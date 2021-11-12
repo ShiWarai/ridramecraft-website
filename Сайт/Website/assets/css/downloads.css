@@ -1,0 +1,13 @@
+.table-bordered, .table-bordered td, .table-bordered th {
+  border: 3px solid #dee2e6;
+}
+
+.table-heading {
+  font-family: 'Noto Sans';
+  font-size: 28px;
+}
+
+.table-text {
+  font-family: 'Open Sans';
+}
+
