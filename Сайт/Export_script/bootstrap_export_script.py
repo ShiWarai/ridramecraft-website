@@ -1,4 +1,4 @@
-#!/yadisk/Проекты/RidrameCraft_сайт/Сайт/.venv/bin python3.8
+#!/yadisk/Проекты/ridramecraft-website/Сайт/.venv/bin/python
 # -*- coding: utf-8 -*-
 
 import sys

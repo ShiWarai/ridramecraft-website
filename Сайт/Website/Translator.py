@@ -13,7 +13,6 @@ if app.debug: # Система для настройки на компьютер
     from babel.messages.pofile import read_po, write_po
     from babel.messages.mofile import write_mo
 
-    from urllib.parse import quote_plus, unquote_plus
     from requests import post
     from json import loads as json_loads
 
@@ -93,18 +92,18 @@ if app.debug: # Система для настройки на компьютер
 
     if langs_dictionary_unfinished:
         for lang in target_langs:
-            with Popen(['pybabel', 'init', '-i', path_join(root_dir, 'req_translation.pot'), '-d', path_join(root_dir, 'Website', 'translations'), '-l', lang], cwd = root_dir) as process:
+            with Popen(['pybabel', 'init', '-i', path_join(root_dir, 'req_translation.pot'), '-d', path_join(root_dir, 'Website', 'translations', '--no-fuzzy-matching'), '-l', lang], cwd = root_dir) as process:
                 process.wait()
     else:
-        with Popen(['pybabel','update','-i', path_join(root_dir, 'req_translation.pot'),'-d', path_join(root_dir, 'Website', 'translations')], cwd = root_dir) as process:
+        with Popen(['pybabel','update','-i', path_join(root_dir, 'req_translation.pot'),'-d', path_join(root_dir, 'Website', 'translations'), '--no-fuzzy-matching'], cwd = root_dir) as process:
             process.wait()
 
-    # # Отчистка от комментариев
-    #
-    # for lang in target_langs:
-    #     deleteCommentsPO(get_po_file_path(lang))
+    # Отчистка от комментариев
 
-    # Грубый перевод непосредственно
+    for lang in target_langs:
+        deleteCommentsPO(get_po_file_path(lang))
+
+    # Первод через Yandex Cloud
 
     def translate(texts, lang):
         data = {
@@ -113,42 +112,40 @@ if app.debug: # Система для настройки на компьютер
             "texts": texts
         }
         response = post('https://translate.api.cloud.yandex.net/translate/v2/translate',
-                        headers = {'Content-type': "application/plain; charset=utf-8",'Authorization' : f"Api-Key AQVN3OCtN5T9Dqzukt70dbMScEbP_SmPow5tPdTd"},
-                        params = data).content
-        return json_loads(response.decode('utf-8'))
+                        headers = {'Content-type': "application/plain; charset=utf-8",'Authorization' : f"Api-Key {app.api_key}"},
+                        json = data)
+        return json_loads(response.content.decode('utf-8'))['translations']
 
     for lang in target_langs:
         # Чтение и обновление словаря
         catalog = None
         req_update = False
+        req_translate = list()
         with open(get_po_file_path(lang),'r', encoding='utf-8') as po:
             catalog = read_po(po) # Загружаем словарь оригинального текста для перевода
-            req_translate = list()
+
             for message in catalog:
                 if message.id and not message.string:
                         print("Not translated: ", message.id)
 
                         if len(message.id):
-                            req_translate.append(quote_plus(message.id, safe="',", encoding='utf-8'))
+                            req_translate.append(message.id)
                             req_update = True
-                        # else:
-                        #     message.string = message.id
-                        #     message.flags = ['fuzzy'] # Перевода нет
 
         if len(req_translate) != 0:
             print("Start AI translation...")
-            translations = translate(req_translate, lang)['translations']
+            translations = translate(req_translate, lang)
 
             updated_dict = dict()
             for i in range(len(req_translate)):
-                updated_dict[unquote_plus(req_translate[i])] = unquote_plus(translations[i]['text'])
+                updated_dict[req_translate[i]] = translations[i]['text']
 
             # Записываем в каталог новые слова
             for message in catalog:
                 if message.id and not message.string:
                     message.string = updated_dict[message.id]
-                    message.flags = ['fuzzy']
-                    print(message.id,"\n:\n",message.string)
+                    message.flags = ['fuzzy',]
+                    print(message.id, "Translated as:", message.string, sep='\n')
 
             # Сохранение словаря
             if req_update:

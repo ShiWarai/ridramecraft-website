@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-10-15 15:57+0300\n"
-"PO-Revision-Date: 2021-09-23 15:35+0300\n"
+"POT-Creation-Date: 2021-11-13 20:26+0300\n"
+"PO-Revision-Date: 2021-09-23 03:45+0300\n"
 "Last-Translator: \n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -23,17 +23,17 @@ msgstr ""
 msgid "Send"
 msgstr "Отправить"
 
-#: Website/templates/color_combinations.html:39
-#: Website/templates/color_combinations.html:42
+#: Website/templates/color_combinations.html:40
+#: Website/templates/color_combinations.html:43
 msgid "Color combinations"
 msgstr "Color combinations"
 
-#: Website/templates/color_combinations.html:58
-#: Website/templates/color_combinations.html:131
+#: Website/templates/color_combinations.html:59
+#: Website/templates/color_combinations.html:132
 msgid "Color: "
 msgstr "Цвет: "
 
-#: Website/templates/color_combinations.html:68
+#: Website/templates/color_combinations.html:69
 msgid ""
 "This page of the site contains a neural network that can form color "
 "combinations. In this section, you can help train a neural network by "
@@ -47,21 +47,21 @@ msgstr ""
 "цветов. Количество цветов может быть изменено (максимум 4), и выбранный "
 "цвет должен быть подтвержден."
 
-#: Website/templates/color_combinations.html:78
-#: Website/templates/color_combinations.html:138
+#: Website/templates/color_combinations.html:79
+#: Website/templates/color_combinations.html:139
 msgid "Number of colors: "
 msgstr "Количество цветов: "
 
-#: Website/templates/color_combinations.html:84
+#: Website/templates/color_combinations.html:85
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: Website/templates/color_combinations.html:87
-#: Website/templates/color_combinations.html:147
+#: Website/templates/color_combinations.html:88
+#: Website/templates/color_combinations.html:148
 msgid "Change number of colors"
 msgstr "Изменить количество цветов"
 
-#: Website/templates/color_combinations.html:121
+#: Website/templates/color_combinations.html:122
 msgid ""
 "Attention! To access the neural network, first fill up the database with "
 "your color combination."
@@ -69,7 +69,7 @@ msgstr ""
 "Внимание! К доступу к нейронной сети, сначала заполните  базу данных "
 "вашей цветовой комбинацией."
 
-#: Website/templates/color_combinations.html:123
+#: Website/templates/color_combinations.html:124
 msgid ""
 "This section of the site allows you to find a suitable color for the "
 "selected set of colors. Select the number of colors and the colors "
@@ -79,31 +79,31 @@ msgstr ""
 " цветов. Выберите количество цветов и сами цвета, а затем запустите "
 "нейронную сеть."
 
-#: Website/templates/color_combinations.html:144
+#: Website/templates/color_combinations.html:145
 msgid "Predict"
 msgstr "Предсказать"
 
-#: Website/templates/color_combinations.html:163
+#: Website/templates/color_combinations.html:164
 msgid "Previous"
 msgstr "Предыдущий"
 
-#: Website/templates/color_combinations.html:170
+#: Website/templates/color_combinations.html:171
 msgid "Next"
 msgstr "Следующий"
 
-#: Website/templates/contacts.html:33
+#: Website/templates/contacts.html:34
 msgid "Shi Warai"
 msgstr "Shi Warai"
 
-#: Website/templates/contacts.html:37
-msgid "Full-stack Developer - Bachelor of Software Engineering"
+#: Website/templates/contacts.html:38
+msgid "Fullstack Developer - Bachelor of Software Engineering"
 msgstr "Fullstack разработчик - Бакалавр программной инженерии"
 
-#: Website/templates/contacts.html:45
+#: Website/templates/contacts.html:46
 msgid "About me"
 msgstr "Обо мне"
 
-#: Website/templates/contacts.html:51
+#: Website/templates/contacts.html:52
 msgid ""
 "I have been programming since the 8th grade (then I made my first full "
 "stack project). During this time, I managed to work in C++, Python, C#, "
@@ -114,57 +114,57 @@ msgid ""
 "website or on Github, but a lot remains unpublished. In addition to "
 "social networks, you can contact me by email."
 msgstr ""
-"I have been programming since the 8th grade (then I made my first full "
-"stack project). During this time, I managed to work in C++, Python, C#, "
-"Lua. After graduation, I became addicted to robotics, classes in which "
-"were held in my school from the 10th grade in the form of a circle. After"
-" graduating from high school, I entered the RTU MIREA in Moscow, where I "
-"currently study and live. Вы можете узнать больше о моих проектах на "
-"веб-сайте или на Github, но многое остается неопубликованным. В "
-"дополнение к социальным сетям вы можете связаться со мной по электронной "
-"почте."
+"Я программирую с 8-го класса (тогда я сделал свой первый проект с полным "
+"стеком). За это время я успел поработать на C++, Python, C#, Lua. После "
+"окончания школы я пристрастился к робототехнике, занятия по которой "
+"проводились в моей школе с 10 класса в форме кружка. После окончания "
+"средней школы я поступил в РТУ МИРЭА в Москве, где в настоящее время "
+"учусь и живу. Вы можете узнать больше о моих проектах на веб-сайте или на"
+" Github, но многое остается неопубликованным. В дополнение к социальным "
+"сетям, вы можете связаться со мной по электронной почте."
 
-#: Website/templates/contacts.html:60
+#: Website/templates/contacts.html:61
 msgid "E-mail"
 msgstr "Электронная почта"
 
-#: Website/templates/downloads.html:31
+#: Website/templates/downloads.html:32
 msgid "Download"
 msgstr "Скачать"
 
-#: Website/templates/downloads.html:33
+#: Website/templates/downloads.html:34
 msgid "List"
 msgstr "Список"
 
-#: Website/templates/downloads.html:36
+#: Website/templates/downloads.html:37
 msgid "Download List"
 msgstr "Список доступных загрузок"
 
-#: Website/templates/downloads.html:44
+#: Website/templates/downloads.html:45
 msgid "Name"
 msgstr "Имя"
 
-#: Website/templates/downloads.html:47
+#: Website/templates/downloads.html:48
 msgid "Extension"
 msgstr "Расширение"
 
-#: Website/templates/downloads.html:50
+#: Website/templates/downloads.html:51
 msgid "Description"
 msgstr "Описание"
 
-#: Website/templates/home.html:33
+#: Website/templates/home.html:34
 msgid "Welcome"
 msgstr "Добро пожаловать"
 
-#: Website/templates/home.html:36
+#: Website/templates/home.html:37
 msgid "to my website"
 msgstr "на мой сайт"
 
-#: Website/templates/home.html:48
+#: Website/templates/home.html:49
 msgid "What is it for?"
 msgstr "Для чего он?"
 
-#: Website/templates/home.html:52
+#: Website/templates/home.html:53
+#, translated
 msgid ""
 "This site was created to publish my projects and file sharing. The site "
 "is hosted on a dedicated server, through which I often also play various "
@@ -175,12 +175,12 @@ msgid ""
 msgstr ""
 "Этот сайт был создан для публикации моих проектов и обмена файлами. Сайт "
 "размещен на выделенном сервере, через который я часто также играю в "
-"различные игры с друзьями. Не все проекты перечислены здесь, но вы "
+"различные кооперативные игры. Не все проекты перечислены здесь, но вы "
 "определенно можете найти полный список на моем GitHub. Если вас "
 "интересует какой-либо проект, вы можете связаться со мной, используя "
 "контакты, указанные на соответствующей странице."
 
-#: Website/templates/home.html:56
+#: Website/templates/home.html:57
 msgid "To projects"
 msgstr "К проектам"
 
@@ -225,15 +225,14 @@ msgid "X"
 msgstr "X"
 
 #: Website/templates/project.html:37
-#, fuzzy
 msgid "Project name: "
-msgstr "Проекты "
+msgstr "Проекты: "
 
-#: Website/templates/projects.html:33
+#: Website/templates/projects.html:34
 msgid "Projects "
 msgstr "Проекты "
 
-#: Website/templates/projects.html:36
+#: Website/templates/projects.html:37
 msgid ""
 "Creating a finished product has been a priority for me for a long time, "
 "and maybe from the very beginning. It was in the projects that I realized"
@@ -280,4 +279,3 @@ msgstr ""
 
 msgid "Click on me"
 msgstr "Нажмите на меня"
-
