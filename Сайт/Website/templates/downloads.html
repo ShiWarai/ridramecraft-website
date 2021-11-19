@@ -1,65 +1,96 @@
 {% extends "layout.html" %}
 <!DOCTYPE html>
-
 <html>
-<head>
-<meta charset="utf-8"/>
-{% block head %}
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-<title>RidrameCraft</title>
-<meta content="Projects page" name="description"/>
-<meta content="website" property="og:type"/>
-<link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-<link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-<link href="../assets/bootstrap/css/bootstrap.min.css?h=cb9114bd32b0a029d9eedd9db9c0b8e8" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-<link href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97" rel="stylesheet"/>
-<link href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354" rel="stylesheet"/>
-<link href="../assets/css/downloads.min.css?h=ba5d5d357c5ddff73aa0403d1a19a329" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
-<script src="{{ url_for('babel_catalog') }}"></script>
-{% endblock head %}
-</head>
-<body id="page-top">{% block content %}
-    <div class="bg-primary top-page" style="padding-bottom: 30px;background: linear-gradient(0deg, #1a252f 0%, #2c3e50 51%);padding-top: 140px;">
-<h2 class="text-uppercase d-flex justify-content-center text-center heading d-flex d-sm-none" style="font-size: 50px;text-align: justify;">Download<br/>List</h2>
-<h2 class="text-uppercase d-sm-flex justify-content-sm-center justify-content-md-center text-center heading d-none d-sm-flex" style="font-size: 50px;text-align: justify;">Download List</h2>
-<hr data-bss-hover-animate="flash" style="background: #18bc9c;height: 5px;width: 90%;"/><div class="table-bordered d-flex justify-content-center" style="padding-bottom: 30px;font-size: 32px;border-style: none;margin-left: 7%;margin-right: 7%;padding-top: 30px;">
-<table class="table table-bordered">
-<thead>
-<tr class="text-white">
-<th class="text-center table-heading" style="font" width="35%">Name</th>
-<th class="text-center d-none d-sm-table-cell table-heading" width="15%">Extension</th>
-<th class="text-center table-heading" width="50%">Description</th>
-</tr>
-</thead>
-<tbody class="text-break text-white table-text" style="font-size: 16px;">
-            {% for download_item in downloads %}
-            <tr class="link" data-bss-hover-animate="flash" onclick="location.href='/downloads/{{download_item.link}}';">
-<td class="d-none d-sm-table-cell">
-<a class="text-white" href="/downloads/{{download_item.link}}">{{download_item.name}}
-                    </a>
-</td>
-<td class="d-table-cell d-sm-none">
-<a class="text-white" download="" href="/downloads/{{download_item.link}}" title="Download">{{(download_item.name + download_item.extension)}}
-                    </a>
-</td>
-<td class="d-none d-sm-table-cell">{{download_item.extension}}</td>
-<td>{{download_item.description}}</td>
-</tr>
-            {% endfor %}
-        </tbody>
-</table>
-</div>
-</div>{% endblock content %}
-    {% block scripts %}<script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638"></script>
-<script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-<script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada"></script>{% endblock scripts %}
-</body>
+ <head>
+  <meta charset="utf-8"/>
+  {% block head %}
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+  <title>
+   RidrameCraft
+  </title>
+  <meta content="Projects page" name="description"/>
+  <meta content="website" property="og:type"/>
+  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
+  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=cb9114bd32b0a029d9eedd9db9c0b8e8" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
+  <link href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97" rel="stylesheet"/>
+  <link href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354" rel="stylesheet"/>
+  <link href="../assets/css/downloads.min.css?h=ba5d5d357c5ddff73aa0403d1a19a329" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
+  <script src="{{ url_for('babel_catalog') }}">
+  </script>
+  {% endblock head %}
+ </head>
+ <body id="page-top">
+  {% block content %}
+  <div class="bg-primary top-page" style="padding-bottom: 30px;background: linear-gradient(0deg, #1a252f 0%, #2c3e50 51%);padding-top: 140px;">
+   <h2 class="text-uppercase d-flex justify-content-center text-center heading d-flex d-sm-none" style="font-size: 50px;text-align: justify;">
+    {{ _("Download") }}
+    <br/>
+    {{ _("List") }}
+   </h2>
+   <h2 class="text-uppercase d-sm-flex justify-content-sm-center justify-content-md-center text-center heading d-none d-sm-flex" style="font-size: 50px;text-align: justify;">
+    {{ _("Download List") }}
+   </h2>
+   <hr data-bss-hover-animate="flash" style="background: #18bc9c;height: 5px;width: 90%;"/>
+   <div class="table-bordered d-flex justify-content-center" style="padding-bottom: 30px;font-size: 32px;border-style: none;margin-left: 7%;margin-right: 7%;padding-top: 30px;">
+    <table class="table table-bordered">
+     <thead>
+      <tr class="text-white">
+       <th class="text-center table-heading" style="font" width="35%">
+        {{ _("Name") }}
+       </th>
+       <th class="text-center d-none d-sm-table-cell table-heading" width="15%">
+        {{ _("Extension") }}
+       </th>
+       <th class="text-center table-heading" width="50%">
+        {{ _("Description") }}
+       </th>
+      </tr>
+     </thead>
+     <tbody class="text-break text-white table-text" style="font-size: 16px;">
+      {% for download_item in downloads %}
+      <tr class="link" data-bss-hover-animate="flash" onclick="location.href='/downloads/{{download_item.link}}';">
+       <td class="d-none d-sm-table-cell">
+        <a class="text-white" href="/downloads/{{download_item.link}}">
+         {{download_item.name}}
+        </a>
+       </td>
+       <td class="d-table-cell d-sm-none">
+        <a class="text-white" download="" href="/downloads/{{download_item.link}}" title="Download">
+         {{(download_item.name + download_item.extension)}}
+        </a>
+       </td>
+       <td class="d-none d-sm-table-cell">
+        {{download_item.extension}}
+       </td>
+       <td>
+        {{download_item.description}}
+       </td>
+      </tr>
+      {% endfor %}
+     </tbody>
+    </table>
+   </div>
+  </div>
+  {% endblock content %}
+    {% block scripts %}
+  <script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638">
+  </script>
+  <script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
+  </script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
+  </script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
+  </script>
+  <script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada">
+  </script>
+  {% endblock scripts %}
+ </body>
 </html>
