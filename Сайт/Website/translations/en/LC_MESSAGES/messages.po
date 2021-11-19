@@ -1,0 +1,266 @@
+# English translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-11-20 00:24+0300\n"
+"PO-Revision-Date: 2021-11-20 00:16+0300\n"
+"Last-Translator: \n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: Website/assets/js/color_combinations.js:76
+msgid "Отправить"
+msgstr "Send"
+
+#: Website/templates/color_combinations.html:40
+#: Website/templates/color_combinations.html:43
+msgid "Color combinations"
+msgstr "Color combinations"
+
+#: Website/templates/color_combinations.html:59
+#: Website/templates/color_combinations.html:134
+msgid "Цвет: "
+msgstr "Color: "
+
+#: Website/templates/color_combinations.html:69
+msgid ""
+"Эта страница сайта содержит нейронную сеть, которая может формировать "
+"цветовые комбинации. В этом разделе вы можете помочь обучить нейронную "
+"сеть, выбрав подходящий цвет для определенного набора сгенерированных "
+"цветов. Количество цветов может быть изменено (максимум 4), и выбранный "
+"цвет должен быть подтвержден."
+msgstr ""
+"This site page contains a neural network that can form color "
+"combinations. In this section, you can help train a neural network by "
+"selecting the appropriate color for a specific set of generated colors. "
+"The number of colors can be changed (maximum 4) and the selected color "
+"must be confirmed."
+
+#: Website/templates/color_combinations.html:79
+msgid "Кол-во цветов: "
+msgstr "Number of colors: "
+
+#: Website/templates/color_combinations.html:85
+msgid "Подтвердить"
+msgstr "Confirm"
+
+#: Website/templates/color_combinations.html:88
+#: Website/templates/color_combinations.html:150
+msgid "Поменять кол-во цветов"
+msgstr "Change the number of colors"
+
+#: Website/templates/color_combinations.html:124
+msgid ""
+"Внимание! К доступу к нейронной сети, сначала заполните базу данных вашей"
+" цветовой комбинацией."
+msgstr ""
+"Attention! To access the neural network, first fill the database with "
+"your color combination."
+
+#: Website/templates/color_combinations.html:126
+msgid ""
+"Данный раздел сайта позволяет найти подходящий цвет для выбранного набора"
+" цветов. Выберите количество цветов и сами цвета, а затем запустите "
+"нейронную сеть."
+msgstr ""
+"This section of the site allows you to find a suitable color for the "
+"selected set of colors. Select the number of colors and the colors "
+"themselves, and then run the neural network."
+
+#: Website/templates/color_combinations.html:141
+msgid "Кол-во цветов"
+msgstr "Number of colors"
+
+#: Website/templates/color_combinations.html:147
+msgid "Сгенерировать"
+msgstr "Predict"
+
+#: Website/templates/contacts.html:34
+msgid "Shi Warai"
+msgstr "Shi Warai"
+
+#: Website/templates/contacts.html:38
+msgid "Fullstack разработчик - Бакалавр программной инженерии"
+msgstr "Fullstack Developer - Bachelor of Software Engineering"
+
+#: Website/templates/contacts.html:46
+msgid "Обо мне"
+msgstr "About me"
+
+#: Website/templates/contacts.html:52
+msgid ""
+"Я занимаюсь программированием с 8-го класса (тогда я сделал свой первый "
+"проект полного стека). За это время я успел поработать на C++, Python, "
+"C#, Lua. По окончании учебы я пристрастился к робототехнике, занятия по "
+"которой проходили в моей школе с 10-го класса в форме кружка. После "
+"окончания школы я поступил в РТУ МИРЭА в Москве, где в настоящее время "
+"учусь и живу. Вы можете узнать больше о моих проектах на сайте или на "
+"Github, но многое остаётся неопубликованным. Помимо социальных сетей, вы "
+"можете связаться со мной по электронной почте."
+msgstr ""
+"I've been programming since 8th grade (then I did my first full stack "
+"project). During this time I managed to work in C++, Python, C#, Lua. "
+"After graduation, I became addicted to robotics, classes in which were "
+"held at my school from the 10th grade in the form of a circle. After "
+"graduating from school, I entered the RTU MIREA in Moscow, where I "
+"currently study and live. You can find out more about my projects on the "
+"website or on Github, but a lot remains unpublished. In addition to "
+"social networks, you can contact me by email."
+
+#: Website/templates/contacts.html:61
+msgid "E-mail"
+msgstr "E-mail"
+
+#: Website/templates/downloads.html:32
+msgid "Доступные файлы"
+msgstr "Available for download"
+
+#: Website/templates/downloads.html:35
+msgid "Доступные для загрузки файлы"
+msgstr "Files available for download"
+
+#: Website/templates/downloads.html:43
+msgid "Имя"
+msgstr "Name"
+
+#: Website/templates/downloads.html:46
+msgid "Расширение"
+msgstr "Expansion"
+
+#: Website/templates/downloads.html:49
+msgid "Описание"
+msgstr "Description"
+
+#: Website/templates/home.html:34
+msgid "Добро пожаловать"
+msgstr "Welcome"
+
+#: Website/templates/home.html:37
+msgid "на моём сайте"
+msgstr "on my website"
+
+#: Website/templates/home.html:49
+msgid "Для чего он?"
+msgstr "What is it for?"
+
+#: Website/templates/home.html:53
+msgid ""
+"Этот сайт был создан для публикации моих проектов и обмена файлами. Сайт "
+"размещен на выделенном сервере, через который я часто также играю в "
+"различные игры с друзьями. Не все проекты перечислены здесь, но вы "
+"определенно можете найти полный список на моем GitHub. Если вас "
+"интересует какой-либо проект, вы можете связаться со мной, используя "
+"контакты, указанные на соответствующей странице."
+msgstr ""
+"This site was created to publish my projects and share files. The site is"
+" hosted on a dedicated server, through which I often also play various "
+"games with friends. Not all projects are listed here, but you can "
+"definitely find the full list on my GitHub. If you are interested in any "
+"project, you can contact me using the contacts listed on the "
+"corresponding page."
+
+#: Website/templates/home.html:57
+msgid "К проектам"
+msgstr "To projects"
+
+#: Website/templates/layout.html:41
+msgid "Главная"
+msgstr "Home"
+
+#: Website/templates/layout.html:46
+msgid "Загрузки"
+msgstr "Downloads"
+
+#: Website/templates/layout.html:51 Website/templates/projects.html:34
+msgid "Проекты"
+msgstr "Projects"
+
+#: Website/templates/layout.html:56
+msgid "Контакты"
+msgstr "Contacts"
+
+#: Website/templates/layout.html:71
+msgid "Местоположение"
+msgstr "Location"
+
+#: Website/templates/layout.html:74
+msgid "Москва, Улица Студенческая, 33, строение 3"
+msgstr "Moscow, 33 Studentskaya Street, building 3"
+
+#: Website/templates/layout.html:79
+msgid "В Интернете"
+msgstr "Around the web"
+
+#: Website/templates/layout.html:110
+msgid "Автор"
+msgstr "Author"
+
+#: Website/templates/layout.html:114
+msgid "Оформлен ShiWarai"
+msgstr "Designed by ShiWarai"
+
+#: Website/templates/project.html:31
+msgid "X"
+msgstr "X"
+
+#: Website/templates/project.html:37
+msgid "Название проекта: "
+msgstr "Project name: "
+
+#: Website/templates/projects.html:37
+msgid ""
+"Создание готового продукта было для меня приоритетом долгое время, а "
+"может быть, и с самого начала. Именно в проектах я реализовывал свои "
+"идеи, стараясь довести их до конца. Некоторые из них были созданы "
+"исключительно для личного пользования, а некоторые имели конкретного "
+"потребителя. Проекты, полностью выполненные мной или в команде, "
+"представлены ниже. У большинства из них есть страница на GitHub."
+msgstr ""
+"Creating a finished product has been a priority for me for a long time, "
+"and maybe from the very beginning. It was in projects that I implemented "
+"my ideas, trying to bring them to the end. Some of them were created "
+"exclusively for personal use, and some had a specific consumer. The "
+"projects fully completed by me or in the team are presented below. Most "
+"of them have a page on GitHub."
+
+msgid "Простой экранный переводчик на основе сторонних библиотек."
+msgstr "A simple on-screen translator based on third-party libraries."
+
+msgid "Нейронная сеть для определения цветовых комбинаций."
+msgstr "A neural network for determining color combinations."
+
+msgid ""
+"Настольное приложение с полностью реализованной серверно-клиентской "
+"частью. Клиент и сервер написаны на разных языках."
+msgstr ""
+"A desktop application with a fully implemented server-client part. The "
+"client and server are written in different languages."
+
+msgid ""
+"Мое первое приложение, написанное на C++ с использованием Windows Forms. "
+"Осуществляет учёт товаров на складе."
+msgstr ""
+"My first application written in C++ using Windows Forms. Performs "
+"accounting of goods in the warehouse."
+
+msgid ""
+"Нейронная сеть для распознавания чисел, написанная как проект по "
+"дисциплине процедурного программирования в университете. Было запрещено "
+"использовать ООП."
+msgstr ""
+"A neural network for number recognition, written as a project on the "
+"discipline of procedural programming at the university. It was forbidden "
+"to use the OOP."
+
+msgid "Нажми на меня"
+msgstr "Click on me"

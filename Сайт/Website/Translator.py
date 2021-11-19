@@ -7,7 +7,7 @@ target_langs = app.config['LANGUAGES'][1:]
 if app.debug: # Система для настройки на компьютере
 
     from Website.Repository import \
-        getFilesList, root_dir, get_mo_file_path, get_po_file_path, templates_directory, fileExist, pot_file_path
+        root_dir, get_mo_file_path, get_po_file_path, fileExist, pot_file_path
     from Website.DatabaseClasses import database, Project
 
     from babel.messages.pofile import read_po, write_po
@@ -16,33 +16,10 @@ if app.debug: # Система для настройки на компьютер
     from requests import post
     from json import loads as json_loads
 
-    from bs4 import BeautifulSoup
-    from bs4.element import Comment
-    from re import match as re_match
     from subprocess import Popen
 
     # Словарь HTML
     # Подготовка страниц к переводу
-
-    def is_visible(element):
-        if element in [' ', '\n']:
-            return False
-        if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
-            return False
-        if isinstance(element, Comment):
-            return False
-        if re_match(r"[^>]*{{[^{}]*}}[^<]*", element) != None or re_match(r"[^>]*{%[^{}%]+%}[^<]*", element) != None:
-            return False
-        return True
-
-    def text_from_html(doc):
-        soup = BeautifulSoup(doc, 'html.parser')
-        texts = soup.findAll(text=True)
-        visible_texts = filter(is_visible, texts)
-        for visible_text in visible_texts:
-            visible_text.replace_with("{{ _(\"" + str(visible_text) + "\") }}")
-
-        return soup.prettify(formatter="html")
 
     def deleteCommentsPO(path):
         data = None
@@ -53,16 +30,6 @@ if app.debug: # Система для настройки на компьютер
 
         with open(path,'w', encoding='utf-8') as po:
             po.write(data)
-
-    templates_list = getFilesList(templates_directory) # Список всех шаблонов страниц html
-
-    for template_path in templates_list:
-        template_data = str()
-        with open(template_path, "r", encoding='utf-8') as template:
-            template_data = template.read()
-        template_data = text_from_html(template_data)
-        with open(template_path, "w", encoding='utf-8') as template:
-            template.write(template_data)
 
     langs_dictionary_unfinished = False
     for lang in target_langs:
@@ -92,7 +59,7 @@ if app.debug: # Система для настройки на компьютер
 
     if langs_dictionary_unfinished:
         for lang in target_langs:
-            with Popen(['pybabel', 'init', '-i', path_join(root_dir, 'req_translation.pot'), '-d', path_join(root_dir, 'Website', 'translations', '--no-fuzzy-matching'), '-l', lang], cwd = root_dir) as process:
+            with Popen(['pybabel', 'init', '-i', path_join(root_dir, 'req_translation.pot'), '-d', path_join(root_dir, 'Website', 'translations'), '-l', lang], cwd = root_dir) as process:
                 process.wait()
     else:
         with Popen(['pybabel','update','-i', path_join(root_dir, 'req_translation.pot'),'-d', path_join(root_dir, 'Website', 'translations'), '--no-fuzzy-matching'], cwd = root_dir) as process:
