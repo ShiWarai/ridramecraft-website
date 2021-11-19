@@ -1,84 +1,56 @@
-{% extends "layout.html" %}
 <!DOCTYPE html>
 <html>
- <head>
-  <meta charset="utf-8"/>
-  {% block head %}
-  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-  <title>
-   RidrameCraft
-  </title>
-  <meta content="Projects page" name="description"/>
-  <meta content="website" property="og:type"/>
-  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=cb9114bd32b0a029d9eedd9db9c0b8e8" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354" rel="stylesheet"/>
-  <link href="../assets/css/home.min.css?h=3225b24eb0990d967f475dc4ced90050" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
-  <script src="{{ url_for('babel_catalog') }}">
-  </script>
-  {% endblock head %}
- </head>
- <body id="page-top">
-  {% block content %}
-  <div class="parallax_top" data-bss-parallax-bg="true" style="background-image: url(../assets/img/background_home.jpg?h=86d95ea5eac2036c5483bfbf44bff998);background-position: center;background-size: cover;">
-   <header class="masthead text-white text-center top-page">
-    <div class="text-white" style="padding-top: 40px;">
-     <h1 style="font-family: 'Noto Sans', sans-serif;">
-      {{ _("Welcome") }}
-     </h1>
-     <h2 class="roboto_slab" style="font-size: 30px;font-family: 'Noto Sans', sans-serif;">
-      {{ _("to my website") }}
-     </h2>
+
+<head>
+    <meta charset="utf-8">
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RidrameCraft</title>
+    <meta name="description" content="Projects page">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" sizes="384x384" href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669">
+    <link rel="icon" type="image/png" sizes="384x384" href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=cb9114bd32b0a029d9eedd9db9c0b8e8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97">
+    <link rel="stylesheet" href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354">
+    <link rel="stylesheet" href="../assets/css/home.min.css?h=3225b24eb0990d967f475dc4ced90050">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script src="{{ url_for('babel_catalog') }}"></script>
+{% endblock head %}
+</head>
+
+<body id="page-top">{% block content %}
+    <div data-bss-parallax-bg="true" class="parallax_top" style="background-image: url(../assets/img/background_home.jpg?h=86d95ea5eac2036c5483bfbf44bff998);background-position: center;background-size: cover;">
+        <header class="masthead text-white text-center top-page">
+            <div class="text-white" style="padding-top: 40px;">
+                <h1 style="font-family: 'Noto Sans', sans-serif;">Welcome</h1>
+                <h2 class="roboto_slab" style="font-size: 30px;font-family: 'Noto Sans', sans-serif;">to my website</h2>
+            </div>
+        </header>
     </div>
-   </header>
-  </div>
-  <div class="highlight bg-primary">
-   <div class="container">
-    <div class="row">
-     <div class="col-md-8 col-lg-8 col-xl-8">
-      <div class="intro">
-       <h2 class="pulse animated heading" style="font-size: 34px;margin-bottom: 20px;">
-        <strong>
-         {{ _("What is it for?") }}
-        </strong>
-       </h2>
-       <p class="text-center text-sm-center text-md-left text-lg-left text-xl-left pulse animated main_text" style="font-size: 18px;">
-        {{ _("This site was created to publish my projects and file sharing. The site is hosted on a dedicated server, through which I often also play various cooperative games. Not all projects are listed here, but you can definitely find the full list on my GitHub. If you are interested in any project, you can contact me using the contacts listed on the corresponding page.") }}
-        <br/>
-       </p>
-       <a class="btn btn-primary pulse animated" href="projects.html" role="button" style="color: var(--light);font-style: normal;text-align: center;margin-bottom: 40px;">
-        {{ _("To projects") }}
-        <br/>
-       </a>
-      </div>
-     </div>
-     <div class="col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center" style="padding: 0px;">
-      <img class="img-fluid pulse animated" src="../assets/img/avatar.png?h=e784ea3930349ff7a3a2f8480035a05c" style="padding-right: 10px;padding-left: 10px;"/>
-     </div>
-    </div>
-   </div>
-  </div>
-  {% endblock content %}
-    {% block scripts %}
-  <script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638">
-  </script>
-  <script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
-  </script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
-  </script>
-  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
-  </script>
-  <script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada">
-  </script>
-  {% endblock scripts %}
- </body>
+    <div class="highlight bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-lg-8 col-xl-8">
+                    <div class="intro">
+                        <h2 class="pulse animated heading" style="font-size: 34px;margin-bottom: 20px;"><strong>What is it for?</strong></h2>
+                        <p class="text-center text-sm-center text-md-left text-lg-left text-xl-left pulse animated main_text" style="font-size: 18px;">This site was created to publish my projects and file sharing. The site is hosted on a dedicated server, through which I often also play various cooperative games. Not all projects are listed here, but you can definitely find the full list on my GitHub. If you are interested in any project, you can contact me using the contacts listed on the corresponding page.<br></p><a class="btn btn-primary pulse animated" role="button" href="projects.html" style="color: var(--light);font-style: normal;text-align: center;margin-bottom: 40px;">To projects<br></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center" style="padding: 0px;"><img class="img-fluid pulse animated" src="../assets/img/avatar.png?h=e784ea3930349ff7a3a2f8480035a05c" style="padding-right: 10px;padding-left: 10px;"></div>
+            </div>
+        </div>
+    </div>{% endblock content %}
+    <script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada"></script>
+</body>
+
 </html>

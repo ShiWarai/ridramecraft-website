@@ -1,83 +1,56 @@
-{% extends "layout.html" %}
 <!DOCTYPE html>
 <html>
- <head>
-  <meta charset="utf-8"/>
-  {% block head %}
-  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-  <title>
-   RidrameCraft
-  </title>
-  <meta content="Projects page" name="description"/>
-  <meta content="website" property="og:type"/>
-  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=cb9114bd32b0a029d9eedd9db9c0b8e8" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354" rel="stylesheet"/>
-  <link href="../assets/css/contacts.min.css?h=d41d8cd98f00b204e9800998ecf8427e" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
-  <script src="{{ url_for('babel_catalog') }}">
-  </script>
-  {% endblock head %}
- </head>
- <body id="page-top">
-  {% block content %}
-  <div class="me_contacts parallax_top" data-bss-parallax-bg="true" style="background-image: url(../assets/img/background_contacts.jpg?h=ab02f04d0eff47e4cd03fd63a9bb4d1b)">
-   <header class="masthead text-white text-center top-page">
-    <div class="container">
-     <h1>
-      {{ _("Shi Warai") }}
-     </h1>
-     <hr class="flex-shrink-0 top_hr" style="color: rgb(255,255,255);font-size: 15px;height: 8px;background: #ffffff;width: 70%;"/>
-     <h2 class="roboto_slab" style="font-family: 'Noto Sans', sans-serif;">
-      {{ _("Fullstack Developer - Bachelor of Software Engineering") }}
-     </h2>
+
+<head>
+    <meta charset="utf-8">
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RidrameCraft</title>
+    <meta name="description" content="Projects page">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" sizes="384x384" href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669">
+    <link rel="icon" type="image/png" sizes="384x384" href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=cb9114bd32b0a029d9eedd9db9c0b8e8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97">
+    <link rel="stylesheet" href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354">
+    <link rel="stylesheet" href="../assets/css/contacts.min.css?h=d41d8cd98f00b204e9800998ecf8427e">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script src="{{ url_for('babel_catalog') }}"></script>
+{% endblock head %}
+</head>
+
+<body id="page-top">{% block content %}
+    <div data-bss-parallax-bg="true" class="me_contacts parallax_top" style="background-image: url(../assets/img/background_contacts.jpg?h=ab02f04d0eff47e4cd03fd63a9bb4d1b)">
+        <header class="masthead text-white text-center top-page">
+            <div class="container">
+                <h1>Shi Warai</h1>
+                <hr class="flex-shrink-0 top_hr" style="color: rgb(255,255,255);font-size: 15px;height: 8px;background: #ffffff;width: 70%;">
+                <h2 class="roboto_slab" style="font-family: 'Noto Sans', sans-serif;">Fullstack Developer - Bachelor of Software Engineering</h2>
+            </div>
+        </header>
     </div>
-   </header>
-  </div>
-  <section class="bg-primary text-white mb-0" id="about" style="padding-top: 48px;">
-   <div class="container">
-    <h1 class="text-uppercase text-center heading">
-     {{ _("About me") }}
-    </h1>
-    <div class="text-center mt-4">
-     <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row flex-xl-row" style="margin-bottom: 15px;">
-      <img class="img-fluid order-1" src="../assets/img/About/green_house.jpg?h=369a0ead5f6b765393bfb7dc8effd0d8" style="width: 34%;min-width: 50%;margin-left: 15px;margin-right: 15px;"/>
-      <p class="text-center text-sm-center text-md-center text-lg-left text-xl-left order-2 main_text" style="margin-top: 15px;margin-right: 0px;">
-       {{ _("I have been programming since the 8th grade (then I made my first full stack project). During this time, I managed to work in C++, Python, C#, Lua. After graduation, I became addicted to robotics, classes in which were held in my school from the 10th grade in the form of a circle. After graduating from high school, I entered the RTU MIREA in Moscow, where I currently study and live. You can find out more about my projects on the website or on Github, but a lot remains unpublished. In addition to social networks, you can contact me by email.") }}
-      </p>
-     </div>
-     <a class="btn btn-outline-light btn-xl" href="mailto:bagerx.original@gmail.com" role="button" style="padding-top: 16px;padding-right: 25px;padding-left: 25px;font-family: 'Noto Sans', sans-serif;">
-      <svg class="mr-2" fill="none" height="1em" style="margin: 0px 0px 0px 0px;margin-right: 0px;font-size: 30px;color: var(--light);margin-top: -5px;" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg">
-       <path clip-rule="evenodd" d="M3.00977 5.83789C3.00977 5.28561 3.45748 4.83789 4.00977 4.83789H20C20.5523 4.83789 21 5.28561 21 5.83789V17.1621C21 18.2667 20.1046 19.1621 19 19.1621H5C3.89543 19.1621 3 18.2667 3 17.1621V6.16211C3 6.11449 3.00333 6.06765 3.00977 6.0218V5.83789ZM5 8.06165V17.1621H19V8.06199L14.1215 12.9405C12.9499 14.1121 11.0504 14.1121 9.87885 12.9405L5 8.06165ZM6.57232 6.80554H17.428L12.7073 11.5263C12.3168 11.9168 11.6836 11.9168 11.2931 11.5263L6.57232 6.80554Z" fill="currentColor" fill-rule="evenodd">
-       </path>
-      </svg>
-      <span style="font-family: Lato, sans-serif;">
-       {{ _("E-mail") }}
-      </span>
-     </a>
-    </div>
-   </div>
-  </section>
-  {% endblock content %}
-    {% block scripts %}
-  <script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638">
-  </script>
-  <script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
-  </script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
-  </script>
-  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
-  </script>
-  <script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada">
-  </script>
-  {% endblock scripts %}
- </body>
+    <section id="about" class="bg-primary text-white mb-0" style="padding-top: 48px;">
+        <div class="container">
+            <h1 class="text-uppercase text-center heading">About me</h1>
+            <div class="text-center mt-4">
+                <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row flex-xl-row" style="margin-bottom: 15px;"><img class="img-fluid order-1" src="../assets/img/About/green_house.jpg?h=369a0ead5f6b765393bfb7dc8effd0d8" style="width: 34%;min-width: 50%;margin-left: 15px;margin-right: 15px;">
+                    <p class="text-center text-sm-center text-md-center text-lg-left text-xl-left order-2 main_text" style="margin-top: 15px;margin-right: 0px;">I have been programming since the 8th grade (then I made my first full stack project). During this time, I managed to work in C++, Python, C#, Lua. After graduation, I became addicted to robotics, classes in which were held in my school from the 10th grade in the form of a circle. After graduating from high school, I entered the RTU MIREA in Moscow, where I currently study and live. You can find out more about my projects on the website or on Github, but a lot remains unpublished. In addition to social networks, you can contact me by email.</p>
+                </div><a class="btn btn-outline-light btn-xl" role="button" href="mailto:bagerx.original@gmail.com" style="padding-top: 16px;padding-right: 25px;padding-left: 25px;font-family: 'Noto Sans', sans-serif;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" class="mr-2" style="margin: 0px 0px 0px 0px;margin-right: 0px;font-size: 30px;color: var(--light);margin-top: -5px;">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.00977 5.83789C3.00977 5.28561 3.45748 4.83789 4.00977 4.83789H20C20.5523 4.83789 21 5.28561 21 5.83789V17.1621C21 18.2667 20.1046 19.1621 19 19.1621H5C3.89543 19.1621 3 18.2667 3 17.1621V6.16211C3 6.11449 3.00333 6.06765 3.00977 6.0218V5.83789ZM5 8.06165V17.1621H19V8.06199L14.1215 12.9405C12.9499 14.1121 11.0504 14.1121 9.87885 12.9405L5 8.06165ZM6.57232 6.80554H17.428L12.7073 11.5263C12.3168 11.9168 11.6836 11.9168 11.2931 11.5263L6.57232 6.80554Z" fill="currentColor"></path>
+                    </svg><span style="font-family: Lato, sans-serif;">E-mail</span></a>
+            </div>
+        </div>
+    </section>{% endblock content %}
+    <script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada"></script>
+</body>
+
 </html>
