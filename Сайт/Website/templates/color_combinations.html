@@ -1,199 +1,118 @@
 {% extends "layout.html" %}
 <!DOCTYPE html>
+
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  {% block head %}
-  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-  <title>
-   Color Combinations - RidrameCraft
-  </title>
-  <meta content="../assets/img/icon.jpg?h=fe01806c3e773b254714f2c8ba2d62a7" property="og:image"/>
-  <meta content="no-cache" http-equiv="Cache-Control"/>
-  <meta content="Color Combinations" name="description"/>
-  <meta content="website" property="og:type"/>
-  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=274d36138d40e374b0a4071754daaee0" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354" rel="stylesheet"/>
-  <link href="../assets/css/bootstrap-colorpicker.min.min.css?h=d28d1ea360e6d32882c5ee521d7ccc6f" rel="stylesheet"/>
-  <link href="../assets/css/color_combinations.min.css?h=c3fb86ee4993d4539e4f6a93bc3c3d58" rel="stylesheet"/>
-  <link href="../assets/css/Colour-Pallete.min.css?h=6f8de7be8cdca814e928dc59960b72cf" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
-  <!-- varibles for js -->
-  <script>
-   var prediction_enabled = "{{ prediction_enabled }}";
-  </script>
-  <script src="{{ url_for('babel_catalog') }}">
-  </script>
-  {% endblock head %}
- </head>
- <body>
-  {% block content %}
-  <div style="height: auto;background: #2c3e50;padding-top: 100px;padding-bottom: 32px;">
-   <h1 class="roboto_slab text-center heading d-sm-none" style="font-size: 44px;">
-    {{ _("Color combinations") }}
-   </h1>
-   <h1 class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center tada animated text-center heading d-none d-sm-flex" data-bss-tooltip="" data-toggle="tooltip" style="margin-bottom: 16px;font-size: 60px;margin-top: 40px;">
-    {{ _("Color combinations") }}
-   </h1>
-   <div class="carousel slide" data-interval="false" data-keyboard="false" data-ride="carousel" data-touch="false" id="main-carousel">
-    <div class="carousel-inner" style="position: relative;padding-bottom: 32px;">
-     <div class="carousel-item {% if mode == 0 %} active {% endif %}" id="train_selection" style="height: 100%;">
-      <form action="/projects/color_combinations/train" class="mx-auto" id="color-input-form" method="post" style="height: 100%;width: 80%;padding: 0px;margin-top: 15px;margin-bottom: 32px;">
-       <div class="container" style="padding: 0px;">
-        <div class="form-row" style="width: 100%;margin: 0px;">
-         <div class="col" style="padding: 0px;">
-          <ul class="list-group list-group-horizontal d-flex justify-content-around" style="border-style: none;">
-           {% for n, color in colors_set %}
-           <li class="d-flex flex-column list-group-item align-items-center" style="background: rgba(255,255,255,0);height: 100%;padding-right: 12px;padding-left: 12px;border-style: none;width: 100%;max-width: 20%;">
-            <input class="form-control" name="base-color-{{n}}" type="hidden" value="{{color}}"/>
-            <div class="color_square" style="background: {{color}};">
-            </div>
-            <span class="d-lg-flex justify-content-lg-center main_text d-flex" style="font-size:100%; margin-top: 5px; margin-bottom: 5px; text-align: center;">
-             {{_("Color: ") ~ color}}
-            </span>
-           </li>
-           {% endfor %}
-          </ul>
-         </div>
-        </div>
-        <div class="form-row" style="margin: 0px;">
-         <div class="col d-inline-flex flex-column-reverse align-items-center flex-sm-column-reverse flex-md-column-reverse flex-lg-column-reverse flex-xl-row" style="padding: 0px;">
-          <p class="text-left text-white main_text" style="font-size: 18px;padding: 5px;">
-           {{ _("This page of the site contains a neural network that can form color combinations. In this section, you can help train a neural network by selecting a suitable color for a certain set of generated colors. The number of colors can be changed (maximum 4), and the selected color must be confirmed.") }}
-           <br/>
-          </p>
-          <div class="d-flex flex-column justify-content-center align-items-center align-self-center order-2 flex-sm-column flex-md-row flex-lg-row flex-xl-row" style="padding-top: 10px;padding-bottom: 10px;padding-right: 12px;padding-left: 12px;width: 100%;">
-           <input class="form-control" id="real-color-input" name="color" type="hidden" value="#000000"/>
-           <input class="mx-auto color_square color_picker" id="color-input" name="color" style="background: #000000; color: #000000; height:0;width:20%;padding-bottom:20%;" type="button" value="#000000"/>
-           <hr style="width: 20px;color: rgba(113,47,47,0);border-style: none;margin: 0px;"/>
-           <div class="d-flex flex-column justify-content-around align-items-xl-end" style="height: 100%;">
-            <div class="text-nowrap d-inline-flex d-lg-flex justify-content-center align-items-center align-self-start flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 40%;padding: 5px;">
-             <span class="text-center main_text color_amount_indicator" style="margin-right: 10px;">
-              {{_("Number of colors: ") ~ colors_n}}
-             </span>
-             <input class="form-control-range color_amount_range" max="4" min="1" name="color_amount" onchange="setColorsAmount(this.value)" step="1" style="width: auto;margin-top: 10px;margin-bottom: 10px;" type="range" value="{{colors_n}}"/>
-            </div>
-            <div class="d-inline-flex justify-content-around align-content-center flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 60%;width: 100%;">
-             <button class="btn btn-primary text-uppercase" id="confirm_color_button" onclick="show_recaptcha()" style="color: var(--light);font-style: normal;text-align: center;margin: 6px;" type="button">
-              {{ _("Confirm") }}
-             </button>
-             <a class="btn btn-primary disabled text-uppercase d-flex align-items-center change_colors_button" href="/projects/color_combinations?color_amount={{colors_n}}" role="button" style="color: var(--light);font-style: normal;text-align: center;margin: 6px;">
-              {{ _("Change number of colors") }}
-             </a>
-             <div class="g-recaptcha" data-sitekey="6Lc8_o4bAAAAANoPxmoIfPXylWMjMgHqipDR9nzZ" id="recaptcha" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0,0,0,0.6); 	z-index: 20; display: flex; justify-content: center; align-items: center; visibility: hidden;">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-      </form>
-     </div>
-     <div class="carousel-item {% if mode == 1 %} active {% endif %}" id="predict_selection" style="height: 100%;">
-      <form action="/projects/color_combinations/predict" class="mx-auto" id="prediction-color-input-form" method="post" style="height: 100%;width: 80%;padding: 0px;margin-top: 15px;margin-bottom: 32px;background: #2c3e50;">
-       <div class="container" style="padding: 0px;">
-        <div class="form-row" style="width: 100%;margin: 0px;">
-         <div class="col" style="padding: 0px;">
-          <ul class="list-group list-group-horizontal d-flex justify-content-around" style="border-style: none;">
-           {% for n, color in last_colors_set %}
-           <li class="d-flex flex-column list-group-item align-items-center" style="background: rgba(255,255,255,0);padding-right: 12px;padding-left: 12px;border-style: none;max-width: 20%;">
-            <input class="form-control" id="real-color-choose-{{n}}" name="color-{{n}}" type="hidden" value="{{color}}"/>
-            <input class="color_square color_picker" id="color-choose-{{n}}" name="color-{{n}}" style="
+<head>
+<meta charset="utf-8"/>
+{% block head %}
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+<title>Color Combinations - RidrameCraft</title>
+<meta content="../assets/img/icon.jpg?h=fe01806c3e773b254714f2c8ba2d62a7" property="og:image"/>
+<meta content="no-cache" http-equiv="Cache-Control"/>
+<meta content="Color Combinations" name="description"/>
+<meta content="website" property="og:type"/>
+<link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
+<link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
+<link href="../assets/bootstrap/css/bootstrap.min.css?h=cb9114bd32b0a029d9eedd9db9c0b8e8" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97" rel="stylesheet"/>
+<link href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354" rel="stylesheet"/>
+<link href="../assets/css/bootstrap-colorpicker.min.min.css?h=d28d1ea360e6d32882c5ee521d7ccc6f" rel="stylesheet"/>
+<link href="../assets/css/color_combinations.min.css?h=c3fb86ee4993d4539e4f6a93bc3c3d58" rel="stylesheet"/>
+<link href="../assets/css/Colour-Pallete.min.css?h=6f8de7be8cdca814e928dc59960b72cf" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
+<!-- varibles for js -->
+<script>
+    var prediction_enabled = "{{ prediction_enabled }}";
+</script><script src="{{ url_for('babel_catalog') }}"></script>
+{% endblock head %}
+</head>
+<body>{% block content %}
+    <div style="height: auto;background: #2c3e50;padding-top: 100px;padding-bottom: 32px;">
+<h1 class="roboto_slab text-center heading d-sm-none" style="font-size: 44px;">Color combinations</h1>
+<h1 class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center tada animated text-center heading d-none d-sm-flex" data-bss-tooltip="" data-toggle="tooltip" style="margin-bottom: 16px;font-size: 60px;margin-top: 40px;">Color combinations</h1>
+<div class="carousel slide" data-interval="false" data-keyboard="false" data-ride="carousel" data-touch="false" id="main-carousel">
+<div class="carousel-inner" style="position: relative;padding-bottom: 32px;">
+<div class="carousel-item {% if mode == 0 %} active {% endif %}" id="train_selection" style="height: 100%;">
+<form action="/projects/color_combinations/train" class="mx-auto" id="color-input-form" method="post" style="height: 100%;width: 80%;padding: 0px;margin-top: 15px;margin-bottom: 32px;">
+<div class="container" style="padding: 0px;">
+<div class="form-row" style="width: 100%;margin: 0px;">
+<div class="col" style="padding: 0px;"><ul class="list-group list-group-horizontal d-flex justify-content-around" style="border-style: none;">
+    {% for n, color in colors_set %}
+    <li class="d-flex flex-column list-group-item align-items-center" style="background: rgba(255,255,255,0);height: 100%;padding-right: 12px;padding-left: 12px;border-style: none;width: 100%;max-width: 20%;">
+<input class="form-control" name="base-color-{{n}}" type="hidden" value="{{color}}"/>
+<div class="color_square" style="background: {{color}};"></div>
+<span class="d-lg-flex justify-content-lg-center main_text d-flex" style="font-size:100%; margin-top: 5px; margin-bottom: 5px; text-align: center;">{{_("Color: ") ~ color}}</span>
+</li>
+    {% endfor %}
+</ul></div>
+</div>
+<div class="form-row" style="margin: 0px;">
+<div class="col d-inline-flex flex-column-reverse align-items-center flex-sm-column-reverse flex-md-column-reverse flex-lg-column-reverse flex-xl-row" style="padding: 0px;">
+<p class="text-left text-white main_text" style="font-size: 18px;padding: 5px;">This page of the site contains a neural network that can form color combinations. In this section, you can help train a neural network by selecting a suitable color for a certain set of generated colors. The number of colors can be changed (maximum 4), and the selected color must be confirmed.<br/></p>
+<div class="d-flex flex-column justify-content-center align-items-center align-self-center order-2 flex-sm-column flex-md-row flex-lg-row flex-xl-row" style="padding-top: 10px;padding-bottom: 10px;padding-right: 12px;padding-left: 12px;width: 100%;"><input class="form-control" id="real-color-input" name="color" type="hidden" value="#000000"/><input class="mx-auto color_square color_picker" id="color-input" name="color" style="background: #000000; color: #000000; height:0;width:20%;padding-bottom:20%;" type="button" value="#000000">
+<hr style="width: 20px;color: rgba(113,47,47,0);border-style: none;margin: 0px;"/>
+<div class="d-flex flex-column justify-content-around align-items-xl-end" style="height: 100%;">
+<div class="text-nowrap d-inline-flex d-lg-flex justify-content-center align-items-center align-self-start flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 40%;padding: 5px;"><span class="text-center main_text color_amount_indicator" style="margin-right: 10px;">{{_("Number of colors: ") ~ colors_n}}</span><input class="form-control-range color_amount_range" max="4" min="1" name="color_amount" onchange="setColorsAmount(this.value)" step="1" style="width: auto;margin-top: 10px;margin-bottom: 10px;" type="range" value="{{colors_n}}"/></div>
+<div class="d-inline-flex justify-content-around align-content-center flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 60%;width: 100%;"><button class="btn btn-primary text-uppercase" id="confirm_color_button" onclick="show_recaptcha()" style="color: var(--light);font-style: normal;text-align: center;margin: 6px;" type="button">Confirm</button><a class="btn btn-primary disabled text-uppercase d-flex align-items-center change_colors_button" href="/projects/color_combinations?color_amount={{colors_n}}" role="button" style="color: var(--light);font-style: normal;text-align: center;margin: 6px;">Change number of colors</a>
+<div class="g-recaptcha" data-sitekey="6Lc8_o4bAAAAANoPxmoIfPXylWMjMgHqipDR9nzZ" id="recaptcha" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0,0,0,0.6); 	z-index: 20; display: flex; justify-content: center; align-items: center; visibility: hidden;"></div>
+</div>
+</div>
+</input></div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="carousel-item {% if mode == 1 %} active {% endif %}" id="predict_selection" style="height: 100%;">
+<form action="/projects/color_combinations/predict" class="mx-auto" id="prediction-color-input-form" method="post" style="height: 100%;width: 80%;padding: 0px;margin-top: 15px;margin-bottom: 32px;background: #2c3e50;">
+<div class="container" style="padding: 0px;">
+<div class="form-row" style="width: 100%;margin: 0px;">
+<div class="col" style="padding: 0px;"><ul class="list-group list-group-horizontal d-flex justify-content-around" style="border-style: none;">
+    {% for n, color in last_colors_set %}
+    <li class="d-flex flex-column list-group-item align-items-center" style="background: rgba(255,255,255,0);padding-right: 12px;padding-left: 12px;border-style: none;max-width: 20%;">
+<input class="form-control" id="real-color-choose-{{n}}" name="color-{{n}}" type="hidden" value="{{color}}">
+<input class="color_square color_picker" id="color-choose-{{n}}" name="color-{{n}}" style="
           background: {{color}};
           color: {{color}}; width: 80%; height: 80%; padding-top: 80%;" type="button" value="{{color}}"/>
-           </li>
-           {% endfor %}
-          </ul>
-          <div style="padding: 0px;">
-          </div>
-         </div>
-        </div>
-        <div class="form-row" style="margin-right: 0px;margin-left: 0px;margin-top: 5px;margin-bottom: 5px;">
-         <div class="col d-inline-flex flex-column-reverse align-items-center flex-sm-column-reverse flex-md-column-reverse flex-lg-column-reverse flex-xl-row" style="padding: 0px;">
-          <p class="text-left text-white main_text" style="font-size: 18px;padding: 5px;">
-           {{ _("Attention! To access the neural network, first fill up the database with your color combination.") }}
-           <br/>
-           {{ _("This section of the site allows you to find a suitable color for the selected set of colors. Select the number of colors and the colors themselves, and then run the neural network.") }}
-           <br/>
-          </p>
-          <div class="d-flex flex-column justify-content-center align-items-center align-self-center order-2 flex-sm-column flex-md-row flex-lg-row flex-xl-row justify-content-xl-center align-items-xl-center" style="padding-top: 10px;padding-bottom: 10px;padding-right: 12px;padding-left: 12px;width: 100%;">
-           <div class="d-flex flex-column align-items-center">
-            <div class="mx-auto color_square" style="background: {{predicted_color}}; color: {{predicted_color}}; height:0; width:20%; padding-bottom:20%;">
-            </div>
-            <span class="d-lg-flex justify-content-lg-center main_text d-flex" style="font-size:100%; margin-top: 5px; margin-bottom: 5px; text-align: center;">
-             {{_("Color: ") ~ predicted_color}}
-            </span>
-           </div>
-           <hr style="width: 20px;color: rgba(113,47,47,0);border-style: none;margin: 0px;"/>
-           <div class="d-flex flex-column justify-content-around align-items-xl-end" style="height: 100%;">
-            <div class="text-nowrap d-inline-flex d-lg-flex justify-content-center align-items-center align-self-start flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 40%;padding: 5px;">
-             <span class="text-center main_text color_amount_indicator" style="margin-right: 10px;">
-              {{_("Number of colors: ") ~ colors_n}}
-             </span>
-             <input class="form-control-range color_amount_range" max="4" min="1" name="color_amount" onchange="setColorsAmount(this.value)" step="1" style="width: auto;margin-top: 10px;margin-bottom: 10px;" type="range" value="{{colors_n}}"/>
-            </div>
-            <div class="d-inline-flex justify-content-around align-content-center flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 60%;width: 100%;">
-             <button class="btn btn-primary disabled text-uppercase" disabled="{{prediction_disabled}}" id="predict_color_button" style="color: var(--light);font-style: normal;margin: 6px;" title="To activate the prediction function, add a color combination to the database" type="submit">
-              {{ _("Predict") }}
-             </button>
-             <a class="btn btn-primary disabled text-uppercase d-flex align-items-center change_colors_button" href="/projects/color_combinations?color_amount={{colors_n}}" role="button" style="color: var(--light);font-style: normal;margin: 6px;">
-              {{ _("Change number of colors") }}
-             </a>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-      </form>
-     </div>
-    </div>
-    <div>
-     <a class="carousel-control-prev" data-slide="prev" href="#main-carousel" role="button" style="width: 10%;">
-      <span class="carousel-control-prev-icon">
-      </span>
-      <span class="sr-only">
-       {{ _("Previous") }}
-      </span>
-     </a>
-     <a class="carousel-control-next" data-slide="next" href="#main-carousel" role="button" style="width: 10%;">
-      <span class="carousel-control-next-icon">
-      </span>
-      <span class="sr-only">
-       {{ _("Next") }}
-      </span>
-     </a>
-    </div>
-   </div>
-  </div>
-  {% endblock content %}
-    {% block scripts %}
-  <script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638">
-  </script>
-  <script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
-  </script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
-  </script>
-  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
-  </script>
-  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit">
-  </script>
-  <script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada">
-  </script>
-  <script src="../assets/js/bootstrap-colorpicker.min.min.js?h=d54c4f99df5ae21841bf1a0e6e50c54a">
-  </script>
-  <script src="../assets/js/color_combinations.min.js?h=889d1629f5a750de8d537941b95a4b94">
-  </script>
-  {% endblock scripts %}
- </body>
+</input></li>
+    {% endfor %}
+</ul>
+<div style="padding: 0px;"></div>
+</div>
+</div>
+<div class="form-row" style="margin-right: 0px;margin-left: 0px;margin-top: 5px;margin-bottom: 5px;">
+<div class="col d-inline-flex flex-column-reverse align-items-center flex-sm-column-reverse flex-md-column-reverse flex-lg-column-reverse flex-xl-row" style="padding: 0px;">
+<p class="text-left text-white main_text" style="font-size: 18px;padding: 5px;">Attention! To access the neural network, first fill up the database with your color combination.<br/>This section of the site allows you to find a suitable color for the selected set of colors. Select the number of colors and the colors themselves, and then run the neural network.<br/></p>
+<div class="d-flex flex-column justify-content-center align-items-center align-self-center order-2 flex-sm-column flex-md-row flex-lg-row flex-xl-row justify-content-xl-center align-items-xl-center" style="padding-top: 10px;padding-bottom: 10px;padding-right: 12px;padding-left: 12px;width: 100%;">
+<div class="d-flex flex-column align-items-center"><div class="mx-auto color_square" style="background: {{predicted_color}}; color: {{predicted_color}}; height:0; width:20%; padding-bottom:20%;"></div>
+<span class="d-lg-flex justify-content-lg-center main_text d-flex" style="font-size:100%; margin-top: 5px; margin-bottom: 5px; text-align: center;">{{_("Color: ") ~ predicted_color}}</span></div>
+<hr style="width: 20px;color: rgba(113,47,47,0);border-style: none;margin: 0px;"/>
+<div class="d-flex flex-column justify-content-around align-items-xl-end" style="height: 100%;">
+<div class="text-nowrap d-inline-flex d-lg-flex justify-content-center align-items-center align-self-start flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 40%;padding: 5px;"><span class="text-center main_text color_amount_indicator" style="margin-right: 10px;">{{_("Number of colors: ") ~ colors_n}}</span><input class="form-control-range color_amount_range" max="4" min="1" name="color_amount" onchange="setColorsAmount(this.value)" step="1" style="width: auto;margin-top: 10px;margin-bottom: 10px;" type="range" value="{{colors_n}}"/></div>
+<div class="d-inline-flex justify-content-around align-content-center flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 60%;width: 100%;"><button class="btn btn-primary disabled text-uppercase" disabled="{{prediction_disabled}}" id="predict_color_button" style="color: var(--light);font-style: normal;margin: 6px;" title="To activate the prediction function, add a color combination to the database" type="submit">Predict</button><a class="btn btn-primary disabled text-uppercase d-flex align-items-center change_colors_button" href="/projects/color_combinations?color_amount={{colors_n}}" role="button" style="color: var(--light);font-style: normal;margin: 6px;">Change number of colors</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div><a class="carousel-control-prev" data-slide="prev" href="#main-carousel" role="button" style="width: 10%;"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" data-slide="next" href="#main-carousel" role="button" style="width: 10%;"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+</div>
+</div>{% endblock content %}
+    {% block scripts %}<script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit"></script>
+<script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada"></script>
+<script src="../assets/js/bootstrap-colorpicker.min.min.js?h=d54c4f99df5ae21841bf1a0e6e50c54a"></script>
+<script src="../assets/js/color_combinations.min.js?h=889d1629f5a750de8d537941b95a4b94"></script>{% endblock scripts %}
+</body>
 </html>
