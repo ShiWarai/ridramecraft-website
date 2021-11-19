@@ -68,9 +68,9 @@ def removeProject(name):
     except:
         print("Ошибка с удалением")
 
-# editProject("Screen Translator","A simple on-screen translator based on third-party libraries.","screen_translator.jpg","https://github.com/ShiWarai/ScreenTranslator")
-# editProject("Color Combinations","A neural network for determining color combinations.","color_combinations.jpg","/projects/color_combinations")
-# editProject("Quinkokolobicky.net","A desktop application with a fully implemented server-client part. The client and server are written in different languages.","quinkokolobicky.jpg","https://yadi.sk/d/0rzx7UJRT36Oxw")
-# editProject("Sasha's Shop","My first application written in C++ using Windows Forms. Implements the accounting of products in the warehouse.","sasha_shop.jpg","https://yadi.sk/d/BVUT6MuLZxUiBQ")
-# editProject("Neural Network C++","A neural network for recognizing numbers, written as a project on the discipline of Procedural programming at a university. It was forbidden to use the PLO.","neural_network.jpg","https://github.com/ShiWarai/neural-network")
-# editProject("Test project window", description="Click on me", image="project_test.png", link="$$showProject('Test project')$$")
+# editProject("Screen Translator", "Простой экранный переводчик на основе сторонних библиотек.","screen_translator.jpg","https://github.com/ShiWarai/ScreenTranslator")
+# editProject("Color Combinations", "Нейронная сеть для определения цветовых комбинаций.","color_combinations.jpg","/projects/color_combinations")
+# editProject("Quinkokolobicky.net", "Настольное приложение с полностью реализованной серверно-клиентской частью. Клиент и сервер написаны на разных языках.","quinkokolobicky.jpg","https://yadi.sk/d/0rzx7UJRT36Oxw")
+# editProject("Sasha's Shop", "Мое первое приложение, написанное на C++ с использованием Windows Forms. Осуществляет учёт товаров на складе.","sasha_shop.jpg","https://yadi.sk/d/BVUT6MuLZxUiBQ")
+# editProject("Neural Network C++", "Нейронная сеть для распознавания чисел, написанная как проект по дисциплине процедурного программирования в университете. Было запрещено использовать ООП.","neural_network.jpg","https://github.com/ShiWarai/neural-network")
+# editProject("Test project window", description="Нажми на меня", image="project_test.png", link="$$showProject('Test project')$$")

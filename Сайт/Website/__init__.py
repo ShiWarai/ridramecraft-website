@@ -21,7 +21,7 @@ app.config['UPLOAD_FOLDER'] = Repository.downloads_directory
 app.config['SQLALCHEMY_BINDS'] = {'main' : "sqlite:///main.db", 'color_combinations' : "sqlite:///colors-sets.db" }
 app.config['SQLALCHEMY_ECHO'] = False
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['LANGUAGES'] = ["en", "ru"] # First language - source
+app.config['LANGUAGES'] = ["ru", "en"] # First language - source
 app.config['DEBUG'] = (args.mode == "debug")
 app.secret_key = token_hex(16)
 app.api_key = args.api_key

@@ -73,7 +73,7 @@ function close_captcha(response){
     button_element = document.getElementById('confirm_color_button');
     button_element.setAttribute('type','submit');
     // Языковой пакет нужен
-    button_element.textContent = _("Send");
+    button_element.textContent = _("Отправить");
     button_element.removeAttribute('onclick');
     button_element.classList.add("pulse", "animated", "infinite");
     
