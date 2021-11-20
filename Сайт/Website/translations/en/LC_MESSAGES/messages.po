@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-21 01:05+0300\n"
+"POT-Creation-Date: 2021-11-21 02:36+0300\n"
 "PO-Revision-Date: 2021-11-20 00:16+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -129,17 +129,22 @@ msgstr "Available for download"
 msgid "Доступные для загрузки файлы"
 msgstr "Files available for download"
 
-#: Website/templates/downloads.html:43
+#: Website/templates/downloads.html:45
 msgid "Имя"
 msgstr "Name"
 
-#: Website/templates/downloads.html:46
+#: Website/templates/downloads.html:48
 msgid "Расширение"
 msgstr "Expansion"
 
-#: Website/templates/downloads.html:49
+#: Website/templates/downloads.html:51
 msgid "Описание"
 msgstr "Description"
+
+#: Website/templates/downloads.html:93
+#, fuzzy
+msgid "Отсутствуют доступные файлы"
+msgstr "There are no available files"
 
 #: Website/templates/home.html:33
 msgid "Добро пожаловать"

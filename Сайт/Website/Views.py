@@ -49,9 +49,10 @@ def contacts():
     return render_base_template("contacts.html")
 
 @app.route('/downloads')
-def downloads(page=1):
+def downloads(page=1, search=False):
 
     page_num = int(request.args.get('page') or page) - 1  # Преобразуем к списочной нумерации
+    searched_name = request.args.get('search') or search  # Получаем имя искомого файла
 
     files_list = list()
     # Заполняем массив ссылок
@@ -60,12 +61,13 @@ def downloads(page=1):
         file_data = dict()
         file = Download.DownloadableFile(file_name)
 
-        file_data.update({"name" : file.name})
-        file_data.update({"extension" : file.extension})
-        file_data.update({"description" : file.description})
-        file_data.update({"link" : file_name})
+        if (not searched_name) or (searched_name in file_name):
+            file_data.update({"name" : file.name})
+            file_data.update({"extension" : file.extension})
+            file_data.update({"description" : file.description})
+            file_data.update({"link" : file_name})
 
-        files_list.append(file_data)
+            files_list.append(file_data)
 
     # Формируем границы отображаемого списка загрузок
     files_n = len(files_list)
@@ -81,16 +83,28 @@ def downloads(page=1):
             downloads=files_list[left_limit:right_limit],
             pages_n=ceil(files_n / links_on_page),
             websiteName=websiteName,
+            search_value=searched_name or "",
             hostName=hostName,
             year=datetime.now().year
         )
     elif page_num * links_on_page > files_n and files_n != 0:
         return redirect("/downloads?page=1")
+    elif files_n == 0 and searched_name:
+        return render_template(
+            "downloads.html",
+            downloads=[],
+            pages_n=1,
+            search_value=searched_name,
+            websiteName=websiteName,
+            hostName=hostName,
+            year=datetime.now().year
+        )
     else:
         return render_template(
             "downloads.html",
             downloads=[],
             pages_n=0,
+            search_value="",
             websiteName=websiteName,
             hostName=hostName,
             year=datetime.now().year
