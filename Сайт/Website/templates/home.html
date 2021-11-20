@@ -10,24 +10,23 @@
   </title>
   <meta content="Projects page" name="description"/>
   <meta content="website" property="og:type"/>
-  <link href="../assets/img/website_icon.png" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/img/website_icon.png" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
+  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=1b3aa22a9c1f28edc35f2946a4fc4b3d" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="../assets/fonts/font-awesome.min.css" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css" rel="stylesheet"/>
-  <link href="../assets/css/home.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.min.css?h=d21c6d52ae1ce6b32b8253dd04e6ab0c" rel="stylesheet"/>
+  <link href="../assets/css/home.min.css?h=3225b24eb0990d967f475dc4ced90050" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
   {% endblock head %}
  </head>
  <body id="page-top">
   {% block content %}
-  <div class="parallax_top" data-bss-parallax-bg="true" style="background-image: url(../assets/img/background_home.jpg);background-position: center;background-size: cover;">
+  <div class="parallax_top" data-bss-parallax-bg="true" style="background-image: url(../assets/img/background_home.jpg?h=86d95ea5eac2036c5483bfbf44bff998);background-position: center;background-size: cover;">
    <header class="masthead text-white text-center top-page">
     <div class="text-white" style="padding-top: 40px;">
      <h1 style="font-family: 'Noto Sans', sans-serif;">
@@ -44,32 +43,32 @@
     <div class="row">
      <div class="col-md-8 col-lg-8 col-xl-8">
       <div class="intro">
-       <h2 class="pulse animated heading" style="font-size: 34px;margin-bottom: 20px;">
+       <h2 class="heading" style="font-size: 34px;margin-bottom: 20px;">
         <strong>
          {{ _("Для чего он?") }}
         </strong>
        </h2>
-       <p class="text-center text-sm-center text-md-left text-lg-left text-xl-left pulse animated main_text" style="font-size: 18px;">
+       <p class="text-center text-sm-center text-md-left text-lg-left text-xl-left main_text" style="font-size: 18px;">
         {{ _("Этот сайт был создан для публикации моих проектов и обмена файлами. Сайт размещен на выделенном сервере, через который я часто также играю в различные игры с друзьями. Не все проекты перечислены здесь, но вы определенно можете найти полный список на моем GitHub. Если вас интересует какой-либо проект, вы можете связаться со мной, используя контакты, указанные на соответствующей странице.") }}
         <br/>
        </p>
-       <a class="btn btn-primary pulse animated" href="projects.html" role="button" style="color: var(--light);font-style: normal;text-align: center;margin-bottom: 40px;">
+       <a class="btn btn-primary" href="projects.html" role="button" style="color: var(--light);font-style: normal;text-align: center;margin-bottom: 40px;">
         {{ _("К проектам") }}
         <br/>
        </a>
       </div>
      </div>
      <div class="col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center" style="padding: 0px;">
-      <img class="img-fluid pulse animated" src="../assets/img/avatar.png" style="padding-right: 10px;padding-left: 10px;"/>
+      <img class="img-fluid" src="../assets/img/avatar.png?h=e784ea3930349ff7a3a2f8480035a05c" style="padding-right: 10px;padding-left: 10px;"/>
      </div>
     </div>
    </div>
   </div>
   {% endblock content %}
   {% block scripts %}
-  <script src="../assets/js/jquery.min.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
   </script>
-  <script src="../assets/bootstrap/js/bootstrap.min.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
   </script>
@@ -77,7 +76,7 @@
   </script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
   </script>
-  <script src="../assets/js/script.min.js">
+  <script src="../assets/js/script.min.js?h=c77ea9a98d927b6826212913410f3ab5">
   </script>
   {% endblock scripts %}
  </body>
