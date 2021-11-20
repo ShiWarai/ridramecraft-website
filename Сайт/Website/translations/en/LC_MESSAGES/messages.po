@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-20 06:03+0300\n"
+"POT-Creation-Date: 2021-11-20 19:06+0300\n"
 "PO-Revision-Date: 2021-11-20 00:16+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -22,17 +22,17 @@ msgstr ""
 msgid "Отправить"
 msgstr "Send"
 
-#: Website/templates/color_combinations.html:40
-#: Website/templates/color_combinations.html:43
+#: Website/templates/color_combinations.html:39
+#: Website/templates/color_combinations.html:42
 msgid "Color combinations"
 msgstr "Color combinations"
 
-#: Website/templates/color_combinations.html:59
-#: Website/templates/color_combinations.html:134
+#: Website/templates/color_combinations.html:58
+#: Website/templates/color_combinations.html:133
 msgid "Цвет: "
 msgstr "Color: "
 
-#: Website/templates/color_combinations.html:69
+#: Website/templates/color_combinations.html:68
 msgid ""
 "Эта страница сайта содержит нейронную сеть, которая может формировать "
 "цветовые комбинации. В этом разделе вы можете помочь обучить нейронную "
@@ -46,20 +46,20 @@ msgstr ""
 "The number of colors can be changed (maximum 4) and the selected color "
 "must be confirmed."
 
-#: Website/templates/color_combinations.html:79
+#: Website/templates/color_combinations.html:78
 msgid "Кол-во цветов: "
 msgstr "Number of colors: "
 
-#: Website/templates/color_combinations.html:85
+#: Website/templates/color_combinations.html:84
 msgid "Подтвердить"
 msgstr "Confirm"
 
-#: Website/templates/color_combinations.html:88
-#: Website/templates/color_combinations.html:150
+#: Website/templates/color_combinations.html:87
+#: Website/templates/color_combinations.html:149
 msgid "Поменять кол-во цветов"
 msgstr "Change the number of colors"
 
-#: Website/templates/color_combinations.html:124
+#: Website/templates/color_combinations.html:123
 msgid ""
 "Внимание! К доступу к нейронной сети, сначала заполните базу данных вашей"
 " цветовой комбинацией."
@@ -67,7 +67,7 @@ msgstr ""
 "Attention! To access the neural network, first fill the database with "
 "your color combination."
 
-#: Website/templates/color_combinations.html:126
+#: Website/templates/color_combinations.html:125
 msgid ""
 "Данный раздел сайта позволяет найти подходящий цвет для выбранного набора"
 " цветов. Выберите количество цветов и сами цвета, а затем запустите "
@@ -77,27 +77,27 @@ msgstr ""
 "selected set of colors. Select the number of colors and the colors "
 "themselves, and then run the neural network."
 
-#: Website/templates/color_combinations.html:141
+#: Website/templates/color_combinations.html:140
 msgid "Кол-во цветов"
 msgstr "Number of colors"
 
-#: Website/templates/color_combinations.html:147
+#: Website/templates/color_combinations.html:146
 msgid "Сгенерировать"
 msgstr "Predict"
 
-#: Website/templates/contacts.html:34
+#: Website/templates/contacts.html:33
 msgid "Shi Warai"
 msgstr "Shi Warai"
 
-#: Website/templates/contacts.html:38
+#: Website/templates/contacts.html:37
 msgid "Fullstack разработчик - Бакалавр программной инженерии"
 msgstr "Fullstack Developer - Bachelor of Software Engineering"
 
-#: Website/templates/contacts.html:46
+#: Website/templates/contacts.html:45
 msgid "Обо мне"
 msgstr "About me"
 
-#: Website/templates/contacts.html:52
+#: Website/templates/contacts.html:51
 msgid ""
 "Я занимаюсь программированием с 8-го класса (тогда я сделал свой первый "
 "проект полного стека). За это время я успел поработать на C++, Python, "
@@ -117,43 +117,43 @@ msgstr ""
 "website or on Github, but a lot remains unpublished. In addition to "
 "social networks, you can contact me by email."
 
-#: Website/templates/contacts.html:61
+#: Website/templates/contacts.html:60
 msgid "E-mail"
 msgstr "E-mail"
 
-#: Website/templates/downloads.html:32
+#: Website/templates/downloads.html:31
 msgid "Доступные файлы"
 msgstr "Available for download"
 
-#: Website/templates/downloads.html:35
+#: Website/templates/downloads.html:34
 msgid "Доступные для загрузки файлы"
 msgstr "Files available for download"
 
-#: Website/templates/downloads.html:43
+#: Website/templates/downloads.html:42
 msgid "Имя"
 msgstr "Name"
 
-#: Website/templates/downloads.html:46
+#: Website/templates/downloads.html:45
 msgid "Расширение"
 msgstr "Expansion"
 
-#: Website/templates/downloads.html:49
+#: Website/templates/downloads.html:48
 msgid "Описание"
 msgstr "Description"
 
-#: Website/templates/home.html:34
+#: Website/templates/home.html:33
 msgid "Добро пожаловать"
 msgstr "Welcome"
 
-#: Website/templates/home.html:37
+#: Website/templates/home.html:36
 msgid "на моём сайте"
 msgstr "on my website"
 
-#: Website/templates/home.html:49
+#: Website/templates/home.html:48
 msgid "Для чего он?"
 msgstr "What is it for?"
 
-#: Website/templates/home.html:53
+#: Website/templates/home.html:52
 msgid ""
 "Этот сайт был создан для публикации моих проектов и обмена файлами. Сайт "
 "размещен на выделенном сервере, через который я часто также играю в "
@@ -169,55 +169,55 @@ msgstr ""
 "project, you can contact me using the contacts listed on the "
 "corresponding page."
 
-#: Website/templates/home.html:57
+#: Website/templates/home.html:56
 msgid "К проектам"
 msgstr "To projects"
 
-#: Website/templates/layout.html:41
+#: Website/templates/layout.html:40
 msgid "Главная"
 msgstr "Home"
 
-#: Website/templates/layout.html:46
+#: Website/templates/layout.html:45
 msgid "Загрузки"
 msgstr "Downloads"
 
-#: Website/templates/layout.html:51 Website/templates/projects.html:34
+#: Website/templates/layout.html:50 Website/templates/projects.html:32
 msgid "Проекты"
 msgstr "Projects"
 
-#: Website/templates/layout.html:56
+#: Website/templates/layout.html:55
 msgid "Контакты"
 msgstr "Contacts"
 
-#: Website/templates/layout.html:71
+#: Website/templates/layout.html:70
 msgid "Местоположение"
 msgstr "Location"
 
-#: Website/templates/layout.html:74
+#: Website/templates/layout.html:73
 msgid "Москва, Улица Студенческая, 33, строение 3"
 msgstr "Moscow, 33 Studentskaya Street, building 3"
 
-#: Website/templates/layout.html:79
+#: Website/templates/layout.html:78
 msgid "В Интернете"
 msgstr "Around the web"
 
-#: Website/templates/layout.html:110
+#: Website/templates/layout.html:109
 msgid "Автор"
 msgstr "Author"
 
-#: Website/templates/layout.html:114
+#: Website/templates/layout.html:113
 msgid "Оформлен ShiWarai"
 msgstr "Designed by ShiWarai"
 
-#: Website/templates/project.html:31
+#: Website/templates/project.html:29
 msgid "X"
 msgstr "X"
 
-#: Website/templates/project.html:37
+#: Website/templates/project.html:35
 msgid "Название проекта: "
 msgstr "Project name: "
 
-#: Website/templates/projects.html:37
+#: Website/templates/projects.html:35
 msgid ""
 "Создание готового продукта было для меня приоритетом долгое время, а "
 "может быть, и с самого начала. Именно в проектах я реализовывал свои "
