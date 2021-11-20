@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
         serve(app, host=HOST, port=PORT, threads=8)
     else:
-        HOST = "localhost"
+        HOST = "192.168.0.103"
         try:
             PORT = 8000
         except ValueError:
