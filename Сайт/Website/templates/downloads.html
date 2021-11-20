@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link href="../assets/css/styles.min.css?h=d21c6d52ae1ce6b32b8253dd04e6ab0c" rel="stylesheet"/>
-  <link href="../assets/css/downloads.min.css?h=cbbc8503a5a86fd0938d44de590c5ea2" rel="stylesheet"/>
+  <link href="../assets/css/downloads.min.css?h=57df07b8da194b20ba6db3bb5b86e5df" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
   {% endblock head %}
@@ -34,6 +34,7 @@
     {{ _("Доступные для загрузки файлы") }}
    </h2>
    <hr style="background: #18bc9c;height: 5px;width: 90%;"/>
+   {% if pages_n %}
    <div class="table-bordered d-flex justify-content-center" style="padding-bottom: 30px;font-size: 32px;border-style: none;margin-left: 7%;margin-right: 7%;padding-top: 30px;">
     <table class="table table-bordered">
      <thead>
@@ -72,6 +73,22 @@
       {% endfor %}
      </tbody>
     </table>
+   </div>
+   <div class="d-flex justify-content-center" id="page_selectors" style="width: 100%;height: 40px;">
+    {% for i in range(pages_n) %}
+    <div class="d-flex justify-content-center align-items-center page_selector">
+     <a href="/downloads?page={{i+1}}">
+      {{i+1}}
+     </a>
+    </div>
+    {% endfor %}{% else %}
+    <div class="d-flex flex-column align-items-center">
+     <img loading="eager" src="../assets/img/no_downloads.jpg?h=2da36543a8c01fafbf8bd851265bf4a3" style="margin: 20px 0px;height: 50vh;"/>
+     <span class="text-center" style="color: #dee2e6;font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 31px;margin: 20px 0px;">
+      {{ _("Отсутствуют доступные файлы") }}
+     </span>
+    </div>
+    {% endif %}
    </div>
   </div>
   {% endblock content %}
