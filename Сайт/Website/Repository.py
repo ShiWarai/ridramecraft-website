@@ -1,7 +1,7 @@
 from os import path, listdir, curdir, remove
 
 root_dir = path.abspath(curdir)
-downloads_directory = path.join(root_dir, "download")
+downloads_directory = path.join(root_dir, "downloads")
 projects_directory = path.join(root_dir,"Website", "projects")
 templates_directory = path.join(root_dir,"Website", "templates")
 static_directory = path.join(root_dir,"Website", "assets")
