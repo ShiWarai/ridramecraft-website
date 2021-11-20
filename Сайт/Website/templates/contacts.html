@@ -10,23 +10,23 @@
   </title>
   <meta content="Projects page" name="description"/>
   <meta content="website" property="og:type"/>
-  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=1b3aa22a9c1f28edc35f2946a4fc4b3d" rel="stylesheet"/>
+  <link href="../assets/img/website_icon.png" rel="icon" sizes="384x384" type="image/png"/>
+  <link href="../assets/img/website_icon.png" rel="icon" sizes="384x384" type="image/png"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css?h=d21c6d52ae1ce6b32b8253dd04e6ab0c" rel="stylesheet"/>
-  <link href="../assets/css/contacts.min.css?h=d41d8cd98f00b204e9800998ecf8427e" rel="stylesheet"/>
+  <link href="../assets/css/styles.min.css" rel="stylesheet"/>
+  <link href="../assets/css/contacts.min.css" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
   {% endblock head %}
  </head>
  <body id="page-top">
   {% block content %}
-  <div class="me_contacts parallax_top" data-bss-parallax-bg="true" style="background-image: url(../assets/img/background_contacts.jpg?h=ab02f04d0eff47e4cd03fd63a9bb4d1b)">
+  <div class="me_contacts parallax_top" data-bss-parallax-bg="true" style="background-image: url(../assets/img/background_contacts.jpg)">
    <header class="masthead text-white text-center top-page">
     <div class="container">
      <h1>
@@ -46,7 +46,7 @@
     </h1>
     <div class="text-center mt-4">
      <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row flex-xl-row" style="margin-bottom: 15px;">
-      <img class="img-fluid order-1" src="../assets/img/About/green_house.jpg?h=369a0ead5f6b765393bfb7dc8effd0d8" style="width: 34%;min-width: 50%;margin-left: 15px;margin-right: 15px;"/>
+      <img class="img-fluid order-1" src="../assets/img/About/green_house.jpg" style="width: 34%;min-width: 50%;margin-left: 15px;margin-right: 15px;"/>
       <p class="text-center text-sm-center text-md-center text-lg-left text-xl-left order-2 main_text" style="margin-top: 15px;margin-right: 0px;">
        {{ _("Я занимаюсь программированием с 8-го класса (тогда я сделал свой первый проект полного стека). За это время я успел поработать на C++, Python, C#, Lua. По окончании учебы я пристрастился к робототехнике, занятия по которой проходили в моей школе с 10-го класса в форме кружка. После окончания школы я поступил в РТУ МИРЭА в Москве, где в настоящее время учусь и живу. Вы можете узнать больше о моих проектах на сайте или на Github, но многое остаётся неопубликованным. Помимо социальных сетей, вы можете связаться со мной по электронной почте.") }}
       </p>
@@ -75,7 +75,7 @@
   </script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
   </script>
-  <script src="../assets/js/script.min.js?h=c77ea9a98d927b6826212913410f3ab5">
+  <script src="../assets/js/script.min.js">
   </script>
   {% endblock scripts %}
  </body>
