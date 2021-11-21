@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from flask import render_template, send_from_directory, abort, request, redirect, session
+from math import ceil, floor
 
 from flask_babel import _
 
@@ -13,7 +14,7 @@ from Website import ColorCombinations
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
 
-def render_base_template(pageName ="home.html"):
+def render_base_template(pageName="home.html"):
     return render_template(
         pageName,
         websiteName = websiteName,
@@ -29,7 +30,7 @@ def get_locale():
 def home():
     return render_base_template("home.html")
 
-@app.route('/home.html')
+@app.route('/home')
 def go_home():
     return redirect('/')
 
@@ -43,37 +44,75 @@ def send_project_assets(path):
 def send_project(project_name):
     return render_template("project.html", project_name = project_name)
 
-@app.route('/contacts.html')
+@app.route('/contacts')
 def contacts():
     return render_base_template("contacts.html")
 
-@app.route('/downloads.html')
-def downloads():
+@app.route('/downloads')
+def downloads(page=1, search=False):
+
+    page_num = int(request.args.get('page') or page) - 1  # Преобразуем к списочной нумерации
+    searched_name = request.args.get('search') or search  # Получаем имя искомого файла
 
     files_list = list()
-
     # Заполняем массив ссылок
     for file_name in Download.getFilesList():
 
         file_data = dict()
         file = Download.DownloadableFile(file_name)
 
-        file_data.update({"name" : file.name})
-        file_data.update({"extension" : file.extension})
-        file_data.update({"description" : file.description})
-        file_data.update({"link" : file_name})
+        if (not searched_name) or (searched_name in file_name):
+            file_data.update({"name" : file.name})
+            file_data.update({"extension" : file.extension})
+            file_data.update({"description" : file.description})
+            file_data.update({"link" : file_name})
 
-        files_list.append(file_data)
+            files_list.append(file_data)
 
-    return render_template(
-        "downloads.html",
-        downloads = files_list,
-        websiteName=websiteName,
-        hostName=hostName,
-        year=datetime.now().year
-    )
+    # Формируем границы отображаемого списка загрузок
+    files_n = len(files_list)
 
-@app.route('/projects.html')
+    links_on_page = 10
+
+    if page_num * links_on_page <= files_n and files_n != 0:
+        left_limit = page_num * links_on_page
+        right_limit = (page_num+1) * links_on_page if (page_num+1) * links_on_page <= files_n else files_n
+
+        return render_template(
+            "downloads.html",
+            downloads=files_list[left_limit:right_limit],
+            pages_n=ceil(files_n / links_on_page),
+            websiteName=websiteName,
+            search_value=searched_name or "",
+            hostName=hostName,
+            year=datetime.now().year
+        )
+    elif page_num * links_on_page > files_n and files_n != 0:
+        return redirect("/downloads?page=1")
+    elif files_n == 0 and searched_name:
+        return render_template(
+            "downloads.html",
+            downloads=[],
+            pages_n=1,
+            search_value=searched_name,
+            websiteName=websiteName,
+            hostName=hostName,
+            year=datetime.now().year
+        )
+    else:
+        return render_template(
+            "downloads.html",
+            downloads=[],
+            pages_n=0,
+            search_value="",
+            websiteName=websiteName,
+            hostName=hostName,
+            year=datetime.now().year
+        )
+
+
+
+@app.route('/projects')
 def projects():
 
     projects = Project.getProjects(Project.getProjectsList()) # Объекты проектов, которые содержат всю нужную информацию
