@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-21 02:36+0300\n"
-"PO-Revision-Date: 2021-11-20 00:16+0300\n"
+"POT-Creation-Date: 2021-11-21 03:53+0300\n"
+"PO-Revision-Date: 2021-11-21 03:53+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -142,7 +142,6 @@ msgid "Описание"
 msgstr "Description"
 
 #: Website/templates/downloads.html:93
-#, fuzzy
 msgid "Отсутствуют доступные файлы"
 msgstr "There are no available files"
 
