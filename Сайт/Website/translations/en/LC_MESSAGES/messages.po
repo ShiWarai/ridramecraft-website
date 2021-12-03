@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-26 09:25+0300\n"
+"POT-Creation-Date: 2021-12-03 06:13+0300\n"
 "PO-Revision-Date: 2021-11-21 03:53+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -142,6 +142,11 @@ msgstr "E-mail"
 msgid "Доступные файлы"
 msgstr "Available files"
 
+#: Website/templates/downloads.html:34
+#, fuzzy
+msgid "Доступные для загрузки файлы"
+msgstr "Files available for download"
+
 #: Website/templates/downloads.html:45
 #, fuzzy
 msgid "Имя"
@@ -157,12 +162,32 @@ msgstr "Expansion"
 msgid "Описание"
 msgstr "Description"
 
-#: Website/templates/downloads.html:82
+#: Website/templates/downloads.html:58
+#, fuzzy
+msgid "name"
+msgstr "name"
+
+#: Website/templates/downloads.html:61
+#, fuzzy
+msgid "name+extension"
+msgstr "name+extension"
+
+#: Website/templates/downloads.html:64
+#, fuzzy
+msgid "extension"
+msgstr "extension"
+
+#: Website/templates/downloads.html:67
+#, fuzzy
+msgid "description"
+msgstr "description"
+
+#: Website/templates/downloads.html:76
 #, fuzzy
 msgid "i"
 msgstr "i"
 
-#: Website/templates/downloads.html:91
+#: Website/templates/downloads.html:85
 #, fuzzy
 msgid "Отсутствуют доступные файлы"
 msgstr "There are no available files"
@@ -307,4 +332,3 @@ msgstr ""
 
 msgid "Нажми на меня"
 msgstr "Click on me"
-
