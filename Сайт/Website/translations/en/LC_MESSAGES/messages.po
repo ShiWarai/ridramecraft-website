@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-03 09:19+0300\n"
+"POT-Creation-Date: 2021-12-03 12:27+0300\n"
 "PO-Revision-Date: 2021-11-21 03:53+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -274,15 +274,10 @@ msgstr "Author"
 msgid "Оформлен ShiWarai"
 msgstr "Designed by ShiWarai"
 
-#: Website/templates/project.html:30 Website/templates/project_error.html:30
+#: Website/templates/project.html:34 Website/templates/project_error.html:30
 #, fuzzy
 msgid "X"
 msgstr "X"
-
-#: Website/templates/project.html:36
-#, fuzzy
-msgid "Название проекта: "
-msgstr "Project name: "
 
 #: Website/templates/project_error.html:36
 #, fuzzy

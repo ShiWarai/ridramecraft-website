@@ -9,7 +9,7 @@ from flask_babel import _
 from Website import app, babel
 from Website import Download
 from Website import Projects
-# from Website import ColorCombinations
+from Website import ColorCombinations
 
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
