@@ -8,8 +8,8 @@ from flask_babel import _
 
 from Website import app, babel
 from Website import Download
-from Website import Project
-from Website import ColorCombinations
+from Website import Projects
+# from Website import ColorCombinations
 
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
@@ -42,7 +42,13 @@ def send_project_assets(path):
 # Для доступа к проектам
 @app.route('/project/<string:project_name>')
 def send_project(project_name):
-    return render_template("project.html", project_name = project_name)
+    project = Projects.getProject(project_name)
+
+    if not project:
+        print("No such project!")
+        return render_template("project_error.html", project_name=project_name)
+
+    return render_template("project.html", project_name=project.name)
 
 @app.route('/contacts')
 def contacts():
@@ -85,7 +91,7 @@ def downloads():
 @app.route('/projects')
 def projects():
 
-    projects = Project.getProjects(Project.getProjectsList()) # Объекты проектов, которые содержат всю нужную информацию
+    projects = Projects.getProjects(Projects.getProjectsList()) # Объекты проектов, которые содержат всю нужную информацию
 
     return render_template(
         "projects.html",

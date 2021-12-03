@@ -21,6 +21,15 @@ def getProjectsList():
     except:
         return list()
 
+def getProject(project_name):
+    project_obj = DatabaseClasses.Project.query.filter_by(name=project_name).first()
+
+    try:
+        project = Project(project_obj)
+    except AttributeError:
+        return None
+
+    return project
 
 def getProjects(sql_project_objects):
     projects_list = list()
@@ -73,4 +82,4 @@ def removeProject(name):
 # editProject("Quinkokolobicky.net", "Настольное приложение с полностью реализованной серверно-клиентской частью. Клиент и сервер написаны на разных языках.","quinkokolobicky.jpg","https://yadi.sk/d/0rzx7UJRT36Oxw")
 # editProject("Sasha's Shop", "Мое первое приложение, написанное на C++ с использованием Windows Forms. Осуществляет учёт товаров на складе.","sasha_shop.jpg","https://yadi.sk/d/BVUT6MuLZxUiBQ")
 # editProject("Neural Network C++", "Нейронная сеть для распознавания чисел, написанная как проект по дисциплине процедурного программирования в университете. Было запрещено использовать ООП.","neural_network.jpg","https://github.com/ShiWarai/neural-network")
-# editProject("Test project window", description="Нажми на меня", image="project_test.png", link="$$showProject('Test project')$$")
+# createProject("Test project", description="Нажми на меня", image="project_test.png", link="$$showProject('Test project')$$")

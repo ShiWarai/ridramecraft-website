@@ -27,7 +27,7 @@ class Project(database.Model):
     link = database.Column(database.Text)
 
     def __repr__(self):
-        return '<Project %s, translated: %s>' % (self.name, self.translated)
+        return '<Project %s>' % (self.name)
 
 database.create_all(bind=['color_combinations','main'])
 
