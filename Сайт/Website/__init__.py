@@ -4,13 +4,13 @@ from flask_babel_js import BabelJS
 from secrets import token_hex
 import argparse
 
-from Website import Repository # Константы расположения проекта
+from Website import Repository  # Константы расположения проекта
 
-# Args
+# Аргументы
 parser = argparse.ArgumentParser(description='Server launcher')
 parser.add_argument('-m', '--mode', metavar='mode', type=str,
                     help="mode of running server (debug/release)", default='release')
-parser.add_argument('-k','--api-key', required=True, metavar='api_key', type=str,
+parser.add_argument('-k', '--api-key', required=True, metavar='api_key', type=str,
                     help="api-key for Yandex Cloud translation")
 
 args = parser.parse_args()
@@ -21,7 +21,7 @@ app.config['UPLOAD_FOLDER'] = Repository.downloads_directory
 app.config['SQLALCHEMY_BINDS'] = {'main' : "sqlite:///main.db", 'color_combinations' : "sqlite:///colors-sets.db" }
 app.config['SQLALCHEMY_ECHO'] = False
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['LANGUAGES'] = ["ru", "en"] # First language - source
+app.config['LANGUAGES'] = ["ru", "en"]  # First language - source
 app.config['DEBUG'] = (args.mode == "debug")
 app.secret_key = token_hex(16)
 app.api_key = args.api_key

@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from flask import render_template, send_from_directory, abort, request, redirect, session
+from math import ceil, floor
 
 from flask_babel import _
 
@@ -13,7 +14,7 @@ from Website import ColorCombinations
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
 
-def render_base_template(pageName ="home.html"):
+def render_base_template(pageName="home.html"):
     return render_template(
         pageName,
         websiteName = websiteName,
@@ -29,7 +30,7 @@ def get_locale():
 def home():
     return render_base_template("home.html")
 
-@app.route('/home.html')
+@app.route('/home')
 def go_home():
     return redirect('/')
 
@@ -43,37 +44,45 @@ def send_project_assets(path):
 def send_project(project_name):
     return render_template("project.html", project_name = project_name)
 
-@app.route('/contacts.html')
+@app.route('/contacts')
 def contacts():
     return render_base_template("contacts.html")
 
-@app.route('/downloads.html')
-def downloads():
+@app.route('/downloads/list', methods=['GET'])
+def downloads_count():
 
     files_list = list()
-
     # Заполняем массив ссылок
     for file_name in Download.getFilesList():
 
         file_data = dict()
         file = Download.DownloadableFile(file_name)
 
-        file_data.update({"name" : file.name})
-        file_data.update({"extension" : file.extension})
-        file_data.update({"description" : file.description})
-        file_data.update({"link" : file_name})
+        file_data.update({"name": file.name})
+        file_data.update({"extension": file.extension})
+        file_data.update({"description": file.description})
+        file_data.update({"link": file_name})
 
         files_list.append(file_data)
 
+    # Формируем границы отображаемого списка загрузок
+    files_n = len(files_list)
+
+    return {'list': files_list, 'count': files_n}
+
+@app.route('/downloads')
+def downloads():
+    files_n = downloads_count()['count']
+
     return render_template(
         "downloads.html",
-        downloads = files_list,
+        isEmpty=files_n == 0,
         websiteName=websiteName,
         hostName=hostName,
         year=datetime.now().year
     )
 
-@app.route('/projects.html')
+@app.route('/projects')
 def projects():
 
     projects = Project.getProjects(Project.getProjectsList()) # Объекты проектов, которые содержат всю нужную информацию

@@ -12,15 +12,14 @@
   <meta content="website" property="og:type"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=a5f1ef960f6df65e5239617e2e8cfb70" rel="stylesheet"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=5a45923fbb054cb82c52203244718c12" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354" rel="stylesheet"/>
-  <link href="../assets/css/downloads.min.css?h=ba5d5d357c5ddff73aa0403d1a19a329" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.min.css?h=d21c6d52ae1ce6b32b8253dd04e6ab0c" rel="stylesheet"/>
+  <link href="../assets/css/downloads.min.css?h=bec7dc1622115f0e67e2d5387bf0b467" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
   {% endblock head %}
@@ -34,52 +33,65 @@
    <h2 class="text-uppercase d-sm-flex justify-content-sm-center justify-content-md-center text-center heading d-none d-sm-flex" style="font-size: 50px;text-align: justify;">
     {{ _("Доступные для загрузки файлы") }}
    </h2>
-   <hr data-bss-hover-animate="flash" style="background: #18bc9c;height: 5px;width: 90%;"/>
-   <div class="table-bordered d-flex justify-content-center" style="padding-bottom: 30px;font-size: 32px;border-style: none;margin-left: 7%;margin-right: 7%;padding-top: 30px;">
-    <table class="table table-bordered">
-     <thead>
-      <tr class="text-white">
-       <th class="text-center table-heading" style="font" width="35%">
-        {{ _("Имя") }}
-       </th>
-       <th class="text-center d-none d-sm-table-cell table-heading" width="15%">
-        {{ _("Расширение") }}
-       </th>
-       <th class="text-center table-heading" width="50%">
-        {{ _("Описание") }}
-       </th>
-      </tr>
-     </thead>
-     <tbody class="text-break text-white table-text" style="font-size: 16px;">
-      {% for download_item in downloads %}
-      <tr class="link" data-bss-hover-animate="flash" onclick="location.href='/downloads/{{download_item.link}}';">
-       <td class="d-none d-sm-table-cell">
-        <a class="text-white" href="/downloads/{{download_item.link}}">
-         {{download_item.name}}
-        </a>
-       </td>
-       <td class="d-table-cell d-sm-none">
-        <a class="text-white" download="" href="/downloads/{{download_item.link}}" title="Download">
-         {{(download_item.name + download_item.extension)}}
-        </a>
-       </td>
-       <td class="d-none d-sm-table-cell">
-        {{download_item.extension}}
-       </td>
-       <td>
-        {{download_item.description}}
-       </td>
-      </tr>
-      {% endfor %}
-     </tbody>
-    </table>
+   <hr style="background: #18bc9c;height: 5px;width: 90%;"/>
+   {% if not isEmpty %}
+   <div class="d-flex flex-column" id="downloads-list">
+    <input class="shadow-lg form-control-lg align-self-center" id="filename-input" inputmode="url" name="filename" onchange="search(this.value)" placeholder="Поиск" style="width: 70%;" type="search"/>
+    <div class="table-bordered d-flex justify-content-center" style="padding-bottom: 20px;font-size: 32px;border-style: none;margin-left: 7%;margin-right: 7%;padding-top: 20px;">
+     <table class="table table-bordered" id="downloads_table">
+      <thead>
+       <tr class="text-white">
+        <th class="text-center table-heading" style="font" width="35%">
+         {{ _("Имя") }}
+        </th>
+        <th class="text-center d-none d-sm-table-cell table-heading" width="15%">
+         {{ _("Расширение") }}
+        </th>
+        <th class="text-center table-heading" width="50%">
+         {{ _("Описание") }}
+        </th>
+       </tr>
+      </thead>
+      <tbody class="text-break text-white table-text" style="font-size: 16px;">
+       <tr class="link" data-bss-hover-animate="flash" onclick="location.href='/downloads'">
+        <td class="d-none d-sm-table-cell">
+         {{ _("name") }}
+        </td>
+        <td class="d-table-cell d-sm-none">
+         {{ _("name+extension") }}
+        </td>
+        <td class="d-none d-sm-table-cell">
+         {{ _("extension") }}
+        </td>
+        <td class="d-none d-sm-table-cell">
+         {{ _("description") }}
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="d-flex justify-content-center" id="page_selectors" style="width: 100%;height: 40px;">
+     <div class="d-flex justify-content-center align-items-center page_selector" style="cursor: pointer;">
+      <span>
+       {{ _("i") }}
+      </span>
+     </div>
+    </div>
    </div>
+   {% else %}
+   <div class="d-flex flex-column align-items-center">
+    <img loading="eager" src="../assets/img/no_downloads.jpg?h=2da36543a8c01fafbf8bd851265bf4a3" style="margin: 20px 0px;height: 50vh;"/>
+    <span class="text-center" style="color: #dee2e6;font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 31px;margin: 20px 0px;">
+     {{ _("Отсутствуют доступные файлы") }}
+    </span>
+   </div>
+   {% endif %}
   </div>
   {% endblock content %}
   {% block scripts %}
-  <script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
   </script>
-  <script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
   </script>
@@ -87,7 +99,9 @@
   </script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
   </script>
-  <script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada">
+  <script src="../assets/js/script.min.js?h=c77ea9a98d927b6826212913410f3ab5">
+  </script>
+  <script src="../assets/js/downloads.min.js?h=e069ab4b6358eea9fc22c5fef7c9a336">
   </script>
   {% endblock scripts %}
  </body>

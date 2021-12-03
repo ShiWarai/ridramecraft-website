@@ -14,17 +14,16 @@
   <meta content="website" property="og:type"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=a5f1ef960f6df65e5239617e2e8cfb70" rel="stylesheet"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=5a45923fbb054cb82c52203244718c12" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
-  <link href="../assets/fonts/font-awesome.min.css?h=ef9efa29ed5490562c2ff272112d2e97" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css?h=9955dc8c698741fcb5ccc6399f603354" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.min.css?h=d21c6d52ae1ce6b32b8253dd04e6ab0c" rel="stylesheet"/>
   <link href="../assets/css/bootstrap-colorpicker.min.min.css?h=d28d1ea360e6d32882c5ee521d7ccc6f" rel="stylesheet"/>
-  <link href="../assets/css/color_combinations.min.css?h=c3fb86ee4993d4539e4f6a93bc3c3d58" rel="stylesheet"/>
+  <link href="../assets/css/color_combinations.min.css?h=63d0ff9a5737de9c69a79fb16add9143" rel="stylesheet"/>
   <link href="../assets/css/Colour-Pallete.min.css?h=6f8de7be8cdca814e928dc59960b72cf" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
   <!-- varibles for js -->
   <script>
    var prediction_enabled = "{{ prediction_enabled }}";
@@ -39,12 +38,12 @@
    <h1 class="roboto_slab text-center heading d-sm-none" style="font-size: 44px;">
     {{ _("Color combinations") }}
    </h1>
-   <h1 class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center tada animated text-center heading d-none d-sm-flex" data-bss-tooltip="" data-toggle="tooltip" style="margin-bottom: 16px;font-size: 60px;margin-top: 40px;">
+   <h1 class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center text-center heading d-none d-sm-flex" data-bss-tooltip="" data-toggle="tooltip" style="margin-bottom: 16px;font-size: 60px;margin-top: 40px;">
     {{ _("Color combinations") }}
    </h1>
-   <div class="carousel slide" data-interval="false" data-keyboard="false" data-ride="carousel" data-touch="false" id="main-carousel">
-    <div class="carousel-inner" style="position: relative;padding-bottom: 32px;">
-     <div class="carousel-item {% if mode == 0 %} active {% endif %}" id="train_selection" style="height: 100%;">
+   <div class="carousel slide" data-interval="false" data-keyboard="false" data-ride="carousel" data-touch="false" id="main-carousel" style="padding-bottom: 32px;">
+    <div class="carousel-inner" style="position: relative;">
+     <div class="carousel-item {% if mode == 0 %} active {% endif %}" id="train_selection">
       <form action="/projects/color_combinations/train" class="mx-auto" id="color-input-form" method="post" style="height: 100%;width: 80%;padding: 0px;margin-top: 15px;margin-bottom: 32px;">
        <div class="container" style="padding: 0px;">
         <div class="form-row" style="width: 100%;margin: 0px;">
@@ -98,7 +97,7 @@
        </div>
       </form>
      </div>
-     <div class="carousel-item {% if mode == 1 %} active {% endif %}" id="predict_selection" style="height: 100%;">
+     <div class="carousel-item {% if mode == 1 %} active {% endif %}" id="predict_selection">
       <form action="/projects/color_combinations/predict" class="mx-auto" id="prediction-color-input-form" method="post" style="height: 100%;width: 80%;padding: 0px;margin-top: 15px;margin-bottom: 32px;background: #2c3e50;">
        <div class="container" style="padding: 0px;">
         <div class="form-row" style="width: 100%;margin: 0px;">
@@ -159,11 +158,11 @@
      </div>
     </div>
     <div>
-     <a class="carousel-control-prev" data-slide="prev" href="#main-carousel" role="button" style="width: 10%;">
+     <a class="carousel-control-prev controls" data-slide="prev" href="#main-carousel" role="button" style="width: 10%;">
       <span class="carousel-control-prev-icon">
       </span>
      </a>
-     <a class="carousel-control-next" data-slide="next" href="#main-carousel" role="button" style="width: 10%;">
+     <a class="carousel-control-next controls" data-slide="next" href="#main-carousel" role="button" style="width: 10%;">
       <span class="carousel-control-next-icon">
       </span>
      </a>
@@ -172,9 +171,9 @@
   </div>
   {% endblock content %}
   {% block scripts %}
-  <script src="../assets/js/jquery.min.js?h=84e399b8f2181ccd73394fdeddff1638">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
   </script>
-  <script src="../assets/bootstrap/js/bootstrap.min.js?h=2504f2315ca47ea4d62e67e20a5551d7">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
   </script>
@@ -184,7 +183,7 @@
   </script>
   <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit">
   </script>
-  <script src="../assets/js/script.min.js?h=90ac2f229acb6b4e5f56600e1c50bada">
+  <script src="../assets/js/script.min.js?h=c77ea9a98d927b6826212913410f3ab5">
   </script>
   <script src="../assets/js/bootstrap-colorpicker.min.min.js?h=d54c4f99df5ae21841bf1a0e6e50c54a">
   </script>
