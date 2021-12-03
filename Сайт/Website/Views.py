@@ -9,7 +9,7 @@ from flask_babel import _
 from Website import app, babel
 from Website import Download
 from Website import Projects
-from Website import ColorCombinations
+#from Website import ColorCombinations
 
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
@@ -43,12 +43,17 @@ def send_project_assets(path):
 @app.route('/project/<string:project_name>')
 def send_project(project_name):
     project = Projects.getProject(project_name)
+    gallery = ['sasha_shop.jpg', 'not_found.jpg', 'color_combinations.jpg']
 
     if not project:
         print("No such project!")
         return render_template("project_error.html", project_name=project_name)
 
-    return render_template("project.html", project_name=project.name)
+    return render_template("project.html",
+                           project_name=project.name,
+                           project_description=project.description * 5,
+                           project_gallery=gallery,
+                           project_link=project.link)
 
 @app.route('/contacts')
 def contacts():

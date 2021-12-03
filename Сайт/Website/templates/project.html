@@ -11,29 +11,79 @@
   <meta content="website" property="og:type"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=5a45923fbb054cb82c52203244718c12" rel="stylesheet"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=988b9366080c29f88c4039da97c818e5" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css?h=0ac8465a5d858192726031e7763e3475" rel="stylesheet"/>
-  <link href="../assets/css/projects.min.css?h=ad53e668ca47e58b8dbdbdb2d9e2029a" rel="stylesheet"/>
+  <link href="../assets/css/styles.min.css?h=63b933744a29a7c31a01aa296e3e2fff" rel="stylesheet"/>
+  <link href="../assets/css/projects.min.css?h=fb0b8fa0b98b6e8f3404726fde1494b5" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
   {% endblock head %}
  </head>
  <body id="pop-up_window" style="background: rgb(44,62,80);border-radius: 0px;padding: 0px;">
-  <div class="d-flex flex-column" id="window_message">
+  <div class="d-flex flex-column" id="window_message" style="box-shadow: 4px 7px 8px #1a252f;border: 5px solid #18bc9c;max-height: 100%;">
    <div class="d-inline-flex flex-row justify-content-between align-items-center" id="pop-up_header">
-    <h1 class="text-left d-flex align-items-center main_text heading" style="padding: 8px 20px;">
+    <h1 class="text-left d-flex align-items-center main_text heading" style="padding: 8px 16px;">
      {{project_name}}
     </h1>
     <a class="d-flex flex-shrink-0 justify-content-center align-items-center align-self-start" onclick="closeProject();" style="background: #18bc9c;margin: 8px;border-radius: 100%;border-style: none;color: var(--light);width: 40px;height: 40px;text-decoration: none; cursor: pointer;">
      {{ _("X") }}
     </a>
    </div>
-   <div class="d-flex flex-column flex-fill justify-content-center align-items-center justify-content-xl-center align-items-xl-center">
+   <div class="d-flex flex-column flex-shrink-1 flex-sm-column flex-md-column flex-lg-row flex-xl-row" id="pop-up_body" style="height: 100%;">
+    <div class="d-flex flex-column align-items-center" style="padding: 0px 20px;height: 100%;width: 60%;">
+     <h1 class="main_text" style="font-size: 46px;font-family: 'Noto Sans', sans-serif;text-align: center;">
+      {{ _("Галерея") }}
+     </h1>
+     <div class="carousel slide d-flex" data-ride="carousel" id="gallery">
+      <div class="carousel-inner d-flex">
+       {% for i in range(project_gallery|length) %}
+       <div class="carousel-item {% if i==0 %}active{% endif %}">
+        <img alt="Slide Image" class="w-100 d-block" src="projects/static/{{project_gallery[i]}}"/>
+       </div>
+       {% endfor %}
+      </div>
+      <div>
+       <a class="carousel-control-prev" data-slide="prev" href="#gallery" role="button">
+        <span class="carousel-control-prev-icon">
+        </span>
+        <span class="sr-only">
+         {{ _("Previous") }}
+        </span>
+       </a>
+       <a class="carousel-control-next" data-slide="next" href="#gallery" role="button">
+        <span class="carousel-control-next-icon">
+        </span>
+        <span class="sr-only">
+         {{ _("Next") }}
+        </span>
+       </a>
+      </div>
+      <ol class="carousel-indicators">
+       {% for i in range(project_gallery|length) %}
+       <li class="{% if i==0 %}active{% endif %}" data-slide-to="{{i}}" data-target="#gallery">
+       </li>
+       {% endfor %}
+      </ol>
+     </div>
+    </div>
+    <div class="d-flex flex-column d-flex flex-column align-items-center" style="width: 40%;padding: 0px 20px;">
+     <h1 class="order-1 main_text" style="font-size: 46px;font-family: 'Noto Sans', sans-serif;text-align: center;">
+      {{ _("Описание") }}
+     </h1>
+     <p class="order-2 main_text" style="padding: 0px 10px;text-align: left;">
+      {{project_description}}
+     </p>
+     <div class="d-flex order-3" style="width: 100%;padding: 10px;">
+      <button class="btn btn-primary text-center text-secondary" data-target="{{project_link}}" style="height: 50px;" type="button">
+       {{ _("Загрузка исходников") }}
+      </button>
+     </div>
+    </div>
    </div>
   </div>
   {% block scripts %}
@@ -47,7 +97,9 @@
   </script>
   <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
   </script>
-  <script src="../assets/js/script.min.js?h=c77ea9a98d927b6826212913410f3ab5">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js">
+  </script>
+  <script src="../assets/js/script.min.js?h=3191e779dcfb9d85eb00bdc357182dd9">
   </script>
   <script src="../assets/js/projects.min.js?h=98be575fb1af58c14e1601acda092a6f">
   </script>

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-03 12:27+0300\n"
+"POT-Creation-Date: 2021-12-03 22:47+0300\n"
 "PO-Revision-Date: 2021-11-21 03:53+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -157,7 +157,7 @@ msgstr "Name"
 msgid "Расширение"
 msgstr "Expansion"
 
-#: Website/templates/downloads.html:52
+#: Website/templates/downloads.html:52 Website/templates/project.html:76
 #, fuzzy
 msgid "Описание"
 msgstr "Description"
@@ -279,6 +279,26 @@ msgstr "Designed by ShiWarai"
 msgid "X"
 msgstr "X"
 
+#: Website/templates/project.html:40
+#, fuzzy
+msgid "Галерея"
+msgstr "Gallery"
+
+#: Website/templates/project.html:55
+#, fuzzy
+msgid "Previous"
+msgstr "Previous"
+
+#: Website/templates/project.html:62
+#, fuzzy
+msgid "Next"
+msgstr "Next"
+
+#: Website/templates/project.html:83
+#, fuzzy
+msgid "Загрузка исходников"
+msgstr "Downloading sources"
+
 #: Website/templates/project_error.html:36
 #, fuzzy
 msgid "Нет такого проекта: "
@@ -333,3 +353,11 @@ msgstr ""
 #, fuzzy
 msgid "Нажми на меня"
 msgstr "Click on me"
+
+#, fuzzy
+msgid ""
+"Робот спасатель, основанный на базе конструктора Lego, с применением "
+"машинного зрения на базе Raspberry Pi 4b (1GB)."
+msgstr ""
+"A rescue robot based on the Lego constructor, using machine vision based "
+"on Raspberry Pi 4b (1GB)."
