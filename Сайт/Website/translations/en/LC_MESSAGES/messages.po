@@ -7,36 +7,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-04 21:31+0300\n"
-"PO-Revision-Date: 2021-11-21 03:53+0300\n"
+"POT-Creation-Date: 2021-12-05 01:21+0300\n"
+"PO-Revision-Date: 2021-12-05 01:28+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: Website/assets/js/color_combinations.js:76
-#, fuzzy
 msgid "Отправить"
 msgstr "Send"
 
 #: Website/templates/color_combinations.html:40
 #: Website/templates/color_combinations.html:43
-#, fuzzy
 msgid "Color combinations"
 msgstr "Color combinations"
 
 #: Website/templates/color_combinations.html:59
 #: Website/templates/color_combinations.html:134
-#, fuzzy
 msgid "Цвет: "
 msgstr "Colour: "
 
 #: Website/templates/color_combinations.html:69
-#, fuzzy
 msgid ""
 "Эта страница сайта содержит нейронную сеть, которая может формировать "
 "цветовые комбинации. В этом разделе вы можете помочь обучить нейронную "
@@ -51,35 +48,30 @@ msgstr ""
 "must be confirmed."
 
 #: Website/templates/color_combinations.html:79
-#, fuzzy
 msgid "Кол-во цветов: "
 msgstr "Number of colors: "
 
 #: Website/templates/color_combinations.html:85
-#, fuzzy
 msgid "Подтвердить"
 msgstr "Confirm"
 
 #: Website/templates/color_combinations.html:88
 #: Website/templates/color_combinations.html:150
-#, fuzzy
 msgid "Поменять кол-во цветов"
 msgstr "Change the number of colors"
 
 #: Website/templates/color_combinations.html:124
-#, fuzzy
 msgid ""
-"Внимание! К доступу к нейронной сети, сначала заполните базу данных вашей"
-" цветовой комбинацией."
+"Внимание! К доступу к нейронной сети, сначала заполните базу данных вашей "
+"цветовой комбинацией."
 msgstr ""
 "Attention! To access the neural network, first fill the database with "
 "your color combination."
 
 #: Website/templates/color_combinations.html:126
-#, fuzzy
 msgid ""
-"Данный раздел сайта позволяет найти подходящий цвет для выбранного набора"
-" цветов. Выберите количество цветов и сами цвета, а затем запустите "
+"Данный раздел сайта позволяет найти подходящий цвет для выбранного набора "
+"цветов. Выберите количество цветов и сами цвета, а затем запустите "
 "нейронную сеть."
 msgstr ""
 "This section of the site allows you to find a suitable color for the "
@@ -87,32 +79,26 @@ msgstr ""
 "themselves, and then run the neural network."
 
 #: Website/templates/color_combinations.html:141
-#, fuzzy
 msgid "Кол-во цветов"
 msgstr "Number of colors"
 
 #: Website/templates/color_combinations.html:147
-#, fuzzy
 msgid "Сгенерировать"
 msgstr "Generate"
 
 #: Website/templates/contacts.html:34
-#, fuzzy
 msgid "Shi Warai"
 msgstr "Shi Warai"
 
 #: Website/templates/contacts.html:38
-#, fuzzy
 msgid "Fullstack разработчик - Бакалавр программной инженерии"
 msgstr "Fullstack Developer - Bachelor of Software Engineering"
 
 #: Website/templates/contacts.html:46
-#, fuzzy
 msgid "Обо мне"
 msgstr "About me"
 
 #: Website/templates/contacts.html:52
-#, fuzzy
 msgid ""
 "Я занимаюсь программированием с 8-го класса (тогда я сделал свой первый "
 "проект полного стека). За это время я успел поработать на C++, Python, "
@@ -133,32 +119,26 @@ msgstr ""
 "social networks, you can contact me by email."
 
 #: Website/templates/contacts.html:61
-#, fuzzy
 msgid "E-mail"
 msgstr "E-mail"
 
 #: Website/templates/downloads.html:32
-#, fuzzy
 msgid "Доступные файлы"
 msgstr "Available files"
 
 #: Website/templates/downloads.html:35
-#, fuzzy
 msgid "Доступные для загрузки файлы"
 msgstr "Files available for download"
 
 #: Website/templates/downloads.html:46
-#, fuzzy
 msgid "Имя"
 msgstr "Name"
 
 #: Website/templates/downloads.html:49
-#, fuzzy
 msgid "Расширение"
 msgstr "Expansion"
 
 #: Website/templates/downloads.html:52 Website/templates/project.html:80
-#, fuzzy
 msgid "Описание"
 msgstr "Description"
 
@@ -188,27 +168,22 @@ msgid "i"
 msgstr "i"
 
 #: Website/templates/downloads.html:86
-#, fuzzy
 msgid "Отсутствуют доступные файлы"
 msgstr "There are no available files"
 
 #: Website/templates/home.html:34
-#, fuzzy
 msgid "Добро пожаловать"
 msgstr "Welcome"
 
 #: Website/templates/home.html:37
-#, fuzzy
 msgid "на моём сайте"
 msgstr "on my website"
 
 #: Website/templates/home.html:49
-#, fuzzy
 msgid "Для чего он?"
 msgstr "What is it for?"
 
 #: Website/templates/home.html:53
-#, fuzzy
 msgid ""
 "Этот сайт был создан для публикации моих проектов и обмена файлами. Сайт "
 "размещен на выделенном сервере, через который я часто также играю в "
@@ -217,95 +192,78 @@ msgid ""
 "интересует какой-либо проект, вы можете связаться со мной, используя "
 "контакты, указанные на соответствующей странице."
 msgstr ""
-"This site was created to publish my projects and share files. The site is"
-" hosted on a dedicated server, through which I often also play various "
+"This site was created to publish my projects and share files. The site is "
+"hosted on a dedicated server, through which I often also play various "
 "games with friends. Not all projects are listed here, but you can "
 "definitely find the full list on my GitHub. If you are interested in any "
 "project, you can contact me using the contacts listed on the "
 "corresponding page."
 
 #: Website/templates/home.html:57
-#, fuzzy
 msgid "К проектам"
 msgstr "To projects"
 
 #: Website/templates/layout.html:41
-#, fuzzy
 msgid "Главная"
 msgstr "Main"
 
 #: Website/templates/layout.html:46
-#, fuzzy
 msgid "Загрузки"
 msgstr "Downloads"
 
 #: Website/templates/layout.html:51 Website/templates/projects.html:33
-#, fuzzy
 msgid "Проекты"
 msgstr "Projects"
 
 #: Website/templates/layout.html:56
-#, fuzzy
 msgid "Контакты"
 msgstr "Contacts"
 
 #: Website/templates/layout.html:71
-#, fuzzy
 msgid "Местоположение"
 msgstr "Location"
 
 #: Website/templates/layout.html:74
-#, fuzzy
 msgid "Москва, Улица Студенческая, 33, строение 3"
 msgstr "Moscow, 33 Studentskaya Street, building 3"
 
 #: Website/templates/layout.html:79
-#, fuzzy
 msgid "В Интернете"
 msgstr "in the Internet"
 
 #: Website/templates/layout.html:110
-#, fuzzy
 msgid "Автор"
 msgstr "Author"
 
 #: Website/templates/layout.html:114
-#, fuzzy
 msgid "Оформлен ShiWarai"
 msgstr "Designed by ShiWarai"
 
 #: Website/templates/project.html:34 Website/templates/project_error.html:30
-#, fuzzy
 msgid "X"
 msgstr "X"
 
 #: Website/templates/project.html:40
-#, fuzzy
 msgid "Галерея"
 msgstr "Gallery"
 
 #: Website/templates/project.html:57
-#, fuzzy
 msgid "Previous"
 msgstr "Previous"
 
 #: Website/templates/project.html:64
-#, fuzzy
 msgid "Next"
 msgstr "Next"
 
-#: Website/templates/project.html:88
-#, fuzzy
+#: Website/templates/project.html:89
 msgid "Загрузка исходников"
 msgstr "Downloading sources"
 
 #: Website/templates/project_error.html:36
-#, fuzzy
 msgid "Нет такого проекта: "
 msgstr "There is no such project: "
 
 #: Website/templates/projects.html:36
-#, fuzzy
 msgid ""
 "Создание готового продукта было для меня приоритетом долгое время, а "
 "может быть, и с самого начала. Именно в проектах я реализовывал свои "

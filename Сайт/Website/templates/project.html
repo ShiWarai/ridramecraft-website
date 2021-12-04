@@ -11,7 +11,7 @@
   <meta content="website" property="og:type"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=d5ac443b5b6f5c37f29b319cc48bcb6c" rel="stylesheet"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=d3228ee507e433c0ba0edc73d5ab9901" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
@@ -83,17 +83,23 @@
       {{project_description}}
      </p>
      <div class="d-flex flex-row justify-content-between align-items-center order-3" style="width: 100%;padding: 10px;">
-      <a class="text-nowrap d-flex align-items-center btn btn-full btn-primary" href="{{project_link}}">
+      {% if project_source_link %}
+      <a class="text-nowrap d-flex align-items-center btn btn-full btn-primary" href="{{project_source_link}}" rel="noopener noreferrer" target="_blank">
        <strong>
         {{ _("Загрузка исходников") }}
        </strong>
       </a>
-      <a class="btn btn-light btn-social btn-img text-center rounded-circle" href="{{project_link}}" role="button" style="background: #18bc9c;border-color: #18bc9c;">
+      <a class="btn btn-light btn-social btn-img text-center rounded-circle" href="{{project_source_link}}" rel="noopener noreferrer" role="button" style="background: #18bc9c;border-color: #18bc9c;" target="_blank">
        <i class="fa fa-arrow-circle-o-down fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
        </i>
       </a>
-      {% if project_github_link %}
-      <a class="btn btn-light btn-social text-center rounded-circle" href="{{project_github_link}}" role="button" style="background: #18bc9c;border-color: #18bc9c;">
+      {% endif %}{% if project_is_app %}
+      <a class="btn btn-light btn-social text-center rounded-circle" href="{{project_link}}" role="button" style="background: #18bc9c;border-color: #18bc9c;">
+       <i class="fa fa-laptop fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
+       </i>
+      </a>
+      {% endif %}{% if project_github_link %}
+      <a class="btn btn-light btn-social text-center rounded-circle" href="{{project_github_link}}" rel="noopener noreferrer" role="button" style="background: #18bc9c;border-color: #18bc9c;" target="_blank">
        <i class="fa fa-github fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
        </i>
       </a>
@@ -117,7 +123,7 @@
   </script>
   <script src="../assets/js/script.min.js?h=3191e779dcfb9d85eb00bdc357182dd9">
   </script>
-  <script src="../assets/js/projects.min.js?h=98be575fb1af58c14e1601acda092a6f">
+  <script src="../assets/js/projects.min.js?h=1be7afd6bab033897a92bc3c286a00f5">
   </script>
   {% endblock scripts %}
  </body>
