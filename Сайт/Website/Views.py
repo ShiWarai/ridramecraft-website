@@ -43,7 +43,7 @@ def send_project_assets(path):
 @app.route('/project/<string:project_name>')
 def send_project(project_name):
     project = Projects.getProject(project_name)
-    gallery = ['sasha_shop.jpg', 'not_found.jpg', 'color_combinations.jpg']
+    gallery = ['projects/static/sasha_shop.jpg', 'projects/static/not_found.jpg', 'projects/static/color_combinations.jpg']
 
     if not project:
         print("No such project!")

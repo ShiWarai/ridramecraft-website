@@ -11,14 +11,14 @@
   <meta content="website" property="og:type"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=988b9366080c29f88c4039da97c818e5" rel="stylesheet"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=d5ac443b5b6f5c37f29b319cc48bcb6c" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-  <link href="../assets/css/styles.min.css?h=63b933744a29a7c31a01aa296e3e2fff" rel="stylesheet"/>
-  <link href="../assets/css/projects.min.css?h=fb0b8fa0b98b6e8f3404726fde1494b5" rel="stylesheet"/>
+  <link href="../assets/css/styles.min.css?h=d7f59b4683089f0567740712bb4ce7ee" rel="stylesheet"/>
+  <link href="../assets/css/projects.min.css?h=a580726548f850c62c3b1221ae9de970" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
@@ -34,54 +34,60 @@
      {{ _("X") }}
     </a>
    </div>
-   <div class="d-flex flex-column flex-shrink-1 flex-sm-column flex-md-column flex-lg-row flex-xl-row" id="pop-up_body" style="height: 100%;">
-    <div class="d-flex flex-column align-items-center" style="padding: 0px 20px;height: 100%;width: 60%;">
-     <h1 class="main_text" style="font-size: 46px;font-family: 'Noto Sans', sans-serif;text-align: center;">
+   <div class="d-flex flex-column flex-shrink-1 flex-sm-column flex-md-column flex-lg-row flex-xl-row" id="pop-up_body">
+    <div class="col-auto col-sm-auto col-md-auto col-lg-7 col-xl-7 d-flex flex-column justify-content-between project-column" id="column-1">
+     <h1 class="heading">
       {{ _("Галерея") }}
      </h1>
-     <div class="carousel slide d-flex" data-ride="carousel" id="gallery">
-      <div class="carousel-inner d-flex">
-       {% for i in range(project_gallery|length) %}
-       <div class="carousel-item {% if i==0 %}active{% endif %}">
-        <img alt="Slide Image" class="w-100 d-block" src="projects/static/{{project_gallery[i]}}"/>
+     <div class="d-flex flex-grow-1 align-items-center">
+      <div id="gallery-wrapper">
+       <div class="carousel slide" data-ride="carousel" id="gallery">
+        <div class="carousel-inner">
+         {% for i in range(project_gallery|length) %}
+         <div class="carousel-item {% if i==0 %}active{% endif %}">
+          <img class="w-100 d-block" src="{{project_gallery[i]}}"/>
+         </div>
+         {% endfor %}
+        </div>
+        <div>
+         <a class="carousel-control-prev" data-slide="prev" href="#gallery" role="button">
+          <span class="carousel-control-prev-icon">
+          </span>
+          <span class="sr-only">
+           {{ _("Previous") }}
+          </span>
+         </a>
+         <a class="carousel-control-next" data-slide="next" href="#gallery" role="button">
+          <span class="carousel-control-next-icon">
+          </span>
+          <span class="sr-only">
+           {{ _("Next") }}
+          </span>
+         </a>
+        </div>
+        <ol class="carousel-indicators">
+         {% for i in range(project_gallery|length) %}
+         <li class="{% if i==0 %}active{% endif %}" data-slide-to="{{i}}" data-target="#gallery">
+         </li>
+         {% endfor %}
+        </ol>
        </div>
-       {% endfor %}
       </div>
-      <div>
-       <a class="carousel-control-prev" data-slide="prev" href="#gallery" role="button">
-        <span class="carousel-control-prev-icon">
-        </span>
-        <span class="sr-only">
-         {{ _("Previous") }}
-        </span>
-       </a>
-       <a class="carousel-control-next" data-slide="next" href="#gallery" role="button">
-        <span class="carousel-control-next-icon">
-        </span>
-        <span class="sr-only">
-         {{ _("Next") }}
-        </span>
-       </a>
-      </div>
-      <ol class="carousel-indicators">
-       {% for i in range(project_gallery|length) %}
-       <li class="{% if i==0 %}active{% endif %}" data-slide-to="{{i}}" data-target="#gallery">
-       </li>
-       {% endfor %}
-      </ol>
      </div>
     </div>
-    <div class="d-flex flex-column d-flex flex-column align-items-center" style="width: 40%;padding: 0px 20px;">
-     <h1 class="order-1 main_text" style="font-size: 46px;font-family: 'Noto Sans', sans-serif;text-align: center;">
+    <div class="col-auto col-sm-auto col-md-auto col-lg-5 col-xl-5 d-flex flex-column justify-content-between d-flex flex-column align-items-center project-column" id="column-2">
+     <h1 class="order-1 heading">
       {{ _("Описание") }}
      </h1>
-     <p class="order-2 main_text" style="padding: 0px 10px;text-align: left;">
+     <p class="text-break order-2 main_text description">
       {{project_description}}
      </p>
      <div class="d-flex order-3" style="width: 100%;padding: 10px;">
-      <button class="btn btn-primary text-center text-secondary" data-target="{{project_link}}" style="height: 50px;" type="button">
-       {{ _("Загрузка исходников") }}
-      </button>
+      <a class="d-flex align-items-center btn btn-primary text-center text-secondary" href="{{project_link}}" style="height: 50px;">
+       <strong>
+        {{ _("Загрузка исходников") }}
+       </strong>
+      </a>
      </div>
     </div>
    </div>
