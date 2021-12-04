@@ -43,7 +43,9 @@ def send_project_assets(path):
 @app.route('/project/<string:project_name>')
 def send_project(project_name):
     project = Projects.getProject(project_name)
-    gallery = ['projects/static/sasha_shop.jpg', 'projects/static/not_found.jpg', 'projects/static/color_combinations.jpg']
+    gallery = ['projects/static/neural_network.jpg', 'projects/static/not_found.jpg']
+    source_link = "https://disk.yandex.ru/d/-WL5VsIEGNKfJA"
+    github_link = "https://github.com/ShiWarai/neural-network"
 
     if not project:
         print("No such project!")
@@ -53,7 +55,8 @@ def send_project(project_name):
                            project_name=project.name,
                            project_description=project.description * 5,
                            project_gallery=gallery,
-                           project_link=project.link)
+                           project_link=source_link,
+                           project_github_link=github_link)
 
 @app.route('/contacts')
 def contacts():

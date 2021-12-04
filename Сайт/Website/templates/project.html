@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link href="../assets/css/styles.min.css?h=d7f59b4683089f0567740712bb4ce7ee" rel="stylesheet"/>
-  <link href="../assets/css/projects.min.css?h=a580726548f850c62c3b1221ae9de970" rel="stylesheet"/>
+  <link href="../assets/css/projects.min.css?h=111109bdb5d4251b76dea22ced8d6978" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
@@ -82,12 +82,22 @@
      <p class="text-break order-2 main_text description">
       {{project_description}}
      </p>
-     <div class="d-flex order-3" style="width: 100%;padding: 10px;">
-      <a class="d-flex align-items-center btn btn-primary text-center text-secondary" href="{{project_link}}" style="height: 50px;">
+     <div class="d-flex flex-row justify-content-between align-items-center order-3" style="width: 100%;padding: 10px;">
+      <a class="text-nowrap d-flex align-items-center btn btn-full btn-primary" href="{{project_link}}">
        <strong>
         {{ _("Загрузка исходников") }}
        </strong>
       </a>
+      <a class="btn btn-light btn-social btn-img text-center rounded-circle" href="{{project_link}}" role="button" style="background: #18bc9c;border-color: #18bc9c;">
+       <i class="fa fa-arrow-circle-o-down fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
+       </i>
+      </a>
+      {% if project_github_link %}
+      <a class="btn btn-light btn-social text-center rounded-circle" href="{{project_github_link}}" role="button" style="background: #18bc9c;border-color: #18bc9c;">
+       <i class="fa fa-github fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
+       </i>
+      </a>
+      {% endif %}
      </div>
     </div>
    </div>

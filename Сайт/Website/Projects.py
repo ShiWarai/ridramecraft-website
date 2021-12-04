@@ -81,6 +81,4 @@ def removeProject(name):
 # editProject("Color Combinations", "Нейронная сеть для определения цветовых комбинаций.","color_combinations.jpg","/projects/color_combinations")
 # editProject("Quinkokolobicky.net", "Настольное приложение с полностью реализованной серверно-клиентской частью. Клиент и сервер написаны на разных языках.","quinkokolobicky.jpg","https://yadi.sk/d/0rzx7UJRT36Oxw")
 # editProject("Sasha's Shop", "Мое первое приложение, написанное на C++ с использованием Windows Forms. Осуществляет учёт товаров на складе.","sasha_shop.jpg","https://yadi.sk/d/BVUT6MuLZxUiBQ")
-# editProject("Neural Network C++", "Нейронная сеть для распознавания чисел, написанная как проект по дисциплине процедурного программирования в университете. Было запрещено использовать ООП.","neural_network.jpg","https://github.com/ShiWarai/neural-network")
-# createProject("Test project", description="Нажми на меня", image="project_test.png", link="$$showProject('Test project')$$")
-editProject("Робот спасатель", description="Робот спасатель, основанный на базе конструктора Lego Mindstorm, с применением машинного зрения на базе Raspberry Pi 4b (1GB).", image="robot.jpg", link="$$showProject('Робот спасатель')$$")
+# editProject("Neural Network C++", description="Нейронная сеть для распознавания чисел, написанная как проект по дисциплине процедурного программирования в университете. Было запрещено использовать ООП.", image="neural_network.jpg", link="$$showProject('Neural Network C++')$$")
