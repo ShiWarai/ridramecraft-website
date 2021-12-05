@@ -1,6 +1,5 @@
-.projects-horizontal {
+.name {
   color: #18bc9c;
-  background-color: #1a252f;
 }
 
 .row {
@@ -36,16 +35,129 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  padding: 50px;
+  padding: 3%;
 }
 
 #window_message {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   font-family: Ubuntu, sans-serif;
   transform: perspective(0px);
   border-radius: 32px;
   background: #1a252f;
   border-style: none;
+}
+
+.projects-horizontal h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width:767px) {
+  .projects-horizontal h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+  }
+}
+
+.projects-horizontal .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 10px;
+}
+
+.projects-horizontal .projects {
+  padding-bottom: 40px;
+}
+
+.projects-horizontal .item {
+  padding-top: 60px;
+  min-height: 160px;
+  animation: none;
+}
+
+.projects-horizontal .item:hover {
+  animation: div-pulse 1s;
+}
+
+@media (max-width:767px) {
+  .projects-horizontal .item {
+    padding-top: 40px;
+    min-height: 160px;
+  }
+}
+
+.projects-horizontal .item .name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 300px;
+}
+
+@media (max-width:991px) {
+  .projects-horizontal .item .name {
+    margin-top: 22px;
+  }
+}
+
+.projects-horizontal .item .description {
+  font-size: 15px;
+  margin-bottom: 0;
+  color: white;
+  font-family: 'Open Sans';
+}
+
+.blured {
+  overflow: hidden;
+  animation: blur 1s;
+  animation-fill-mode: forwards;
+}
+
+.unblured {
+  animation: unblur 1s;
+  animation-fill-mode: forwards;
+}
+
+.appeared {
+  animation: appear 1s;
+  animation-fill-mode: forwards;
+  /*animation-direction: normal;*/
+}
+
+.disappeared {
+  animation: disappear 1s;
+  animation-fill-mode: forwards;
+  /*animation-direction: reverse;*/
+}
+
+@keyframes blur {
+  from {
+    filter: blur(0px);
+  }
+  to {
+    filter: blur(100px);
+  }
+}
+
+@keyframes unblur {
+  from {
+    filter: blur(100px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
+
+#pop-up_header .heading {
+  color: #ffffff !important;
+  font-size: 32px;
+  margin: 0px !important;
 }
 

@@ -18,7 +18,7 @@ args = parser.parse_args()
 # App
 app = Flask(__name__, static_folder='assets')
 app.config['UPLOAD_FOLDER'] = Repository.downloads_directory
-app.config['SQLALCHEMY_BINDS'] = {'main' : "sqlite:///main.db", 'color_combinations' : "sqlite:///colors-sets.db" }
+app.config['SQLALCHEMY_BINDS'] = {'projects': "sqlite:///projects.db", 'color_combinations': "sqlite:///colors-sets.db" }
 app.config['SQLALCHEMY_ECHO'] = False
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['LANGUAGES'] = ["ru", "en"]  # First language - source

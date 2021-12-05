@@ -32,7 +32,7 @@ for template in getFilesList(template_path):
     with open(template, 'r', encoding='utf-8') as file:
         file_data = file.read()
 
-    if not (path.basename(template) in ["layout.html", "project.html"]):
+    if not (path.basename(template) in ["layout.html", "project.html", "project_error.html"]):
         # добавление расширения шаблона flask
         file_data = "{% extends \"layout.html\" %}\n" + file_data
 

@@ -1,56 +1,42 @@
-var parser = new DOMParser();
+var parser = new DOMParser;
 
-function showProject(name){
-    pop_up_window = document.createElement('div');
+const animation_time = 1000;
+
+function showProject(e) {
+    pop_up_window = document.createElement("div");
     pop_up_window.id = "pop-up_window";
-    pop_up_window.style['opacity'] = 0;
+    // pop_up_window.style.opacity = 0;
     
-
-    pop_up_message = parser.parseFromString(httpGet("../project/" + name), "text/html").getElementById('window_message');
+    pop_up_message = parser.parseFromString(httpGet("../project/" + e), "text/html").getElementById("window_message");
     pop_up_window.append(pop_up_message);
     
     document.body.insertAdjacentElement("afterEnd", pop_up_window);
     
+    document.body.style.overflow = 'hidden';
+    document.body.classList.toggle('unblured', false);
+    document.body.classList.toggle('blured', true);
     
-    counter = 0;
-    timer = setInterval(function() {
-        if (counter > 10) {
-            clearInterval(timer);
-            return;
-        }
-        else
-        {
-            document.body.style['filter'] = "blur(" + String(counter) + "px)";
-            pop_up_window.style['opacity'] = counter / 10;
-            counter+=0.5;
-        }
-    }, 20);
+    pop_up_window.classList.toggle('appeared', true);
+    pop_up_window.classList.toggle('disappeared', false);
 };
 
-function closeProject(){
-    pop_up_window = document.getElementById('pop-up_window');
+function closeProject() {
+    pop_up_window = document.getElementById("pop-up_window");
     
-    counter = 10;
-    timer = setInterval(function() {
-        if (counter < 0) {
-            clearInterval(timer);
-            pop_up_window.remove();
-            document.body.style['filter'] = "";
-            return;
-        }
-        else
-        {
-            document.body.style['filter'] = "blur(" + String(counter) + "px)";
-            pop_up_window.style['opacity'] = counter / 10;
-            counter-=0.5;
-        }
-    }, 20);
+    document.body.classList.toggle('blured', false);
+    document.body.classList.toggle('unblured', true);
+    pop_up_window.classList.toggle('appeared', false);
+    pop_up_window.classList.toggle('disappeared', true);
+    
+    setTimeout(function(){
+        document.body.classList.toggle('unblured', false);
+        pop_up_window.classList.toggle('disappeared', false);
+        pop_up_window.remove();
+        document.body.style.overflow = 'visible';
+    }, animation_time);
 };
 
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", theUrl, false);
-    xmlHttp.send(null);
-    return xmlHttp.responseText;
+function httpGet(e) {
+    var t = new XMLHttpRequest;
+    return t.open("GET", e, !1), t.send(null), t.responseText
 };

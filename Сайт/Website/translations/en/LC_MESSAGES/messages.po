@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-03 06:13+0300\n"
-"PO-Revision-Date: 2021-11-21 03:53+0300\n"
+"POT-Creation-Date: 2021-12-05 16:38+0300\n"
+"PO-Revision-Date: 2021-12-05 01:28+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -19,24 +19,20 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: Website/assets/js/color_combinations.js:76
-#, fuzzy
 msgid "Отправить"
 msgstr "Send"
 
-#: Website/templates/color_combinations.html:39
-#: Website/templates/color_combinations.html:42
-#, fuzzy
+#: Website/templates/color_combinations.html:40
+#: Website/templates/color_combinations.html:43
 msgid "Color combinations"
 msgstr "Color combinations"
 
-#: Website/templates/color_combinations.html:58
-#: Website/templates/color_combinations.html:133
-#, fuzzy
+#: Website/templates/color_combinations.html:59
+#: Website/templates/color_combinations.html:134
 msgid "Цвет: "
 msgstr "Colour: "
 
-#: Website/templates/color_combinations.html:68
-#, fuzzy
+#: Website/templates/color_combinations.html:69
 msgid ""
 "Эта страница сайта содержит нейронную сеть, которая может формировать "
 "цветовые комбинации. В этом разделе вы можете помочь обучить нейронную "
@@ -50,24 +46,20 @@ msgstr ""
 "The number of colors can be changed (maximum 4) and the selected color "
 "must be confirmed."
 
-#: Website/templates/color_combinations.html:78
-#, fuzzy
+#: Website/templates/color_combinations.html:79
 msgid "Кол-во цветов: "
 msgstr "Number of colors: "
 
-#: Website/templates/color_combinations.html:84
-#, fuzzy
+#: Website/templates/color_combinations.html:85
 msgid "Подтвердить"
 msgstr "Confirm"
 
-#: Website/templates/color_combinations.html:87
-#: Website/templates/color_combinations.html:149
-#, fuzzy
+#: Website/templates/color_combinations.html:88
+#: Website/templates/color_combinations.html:150
 msgid "Поменять кол-во цветов"
 msgstr "Change the number of colors"
 
-#: Website/templates/color_combinations.html:123
-#, fuzzy
+#: Website/templates/color_combinations.html:124
 msgid ""
 "Внимание! К доступу к нейронной сети, сначала заполните базу данных вашей"
 " цветовой комбинацией."
@@ -75,8 +67,7 @@ msgstr ""
 "Attention! To access the neural network, first fill the database with "
 "your color combination."
 
-#: Website/templates/color_combinations.html:125
-#, fuzzy
+#: Website/templates/color_combinations.html:126
 msgid ""
 "Данный раздел сайта позволяет найти подходящий цвет для выбранного набора"
 " цветов. Выберите количество цветов и сами цвета, а затем запустите "
@@ -86,33 +77,27 @@ msgstr ""
 "selected set of colors. Select the number of colors and the colors "
 "themselves, and then run the neural network."
 
-#: Website/templates/color_combinations.html:140
-#, fuzzy
+#: Website/templates/color_combinations.html:141
 msgid "Кол-во цветов"
 msgstr "Number of colors"
 
-#: Website/templates/color_combinations.html:146
-#, fuzzy
+#: Website/templates/color_combinations.html:147
 msgid "Сгенерировать"
 msgstr "Generate"
 
-#: Website/templates/contacts.html:33
-#, fuzzy
+#: Website/templates/contacts.html:34
 msgid "Shi Warai"
 msgstr "Shi Warai"
 
-#: Website/templates/contacts.html:37
-#, fuzzy
+#: Website/templates/contacts.html:38
 msgid "Fullstack разработчик - Бакалавр программной инженерии"
 msgstr "Fullstack Developer - Bachelor of Software Engineering"
 
-#: Website/templates/contacts.html:45
-#, fuzzy
+#: Website/templates/contacts.html:46
 msgid "Обо мне"
 msgstr "About me"
 
-#: Website/templates/contacts.html:51
-#, fuzzy
+#: Website/templates/contacts.html:52
 msgid ""
 "Я занимаюсь программированием с 8-го класса (тогда я сделал свой первый "
 "проект полного стека). За это время я успел поработать на C++, Python, "
@@ -132,83 +117,72 @@ msgstr ""
 "website or on Github, but a lot remains unpublished. In addition to "
 "social networks, you can contact me by email."
 
-#: Website/templates/contacts.html:60
-#, fuzzy
+#: Website/templates/contacts.html:61
 msgid "E-mail"
 msgstr "E-mail"
 
-#: Website/templates/downloads.html:31
-#, fuzzy
+#: Website/templates/downloads.html:32
 msgid "Доступные файлы"
 msgstr "Available files"
 
-#: Website/templates/downloads.html:34
-#, fuzzy
+#: Website/templates/downloads.html:35
 msgid "Доступные для загрузки файлы"
 msgstr "Files available for download"
 
-#: Website/templates/downloads.html:45
-#, fuzzy
+#: Website/templates/downloads.html:46
 msgid "Имя"
 msgstr "Name"
 
-#: Website/templates/downloads.html:48
-#, fuzzy
+#: Website/templates/downloads.html:49
 msgid "Расширение"
 msgstr "Expansion"
 
-#: Website/templates/downloads.html:51
-#, fuzzy
+#: Website/templates/downloads.html:52 Website/templates/project.html:80
 msgid "Описание"
 msgstr "Description"
 
-#: Website/templates/downloads.html:58
+#: Website/templates/downloads.html:59
 #, fuzzy
 msgid "name"
 msgstr "name"
 
-#: Website/templates/downloads.html:61
+#: Website/templates/downloads.html:62
 #, fuzzy
 msgid "name+extension"
 msgstr "name+extension"
 
-#: Website/templates/downloads.html:64
+#: Website/templates/downloads.html:65
 #, fuzzy
 msgid "extension"
 msgstr "extension"
 
-#: Website/templates/downloads.html:67
+#: Website/templates/downloads.html:68
 #, fuzzy
 msgid "description"
 msgstr "description"
 
-#: Website/templates/downloads.html:76
+#: Website/templates/downloads.html:77
 #, fuzzy
 msgid "i"
 msgstr "i"
 
-#: Website/templates/downloads.html:85
-#, fuzzy
+#: Website/templates/downloads.html:86
 msgid "Отсутствуют доступные файлы"
 msgstr "There are no available files"
 
-#: Website/templates/home.html:33
-#, fuzzy
+#: Website/templates/home.html:34
 msgid "Добро пожаловать"
 msgstr "Welcome"
 
-#: Website/templates/home.html:36
-#, fuzzy
+#: Website/templates/home.html:37
 msgid "на моём сайте"
 msgstr "on my website"
 
-#: Website/templates/home.html:48
-#, fuzzy
+#: Website/templates/home.html:49
 msgid "Для чего он?"
 msgstr "What is it for?"
 
-#: Website/templates/home.html:52
-#, fuzzy
+#: Website/templates/home.html:53
 msgid ""
 "Этот сайт был создан для публикации моих проектов и обмена файлами. Сайт "
 "размещен на выделенном сервере, через который я часто также играю в "
@@ -224,68 +198,71 @@ msgstr ""
 "project, you can contact me using the contacts listed on the "
 "corresponding page."
 
-#: Website/templates/home.html:56
-#, fuzzy
+#: Website/templates/home.html:57
 msgid "К проектам"
 msgstr "To projects"
 
-#: Website/templates/layout.html:40
-#, fuzzy
+#: Website/templates/layout.html:41
 msgid "Главная"
 msgstr "Main"
 
-#: Website/templates/layout.html:45
-#, fuzzy
+#: Website/templates/layout.html:46
 msgid "Загрузки"
 msgstr "Downloads"
 
-#: Website/templates/layout.html:50 Website/templates/projects.html:32
-#, fuzzy
+#: Website/templates/layout.html:51 Website/templates/projects.html:33
 msgid "Проекты"
 msgstr "Projects"
 
-#: Website/templates/layout.html:55
-#, fuzzy
+#: Website/templates/layout.html:56
 msgid "Контакты"
 msgstr "Contacts"
 
-#: Website/templates/layout.html:70
-#, fuzzy
+#: Website/templates/layout.html:71
 msgid "Местоположение"
 msgstr "Location"
 
-#: Website/templates/layout.html:73
-#, fuzzy
+#: Website/templates/layout.html:74
 msgid "Москва, Улица Студенческая, 33, строение 3"
 msgstr "Moscow, 33 Studentskaya Street, building 3"
 
-#: Website/templates/layout.html:78
-#, fuzzy
+#: Website/templates/layout.html:79
 msgid "В Интернете"
 msgstr "in the Internet"
 
-#: Website/templates/layout.html:109
-#, fuzzy
+#: Website/templates/layout.html:110
 msgid "Автор"
 msgstr "Author"
 
-#: Website/templates/layout.html:113
-#, fuzzy
+#: Website/templates/layout.html:114
 msgid "Оформлен ShiWarai"
 msgstr "Designed by ShiWarai"
 
-#: Website/templates/project.html:29
-#, fuzzy
+#: Website/templates/project.html:34 Website/templates/project_error.html:30
 msgid "X"
 msgstr "X"
 
-#: Website/templates/project.html:35
-#, fuzzy
-msgid "Название проекта: "
-msgstr "Project name: "
+#: Website/templates/project.html:40
+msgid "Галерея"
+msgstr "Gallery"
 
-#: Website/templates/projects.html:35
-#, fuzzy
+#: Website/templates/project.html:57
+msgid "Previous"
+msgstr "Previous"
+
+#: Website/templates/project.html:64
+msgid "Next"
+msgstr "Next"
+
+#: Website/templates/project.html:89
+msgid "Загрузка исходников"
+msgstr "Downloading sources"
+
+#: Website/templates/project_error.html:36
+msgid "Нет такого проекта: "
+msgstr "There is no such project: "
+
+#: Website/templates/projects.html:36
 msgid ""
 "Создание готового продукта было для меня приоритетом долгое время, а "
 "может быть, и с самого начала. Именно в проектах я реализовывал свои "
@@ -301,12 +278,15 @@ msgstr ""
 "projects fully completed by me or in the team are presented below. Most "
 "of them have a page on GitHub."
 
+#, fuzzy
 msgid "Простой экранный переводчик на основе сторонних библиотек."
 msgstr "A simple on-screen translator based on third-party libraries."
 
+#, fuzzy
 msgid "Нейронная сеть для определения цветовых комбинаций."
 msgstr "A neural network for determining color combinations."
 
+#, fuzzy
 msgid ""
 "Настольное приложение с полностью реализованной серверно-клиентской "
 "частью. Клиент и сервер написаны на разных языках."
@@ -314,6 +294,7 @@ msgstr ""
 "A desktop application with a fully implemented server-client part. The "
 "client and server are written in different languages."
 
+#, fuzzy
 msgid ""
 "Мое первое приложение, написанное на C++ с использованием Windows Forms. "
 "Осуществляет учёт товаров на складе."
@@ -321,6 +302,7 @@ msgstr ""
 "My first application written in C++ using Windows Forms. Performs "
 "accounting of goods in the warehouse."
 
+#, fuzzy
 msgid ""
 "Нейронная сеть для распознавания чисел, написанная как проект по "
 "дисциплине процедурного программирования в университете. Было запрещено "
@@ -330,6 +312,18 @@ msgstr ""
 "discipline of procedural programming at the university. It was forbidden "
 "to use the OOP."
 
-msgid "Нажми на меня"
-msgstr "Click on me"
+#, fuzzy
+msgid ""
+"Робот на базе Lego Mindstorm, работающий под управлением Raspberry Pi. "
+"Обладает компьютерным зрением и заменяемыми модулями."
+msgstr ""
+"A robot based on Lego Mindstorm running Raspberry Pi. Has computer vision"
+" and replaceable modules."
 
+#, fuzzy
+msgid ""
+"Данная теплица на базе Lego Mindstorm была разработана в 10 классе к "
+"школьной конференции по актуальным проблемам в науке и обществе."
+msgstr ""
+"This greenhouse based on Lego Mindstorm was developed in the 10th grade "
+"for a school conference on topical issues in science and society."

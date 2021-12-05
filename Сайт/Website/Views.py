@@ -8,7 +8,7 @@ from flask_babel import _
 
 from Website import app, babel
 from Website import Download
-from Website import Project
+from Website import Projects
 from Website import ColorCombinations
 
 websiteName = "RidrameCraft"
@@ -17,9 +17,9 @@ hostName = "ridramecraft.ru"
 def render_base_template(pageName="home.html"):
     return render_template(
         pageName,
-        websiteName = websiteName,
-        hostName = hostName,
-        year = datetime.now().year
+        websiteName=websiteName,
+        hostName=hostName,
+        year=datetime.now().year
     )
 
 @babel.localeselector
@@ -42,7 +42,29 @@ def send_project_assets(path):
 # Для доступа к проектам
 @app.route('/project/<string:project_name>')
 def send_project(project_name):
-    return render_template("project.html", project_name = project_name)
+    project = Projects.getProject(project_name)
+
+    if not project.is_full:
+        print("No such full project!")
+        return render_template("project_error.html", project_name=project_name)
+
+    gallery = project.images
+    source_link = project.source_link
+    github_link = project.github_link
+    is_app = project.is_app
+
+    if not project:
+        print("No such project!")
+        return render_template("project_error.html", project_name=project_name)
+
+    return render_template("project.html",
+                           project_name=project.name,
+                           project_description=project.full_description,
+                           project_gallery=gallery,
+                           project_link=project.link,
+                           project_source_link=source_link,
+                           project_github_link=github_link,
+                           project_is_app=is_app)
 
 @app.route('/contacts')
 def contacts():
@@ -85,11 +107,11 @@ def downloads():
 @app.route('/projects')
 def projects():
 
-    projects = Project.getProjects(Project.getProjectsList()) # Объекты проектов, которые содержат всю нужную информацию
+    projects = Projects.getProjects(Projects.getProjectsList()) # Объекты проектов, которые содержат всю нужную информацию
 
     return render_template(
         "projects.html",
-        projects = projects,
+        projects=projects,
         websiteName=websiteName,
         hostName=hostName,
         year=datetime.now().year
@@ -102,7 +124,7 @@ def download_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 @app.route('/projects/color_combinations')
-def colors_combinations(train_color_amount = 3, mode = 0):
+def colors_combinations(train_color_amount=3, mode=0):
 
     train_color_amount = int(request.args.get('color_amount') or train_color_amount)
     mode = int(request.args.get('mode') or mode)
