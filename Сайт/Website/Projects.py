@@ -117,7 +117,7 @@ def removeProject(name):
     except:
         print("Ошибка с удалением")
 
-# createProject("Screen Translator",
+# editProject("Screen Translator",
 #               description="Простой экранный переводчик на основе сторонних библиотек.",
 #               images="screen_translator.jpg",
 #               link="/downloads/ScreenTranslator.zip",
@@ -126,7 +126,7 @@ def removeProject(name):
 #               source_link="/downloads/ScreenTranslator.zip",
 #               github_link="https://github.com/ShiWarai/ScreenTranslator")
 #
-# createProject("Color Combinations",
+# editProject("Color Combinations",
 #             description="Нейронная сеть для определения цветовых комбинаций.",
 #             images="color_combinations_1.jpg color_combinations_2.jpg",
 #             link="/projects/color_combinations",
@@ -136,7 +136,7 @@ def removeProject(name):
 #             source_link=None,
 #             github_link=None)
 #
-# createProject("Quinkokolobicky.net",
+# editProject("Quinkokolobicky.net",
 #             description="Настольное приложение с полностью реализованной серверно-клиентской частью. Клиент и сервер написаны на разных языках.",
 #             images="quinkokolobicky.jpg",
 #             link="https://yadi.sk/d/0rzx7UJRT36Oxw",
@@ -145,7 +145,7 @@ def removeProject(name):
 #             source_link="https://yadi.sk/d/0rzx7UJRT36Oxw",
 #             github_link="https://github.com/ShiWarai/quinkokolobicky")
 #
-# createProject("Sasha's Shop",
+# editProject("Sasha's Shop",
 #             description="Мое первое приложение, написанное на C++ с использованием Windows Forms. Осуществляет учёт товаров на складе.",
 #             images="sasha_shop.jpg",
 #             link="https://yadi.sk/d/BVUT6MuLZxUiBQ",
@@ -154,7 +154,7 @@ def removeProject(name):
 #             source_link="https://yadi.sk/d/BVUT6MuLZxUiBQ",
 #             github_link=None)
 #
-# createProject("Neural Network C++",
+# editProject("Neural Network C++",
 #             description="Нейронная сеть для распознавания чисел, написанная как проект по дисциплине процедурного программирования в университете. Было запрещено использовать ООП.",
 #             images="neural_network.jpg not_found.jpg",
 #             link="https://disk.yandex.ru/d/-WL5VsIEGNKfJA",
@@ -162,3 +162,21 @@ def removeProject(name):
 #             full_description="Нейронная сеть для распознавания чисел, написанная как проект по дисциплине процедурного программирования в университете. Было запрещено использовать ООП. Полный код можно получить по ссылке ниже, а также на GitHub.",
 #             source_link="https://disk.yandex.ru/d/-WL5VsIEGNKfJA",
 #             github_link="https://github.com/ShiWarai/neural-network")
+#
+# editProject("Робот-пожарник",
+#             description="Робот на базе Lego Mindstorm, работающий под управлением Raspberry Pi. Обладает компьютерным зрением и заменяемыми модулями.",
+#             images="robot.jpg robot_zoom.jpg",
+#             link="https://disk.yandex.ru/d/_byl0OrlPR2k9A",
+#             is_full=True,
+#             full_description="Робот на базе Lego Mindstorm, работающий под управлением Raspberry Pi. Обладает компьютерным зрением и заменяемыми модулями. Создан мною до окончания школы в 11 классе, но многое реализовать не успел из-за начавшейся пандемии.",
+#             source_link="https://disk.yandex.ru/d/_byl0OrlPR2k9A",
+#             github_link=None)
+#
+# editProject("Автоматическая теплица",
+#             description="Данная теплица на базе Lego Mindstorm была разработана в 10 классе к школьной конференции по актуальным проблемам в науке и обществе.",
+#             images="green_house.jpg",
+#             link="https://disk.yandex.ru/d/CjIqPpLcHjahYA",
+#             is_full=True,
+#             full_description="Данная теплица на базе Lego Mindstorm была разработана в 10 классе к школьной конференции по актуальным проблемам в науке и обществе.",
+#             source_link="https://disk.yandex.ru/d/CjIqPpLcHjahYA",
+#             github_link=None)

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-05 12:03+0300\n"
+"POT-Creation-Date: 2021-12-05 16:36+0300\n"
 "PO-Revision-Date: 2021-12-05 01:28+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -254,7 +254,7 @@ msgstr "Previous"
 msgid "Next"
 msgstr "Next"
 
-#: Website/templates/project.html:88
+#: Website/templates/project.html:89
 msgid "Загрузка исходников"
 msgstr "Downloading sources"
 
@@ -278,12 +278,15 @@ msgstr ""
 "projects fully completed by me or in the team are presented below. Most "
 "of them have a page on GitHub."
 
+#, fuzzy
 msgid "Простой экранный переводчик на основе сторонних библиотек."
 msgstr "A simple on-screen translator based on third-party libraries."
 
+#, fuzzy
 msgid "Нейронная сеть для определения цветовых комбинаций."
 msgstr "A neural network for determining color combinations."
 
+#, fuzzy
 msgid ""
 "Настольное приложение с полностью реализованной серверно-клиентской "
 "частью. Клиент и сервер написаны на разных языках."
@@ -291,6 +294,7 @@ msgstr ""
 "A desktop application with a fully implemented server-client part. The "
 "client and server are written in different languages."
 
+#, fuzzy
 msgid ""
 "Мое первое приложение, написанное на C++ с использованием Windows Forms. "
 "Осуществляет учёт товаров на складе."
@@ -298,6 +302,7 @@ msgstr ""
 "My first application written in C++ using Windows Forms. Performs "
 "accounting of goods in the warehouse."
 
+#, fuzzy
 msgid ""
 "Нейронная сеть для распознавания чисел, написанная как проект по "
 "дисциплине процедурного программирования в университете. Было запрещено "
@@ -306,3 +311,19 @@ msgstr ""
 "A neural network for number recognition, written as a project on the "
 "discipline of procedural programming at the university. It was forbidden "
 "to use the OOP."
+
+#, fuzzy
+msgid ""
+"Робот на базе Lego Mindstorm, работающий под управлением Raspberry Pi. "
+"Обладает компьютерным зрением и заменяемыми модулями."
+msgstr ""
+"A robot based on Lego Mindstorm running Raspberry Pi. Has computer vision"
+" and replaceable modules."
+
+#, fuzzy
+msgid ""
+"Данная теплица на базе Lego Mindstorm была разработана в 10 классе к "
+"школьной конференции по актуальным проблемам в науке и обществе."
+msgstr ""
+"This greenhouse based on Lego Mindstorm was developed in the 10th grade "
+"for a school conference on topical issues in science and society."
