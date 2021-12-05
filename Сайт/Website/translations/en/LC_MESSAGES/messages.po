@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-05 17:01+0300\n"
-"PO-Revision-Date: 2021-12-05 01:28+0300\n"
+"POT-Creation-Date: 2021-12-05 18:41+0300\n"
+"PO-Revision-Date: 2021-12-05 18:40+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -105,8 +105,7 @@ msgid ""
 "которой проходили в моей школе с 10-го класса в форме кружка. После "
 "окончания школы я поступил в РТУ МИРЭА в Москве, где в настоящее время "
 "учусь и живу. Вы можете узнать больше о моих проектах на сайте или на "
-"Github, но многое остаётся неопубликованным. Помимо социальных сетей, вы "
-"можете связаться со мной по электронной почте."
+"Github, но многое остаётся неопубликованным."
 msgstr ""
 "I've been programming since 8th grade (then I did my first full stack "
 "project). During this time I managed to work in C++, Python, C#, Lua. "
@@ -114,10 +113,57 @@ msgstr ""
 "held at my school from the 10th grade in the form of a circle. After "
 "graduating from school, I entered the RTU MIREA in Moscow, where I "
 "currently study and live. You can find out more about my projects on the "
-"website or on Github, but a lot remains unpublished. In addition to "
-"social networks, you can contact me by email."
+"website or on Github, but a lot remains unpublished."
 
-#: Website/templates/contacts.html:61
+#: Website/templates/contacts.html:58
+msgid ""
+"Основным занятием на текущий момент является разработка ПО для прикладных"
+" целей, решение задач по курсу обучения в ВУЗе, а также прохождение "
+"факультативных курсов. Из актуальных: курсы от VK Company по направлению "
+"«‎Автоматизированное тестирование» и «‎Базовое администрирование Linux», "
+"а также 2 семестровый курс IoT от Академии Самсунг. Весь прогресс "
+"обучения я также пытаюсь фиксировать с помощью сторонних проектов или с "
+"помощью репозитория на GitHub."
+msgstr ""
+"The main occupation at the moment is the development of software for "
+"applied purposes, solving problems in the course of study at the "
+"university, as well as taking elective courses. Among the relevant: "
+"courses from VK Company in the direction of \"Automated testing\" and "
+"\"Basic Linux Administration\", as well as a 2-semester IoT course from "
+"Samsung Academy. I also try to record all the learning progress using "
+"third-party projects or using a repository on GitHub."
+
+#: Website/templates/contacts.html:64
+msgid ""
+"И всё-таки главной моей мечтой является реализация самого себя в сфере "
+"робототехники. Ещё с детства меня привлекало черчение, чтение книг по "
+"механике, сложное устройство повседневных вещей. В школе я прошёл курс по"
+" робототехнике на базе городского ПТУ, а позже занялся своими проектами, "
+"в которых я уже применил школьные наборы Lego Mindstorm. Результаты можно"
+" также увидеть во вкладе "
+msgstr ""
+"And yet my main dream is to realize myself in the field of robotics. "
+"Since childhood, I have been attracted to drawing, reading books on "
+"mechanics, and the complex arrangement of everyday things. At school, I "
+"took a course in robotics on the basis of a city vocational school, and "
+"later I started my own projects, in which I had already used Lego "
+"Mindstorm school kits. The results can also be seen in the contribution "
+
+#: Website/templates/contacts.html:66 Website/templates/layout.html:51
+#: Website/templates/projects.html:33
+msgid "Проекты"
+msgstr "Projects"
+
+#: Website/templates/contacts.html:68
+#, fuzzy
+msgid "."
+msgstr "."
+
+#: Website/templates/contacts.html:72
+msgid "Помимо социальных сетей, вы можете связаться со мной по электронной почте:"
+msgstr "In addition to social networks, you can contact me by email:"
+
+#: Website/templates/contacts.html:80
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -189,14 +235,14 @@ msgid ""
 "различные игры с друзьями. Не все проекты перечислены здесь, но вы "
 "определенно можете найти полный список на моем GitHub. Если вас "
 "интересует какой-либо проект, вы можете связаться со мной, используя "
-"контакты, указанные на соответствующей странице."
+"контакты, указанные на соответствующей странице или ниже."
 msgstr ""
 "This site was created to publish my projects and share files. The site is"
 " hosted on a dedicated server, through which I often also play various "
 "games with friends. Not all projects are listed here, but you can "
 "definitely find the full list on my GitHub. If you are interested in any "
 "project, you can contact me using the contacts listed on the "
-"corresponding page."
+"corresponding page or below."
 
 #: Website/templates/home.html:57
 msgid "К проектам"
@@ -209,10 +255,6 @@ msgstr "Main"
 #: Website/templates/layout.html:46
 msgid "Загрузки"
 msgstr "Downloads"
-
-#: Website/templates/layout.html:51 Website/templates/projects.html:33
-msgid "Проекты"
-msgstr "Projects"
 
 #: Website/templates/layout.html:56
 msgid "Контакты"
@@ -228,7 +270,7 @@ msgstr "Moscow, 33 Studentskaya Street, building 3"
 
 #: Website/templates/layout.html:79
 msgid "В Интернете"
-msgstr "in the Internet"
+msgstr "Around the Web"
 
 #: Website/templates/layout.html:110
 msgid "Автор"
@@ -278,15 +320,12 @@ msgstr ""
 "projects fully completed by me or in the team are presented below. Most "
 "of them have a page on GitHub."
 
-#, fuzzy
 msgid "Простой экранный переводчик на основе сторонних библиотек."
 msgstr "A simple on-screen translator based on third-party libraries."
 
-#, fuzzy
 msgid "Нейронная сеть для определения цветовых комбинаций."
 msgstr "A neural network for determining color combinations."
 
-#, fuzzy
 msgid ""
 "Настольное приложение с полностью реализованной серверно-клиентской "
 "частью. Клиент и сервер написаны на разных языках."
@@ -294,7 +333,6 @@ msgstr ""
 "A desktop application with a fully implemented server-client part. The "
 "client and server are written in different languages."
 
-#, fuzzy
 msgid ""
 "Мое первое приложение, написанное на C++ с использованием Windows Forms. "
 "Осуществляет учёт товаров на складе."
@@ -302,7 +340,6 @@ msgstr ""
 "My first application written in C++ using Windows Forms. Performs "
 "accounting of goods in the warehouse."
 
-#, fuzzy
 msgid ""
 "Нейронная сеть для распознавания чисел, написанная как проект по "
 "дисциплине процедурного программирования в университете. Было запрещено "
@@ -312,7 +349,6 @@ msgstr ""
 "discipline of procedural programming at the university. It was forbidden "
 "to use the OOP."
 
-#, fuzzy
 msgid ""
 "Робот на базе Lego Mindstorm, работающий под управлением Raspberry Pi. "
 "Обладает компьютерным зрением и заменяемыми модулями."
@@ -320,7 +356,6 @@ msgstr ""
 "A robot based on Lego Mindstorm running Raspberry Pi. Has computer vision"
 " and replaceable modules."
 
-#, fuzzy
 msgid ""
 "Данная теплица на базе Lego Mindstorm была разработана в 10 классе к "
 "школьной конференции по актуальным проблемам в науке и обществе."
