@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-06 14:26+0300\n"
+"POT-Creation-Date: 2021-12-06 16:47+0300\n"
 "PO-Revision-Date: 2021-12-05 18:40+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -183,7 +183,7 @@ msgstr "Name"
 msgid "Расширение"
 msgstr "Expansion"
 
-#: Website/templates/downloads.html:52 Website/templates/project.html:81
+#: Website/templates/downloads.html:52 Website/templates/project.html:80
 msgid "Описание"
 msgstr "Description"
 
@@ -288,15 +288,15 @@ msgstr "X"
 msgid "Галерея"
 msgstr "Gallery"
 
-#: Website/templates/project.html:58
+#: Website/templates/project.html:57
 msgid "Previous"
 msgstr "Previous"
 
-#: Website/templates/project.html:65
+#: Website/templates/project.html:64
 msgid "Next"
 msgstr "Next"
 
-#: Website/templates/project.html:90
+#: Website/templates/project.html:89
 msgid "Загрузка исходников"
 msgstr "Downloading sources"
 
@@ -323,8 +323,13 @@ msgstr ""
 msgid "Простой экранный переводчик на основе сторонних библиотек."
 msgstr "A simple on-screen translator based on third-party libraries."
 
-msgid "Нейронная сеть для определения цветовых комбинаций."
-msgstr "A neural network for determining color combinations."
+#, fuzzy
+msgid ""
+"Нейронная сеть для определения цветовых комбинаций. Является первым "
+"веб-приложением на данном веб-сайте."
+msgstr ""
+"A neural network for determining color combinations. Is the first web "
+"application on this website."
 
 msgid ""
 "Настольное приложение с полностью реализованной серверно-клиентской "
