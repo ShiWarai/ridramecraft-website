@@ -6,7 +6,7 @@ from Website import DatabaseClasses
 class Project:
     def __init__(self, project_object):
 
-        self.name = project_object.name
+        self.name = _l(project_object.name)
         self.description = _l(project_object.description)
         self.image = path.join("projects", "static", project_object.images.split(' ')[0])
 
