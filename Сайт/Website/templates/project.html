@@ -11,14 +11,14 @@
   <meta content="website" property="og:type"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=5b3177bc249a50beff13b195bc02fefc" rel="stylesheet"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=238d2b9f54cfe56ca76d080e414c30d5" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link href="../assets/css/styles.min.css?h=63b933744a29a7c31a01aa296e3e2fff" rel="stylesheet"/>
-  <link href="../assets/css/projects.min.css?h=ad68126bf6bafe7532667ffa6b47dd46" rel="stylesheet"/>
+  <link href="../assets/css/projects.min.css?h=e4d2ceed0a254b6bd0c41e1026b72c7e" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
@@ -41,73 +41,83 @@
      </h1>
      <div class="d-flex flex-grow-1 align-items-center">
       <div id="gallery-wrapper">
-       <div class="carousel slide" data-ride="carousel" id="gallery">
+       <div class="carousel slide" data-interval="false" data-ride="carousel" id="gallery">
         <div class="carousel-inner">
          {% for i in range(project_gallery|length) %}
          <div class="carousel-item {% if i==0 %}active{% endif %}">
           <img class="w-100 d-block" src="{{project_gallery[i]}}"/>
          </div>
          {% endfor %}
+        {% for i in range(project_videos|length) %}
+         <div class="carousel-item">
+          <video class="img-fluid w-100 d-block d-flex justify-content-center" controls="" height="auto" preload="metadata" width="auto">
+           <source src="{{project_videos[i]}}" type="video/mp4"/>
+          </video>
+         </div>
+         {% endfor %}
         </div>
         <div>
-         <a class="carousel-control-prev" data-slide="prev" href="#gallery" role="button">
+         <a class="carousel-control carousel-control-prev" data-slide="prev" href="#gallery" role="button">
           <span class="carousel-control-prev-icon">
           </span>
           <span class="sr-only">
-           {{ _("Previous") }}
+           {{ _("Предыдущий") }}
           </span>
          </a>
-         <a class="carousel-control-next" data-slide="next" href="#gallery" role="button">
+         <a class="carousel-control carousel-control-next" data-slide="next" href="#gallery" role="button">
           <span class="carousel-control-next-icon">
           </span>
           <span class="sr-only">
-           {{ _("Next") }}
+           {{ _("Следующий") }}
           </span>
          </a>
         </div>
-        <ol class="carousel-indicators">
-         {% for i in range(project_gallery|length) %}
-         <li class="{% if i==0 %}active{% endif %}" data-slide-to="{{i}}" data-target="#gallery">
-         </li>
-         {% endfor %}
-        </ol>
        </div>
       </div>
      </div>
     </div>
     <div class="col d-flex flex-column justify-content-between d-flex flex-column align-items-center project-column" id="column-2">
-     <h1 class="text-uppercase order-1 heading">
+     <h1 class="text-uppercase heading">
       {{ _("Описание") }}
      </h1>
-     <div class="order-2 description main_text">
+     <div class="description main_text">
       {% for paragraph in project_description %}
       <p>
        {{paragraph}}
       </p>
       {% endfor %}
      </div>
-     <div class="d-flex flex-row justify-content-between align-items-center order-3" style="width: 100%;">
-      {% if project_source_link %}
-      <a class="text-nowrap d-flex align-items-center btn btn-full btn-primary" href="{{project_source_link}}" rel="noopener noreferrer" target="_blank">
-       <strong>
-        {{ _("Загрузка исходников") }}
-       </strong>
-      </a>
-      <a class="btn btn-light btn-social btn-img text-center rounded-circle" href="{{project_source_link}}" rel="noopener noreferrer" role="button" style="background: #18bc9c;border-color: #18bc9c;" target="_blank">
-       <i class="fa fa-arrow-circle-o-down fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
-       </i>
-      </a>
-      {% endif %}{% if project_is_app %}
-      <a class="btn btn-light btn-social text-center rounded-circle" href="{{project_link}}" role="button" style="background: #18bc9c;border-color: #18bc9c;">
-       <i class="fa fa-laptop fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
-       </i>
-      </a>
-      {% endif %}{% if project_github_link %}
-      <a class="btn btn-light btn-social text-center rounded-circle" href="{{project_github_link}}" rel="noopener noreferrer" role="button" style="background: #18bc9c;border-color: #18bc9c;" target="_blank">
-       <i class="fa fa-github fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
-       </i>
-      </a>
-      {% endif %}
+     <div style="width: 100%;">
+      <div class="d-flex flex-row tags" style="margin-bottom: 16px;">
+       {% for tag in tags %}
+       <span class="text-white tag">
+        {{tag.name}}
+       </span>
+       {% endfor %}
+      </div>
+      <div class="d-flex flex-row justify-content-between align-items-center" style="width: 100%;">
+       {% if project_source_link %}
+       <a class="text-nowrap d-flex align-items-center btn btn-full btn-primary" href="{{project_source_link}}" rel="noopener noreferrer" target="_blank">
+        <strong>
+         {{ _("Загрузка исходников") }}
+        </strong>
+       </a>
+       <a class="btn btn-light btn-social btn-img text-center rounded-circle" href="{{project_source_link}}" rel="noopener noreferrer" role="button" style="background: #18bc9c;border-color: #18bc9c;" target="_blank">
+        <i class="fa fa-arrow-circle-o-down fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
+        </i>
+       </a>
+       {% endif %}{% if project_is_app %}
+       <a class="btn btn-light btn-social text-center rounded-circle" href="{{project_link}}" role="button" style="background: #18bc9c;border-color: #18bc9c;">
+        <i class="fa fa-laptop fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
+        </i>
+       </a>
+       {% endif %}{% if project_github_link %}
+       <a class="btn btn-light btn-social text-center rounded-circle" href="{{project_github_link}}" rel="noopener noreferrer" role="button" style="background: #18bc9c;border-color: #18bc9c;" target="_blank">
+        <i class="fa fa-github fa-fw icon-btn" style="font-size: 23px;padding-top: 6px;padding-right: 6px;">
+        </i>
+       </a>
+       {% endif %}
+      </div>
      </div>
     </div>
    </div>
