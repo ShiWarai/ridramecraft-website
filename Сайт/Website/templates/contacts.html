@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link href="../assets/css/styles.min.css?h=63b933744a29a7c31a01aa296e3e2fff" rel="stylesheet"/>
-  <link href="../assets/css/contacts.min.css?h=db9ec279b5530ba1486208c0958b57ee" rel="stylesheet"/>
+  <link href="../assets/css/contacts.min.css?h=50685cb10e4dd87ff3dcf0b4d8ca9cef" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
@@ -45,20 +45,20 @@
     <h1 class="text-uppercase text-center heading">
      {{ _("Обо мне") }}
     </h1>
-    <div class="text-center mt-4">
-     <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row flex-xl-row" style="margin-bottom: 15px;">
+    <div class="text-center mt-4 description-block">
+     <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row flex-xl-row">
       <img class="img-fluid shadow-lg order-1 image" src="../assets/img/About/green_house.jpg?h=ab99a49e4777752157d3b7d7f9a11005"/>
       <p class="text-left order-2 main_text" style="margin: 15px;">
        {{ _("Я занимаюсь программированием с 8-го класса (тогда я сделал свой первый проект полного стека). За это время я успел поработать на C++, Python, C#, Lua. По окончании учебы я пристрастился к робототехнике, занятия по которой проходили в моей школе с 10-го класса в форме кружка. После окончания школы я поступил в РТУ МИРЭА в Москве, где в настоящее время учусь и живу. Вы можете узнать больше о моих проектах на сайте или на Github, но многое остаётся неопубликованным.") }}
       </p>
      </div>
-     <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row-reverse flex-xl-row-reverse" style="margin-bottom: 15px;">
-      <img class="img-fluid shadow-lg order-1 image" src="../assets/img/About/its_like_me.jpg?h=c54bdeefc44061d5cbd9c6fa3d3f0b6f"/>
+     <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row-reverse flex-xl-row-reverse">
+      <img class="img-fluid shadow-lg order-1 image" src="../assets/img/About/its_like_me.jpg?h=c54bdeefc44061d5cbd9c6fa3d3f0b6f" style="width: 30%;"/>
       <p class="text-right order-2 main_text" style="margin: 15px;">
        {{ _("Основным занятием на текущий момент является разработка ПО для прикладных целей, решение задач по курсу обучения в ВУЗе, а также прохождение факультативных курсов. Из актуальных: курсы от VK Company по направлению «‎Автоматизированное тестирование» и «‎Базовое администрирование Linux», а также 2 семестровый курс IoT от Академии Samsung. Весь прогресс обучения я также пытаюсь фиксировать с помощью сторонних проектов или с помощью репозитория на GitHub.") }}
       </p>
      </div>
-     <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row flex-xl-row" style="margin-bottom: 15px;">
+     <div class="d-inline-flex flex-column justify-content-around align-items-center flex-sm-column flex-md-column flex-lg-row flex-xl-row">
       <img class="img-fluid shadow-lg order-1 image" src="../assets/img/About/robot.jpg?h=f1e3f585f9b9f958ddcb76e76670cbb3"/>
       <p class="text-left order-2 main_text" style="margin: 15px;">
        {{ _("И всё-таки главной моей мечтой является реализация самого себя в сфере робототехники. Ещё с детства меня привлекало черчение, чтение книг по механике, сложное устройство повседневных вещей. В школе я прошёл курс по робототехнике на базе городского колледжа, а позже занялся своими проектами, в которых я уже применил школьные наборы Lego Mindstorm. Результаты можно также увидеть во вкладе ") }}
@@ -68,7 +68,7 @@
        {{ _(".") }}
       </p>
      </div>
-     <p class="text-center main_text" style="margin-top: 32px;">
+     <p class="text-center main_text" style="margin-top: 8px;">
       {{ _("Помимо социальных сетей, вы можете связаться со мной по электронной почте:") }}
      </p>
      <a class="btn btn-outline-light btn-xl" href="mailto:mail@zhuravliov.pav@yandex.ru?subject=Вопрос по поводу сайта" role="button" style="padding-top: 16px;padding-right: 25px;padding-left: 25px;font-family: 'Noto Sans', sans-serif;">
