@@ -48,6 +48,7 @@ def send_project(project_id):
         print("No such full project!")
         return render_template("project_error.html", project_name=project_id)
 
+    full_description = project.full_description.split('\n')  # Для разбития на абзацы
     gallery = project.images
     source_link = project.source_link
     github_link = project.github_link
@@ -59,7 +60,7 @@ def send_project(project_id):
 
     return render_template("project.html",
                            project_name=project.name,
-                           project_description=project.full_description,
+                           project_description=full_description,
                            project_gallery=gallery,
                            project_link=project.link,
                            project_source_link=source_link,
