@@ -61,6 +61,7 @@ def send_project(project_id):
     return render_template("project.html",
                            project_name=project.name,
                            project_description=full_description,
+                           tags=project.tags,
                            project_gallery=gallery,
                            project_videos=project.videos,
                            project_link=project.link,
@@ -100,7 +101,7 @@ def downloads():
 
     return render_template(
         "downloads.html",
-        isEmpty=files_n == 0,
+        isEmpty= (files_n == 0),
         websiteName=websiteName,
         hostName=hostName,
         year=datetime.now().year
@@ -109,7 +110,7 @@ def downloads():
 @app.route('/projects')
 def projects():
 
-    projects = Projects.getProjects()# Объекты проектов, которые содержат всю нужную информацию
+    projects = Projects.getProjects()  # Объекты проектов, которые содержат всю нужную информацию
 
     return render_template(
         "projects.html",

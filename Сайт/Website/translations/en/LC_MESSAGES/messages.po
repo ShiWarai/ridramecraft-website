@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-10 10:10+0300\n"
+"POT-Creation-Date: 2021-12-10 17:10+0300\n"
 "PO-Revision-Date: 2021-12-10 07:54+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -186,7 +186,7 @@ msgstr "Name"
 msgid "Расширение"
 msgstr "Expansion"
 
-#: Website/templates/downloads.html:52 Website/templates/project.html:85
+#: Website/templates/downloads.html:52 Website/templates/project.html:81
 msgid "Описание"
 msgstr "Description"
 
@@ -296,15 +296,15 @@ msgstr "X"
 msgid "Галерея"
 msgstr "Gallery"
 
-#: Website/templates/project.html:62
+#: Website/templates/project.html:64
 msgid "Предыдущий"
 msgstr "Previous"
 
-#: Website/templates/project.html:69
+#: Website/templates/project.html:71
 msgid "Следующий"
 msgstr "Next"
 
-#: Website/templates/project.html:98
+#: Website/templates/project.html:102
 msgid "Загрузка исходников"
 msgstr "Downloading sources"
 

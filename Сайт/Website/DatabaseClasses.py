@@ -24,6 +24,7 @@ class Project(database.Model):
     id = database.Column(database.Integer, primary_key=True, autoincrement=True)
     name = database.Column(database.Text, nullable=False, unique=True)
     description = database.Column(database.Text, default="Not found")
+    tags = database.Column(database.Text, nullable=False, default="No tags")
     images = database.Column(database.Text, nullable=False, default="not_found.png")
     link = database.Column(database.Text)
     is_full = database.Column(database.Boolean, nullable=False, default=False)

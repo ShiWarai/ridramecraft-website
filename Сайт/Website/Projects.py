@@ -9,11 +9,16 @@ class Project:
         self.id = project_object.id
         self.name = _l(project_object.name)
         self.description = _l(project_object.description)
-        self.image = path.join("projects", "static", "images", project_object.images.split(' ')[0])
+
+        self.tags = list()
+        for tag in project_object.tags.split(';'):
+            self.tags.append({'name': tag})
+
+        self.image = path.join("projects", "static", "images", project_object.images.split(';')[0])
 
         self.images = list()
         if project_object.images:
-            for image in project_object.images.split(' '):
+            for image in project_object.images.split(';'):
                 self.images.append(path.join("projects", "static", "images", image))
 
         self.link = project_object.link
@@ -23,7 +28,7 @@ class Project:
 
         self.videos = list()
         if project_object.videos:
-            for video in project_object.videos.split(' '):
+            for video in project_object.videos.split(';'):
                 self.videos.append(path.join("projects", "static", "videos", video))
 
         self.source_link = project_object.source_link
