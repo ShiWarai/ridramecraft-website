@@ -41,7 +41,7 @@ if app.debug: # Система для настройки на компьютер
     with Popen(['pybabel','extract','-F','babel.cfg','-k','_l','-o','req_translation.pot','.'], cwd = root_dir) as process:
         process.wait()
 
-    # Его пополнение БД
+    # Пополняем словарь текстами из БД
 
     catalog = None
 
@@ -49,7 +49,9 @@ if app.debug: # Система для настройки на компьютер
         catalog = read_po(pot)  # Загружаем список всех слов к переводу
         projects = Project.query.all()
         for project in projects:
+            catalog.add(project.name)
             catalog.add(project.description)
+            catalog.add(project.full_description)
 
         database.session.commit() # Сохраняем translated
     with open(pot_file_path, 'wb') as pot:
@@ -111,7 +113,7 @@ if app.debug: # Система для настройки на компьютер
             for message in catalog:
                 if message.id and not message.string:
                     message.string = updated_dict[message.id]
-                    message.flags = ['fuzzy',]
+                    # message.flags = ['fuzzy',] временно выключено
                     print(message.id, "Translated as:", message.string, sep='\n')
 
             # Сохранение словаря

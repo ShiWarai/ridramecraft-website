@@ -21,7 +21,8 @@ class ColorCombination(database.Model):
 class Project(database.Model):
     __bind_key__ = 'projects'
 
-    name =  database.Column(database.Text, primary_key=True)
+    id = database.Column(database.Integer, primary_key=True, autoincrement=True)
+    name = database.Column(database.Text, nullable=False, unique=True)
     description = database.Column(database.Text, default="Not found")
     images = database.Column(database.Text, nullable=False, default="not_found.png")
     link = database.Column(database.Text)

@@ -3,9 +3,10 @@ from flask_babel import lazy_gettext as _l
 
 from Website import DatabaseClasses
 
+
 class Project:
     def __init__(self, project_object):
-
+        self.id = project_object.id
         self.name = _l(project_object.name)
         self.description = _l(project_object.description)
         self.image = path.join("projects", "static", project_object.images.split(' ')[0])
@@ -21,16 +22,8 @@ class Project:
         self.source_link = project_object.source_link
         self.github_link = project_object.github_link
 
-# Глобальные функции
-def getProjectsList():
-    try:
-        projects_list = DatabaseClasses.Project.query.order_by(DatabaseClasses.Project.name).all()
-        return projects_list
-    except:
-        return list()
-
-def getProject(project_name):
-    project_obj = DatabaseClasses.Project.query.filter_by(name=project_name).first()
+def getProject(id):
+    project_obj = DatabaseClasses.Project.query.filter_by(id=id).first()
 
     try:
         project = Project(project_obj)
@@ -39,9 +32,16 @@ def getProject(project_name):
 
     return project
 
-def getProjects(sql_project_objects):
-    projects_list = list()
 
+def getProjects():
+
+    sql_project_objects = list()
+    try:
+        sql_project_objects = DatabaseClasses.Project.query.order_by(DatabaseClasses.Project.name).all()
+    except:
+        pass
+
+    projects_list = list()
     for obj in sql_project_objects:
         projects_list.append(Project(obj))
 
@@ -78,6 +78,7 @@ def createProject(name,
         DatabaseClasses.database.session.rollback()
         return False
 
+
 def editProject(name,
                 description=None,
                 images=None,
@@ -109,6 +110,7 @@ def editProject(name,
         DatabaseClasses.database.session.commit()
     except:
         print("Ошибка с изменением")
+
 
 def removeProject(name):
     try:

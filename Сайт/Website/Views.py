@@ -9,7 +9,7 @@ from flask_babel import _
 from Website import app, babel
 from Website import Download
 from Website import Projects
-from Website import ColorCombinations
+#from Website import ColorCombinations
 
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
@@ -40,14 +40,15 @@ def send_project_assets(path):
     return send_from_directory('projects', path)
 
 # Для доступа к проектам
-@app.route('/project/<string:project_name>')
-def send_project(project_name):
-    project = Projects.getProject(project_name)
+@app.route('/project/<int:project_id>')
+def send_project(project_id):
+    project = Projects.getProject(project_id)
 
     if not project.is_full:
         print("No such full project!")
-        return render_template("project_error.html", project_name=project_name)
+        return render_template("project_error.html", project_name=project_id)
 
+    full_description = project.full_description.split('\n')  # Для разбития на абзацы
     gallery = project.images
     source_link = project.source_link
     github_link = project.github_link
@@ -55,11 +56,11 @@ def send_project(project_name):
 
     if not project:
         print("No such project!")
-        return render_template("project_error.html", project_name=project_name)
+        return render_template("project_error.html", project_name=project_id)
 
     return render_template("project.html",
                            project_name=project.name,
-                           project_description=project.full_description,
+                           project_description=full_description,
                            project_gallery=gallery,
                            project_link=project.link,
                            project_source_link=source_link,
@@ -107,7 +108,7 @@ def downloads():
 @app.route('/projects')
 def projects():
 
-    projects = Projects.getProjects(Projects.getProjectsList()) # Объекты проектов, которые содержат всю нужную информацию
+    projects = Projects.getProjects()# Объекты проектов, которые содержат всю нужную информацию
 
     return render_template(
         "projects.html",
