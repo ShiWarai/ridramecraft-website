@@ -113,7 +113,7 @@ if app.debug: # Система для настройки на компьютер
             for message in catalog:
                 if message.id and not message.string:
                     message.string = updated_dict[message.id]
-                    message.flags = ['fuzzy',]
+                    # message.flags = ['fuzzy',] временно выключено
                     print(message.id, "Translated as:", message.string, sep='\n')
 
             # Сохранение словаря
