@@ -29,6 +29,7 @@ class Project(database.Model):
     is_full = database.Column(database.Boolean, nullable=False, default=False)
     is_app = database.Column(database.Boolean, nullable=False, default=False)
     full_description = database.Column(database.Text)
+    videos = database.Column(database.Text)
     source_link = database.Column(database.Text)
     github_link = database.Column(database.Text)
 

@@ -9,7 +9,7 @@ from flask_babel import _
 from Website import app, babel
 from Website import Download
 from Website import Projects
-#from Website import ColorCombinations
+from Website import ColorCombinations
 
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
@@ -62,6 +62,7 @@ def send_project(project_id):
                            project_name=project.name,
                            project_description=full_description,
                            project_gallery=gallery,
+                           project_videos=project.videos,
                            project_link=project.link,
                            project_source_link=source_link,
                            project_github_link=github_link,
