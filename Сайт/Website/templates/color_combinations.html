@@ -36,7 +36,7 @@
  <body>
   {% block content %}
   <div style="height: auto;background: #2c3e50;padding-top: 100px;padding-bottom: 32px;">
-   <h1 class="roboto_slab text-center heading d-sm-none" style="font-size: 44px;">
+   <h1 class="text-break roboto_slab text-center heading d-sm-none" style="font-size: 44px;">
     {{ _("Color combinations") }}
    </h1>
    <h1 class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center text-center heading d-none d-sm-flex" data-bss-tooltip="" data-toggle="tooltip" style="margin-bottom: 16px;font-size: 60px;margin-top: 40px;">
@@ -138,7 +138,7 @@
            <div class="d-flex flex-column justify-content-around align-items-xl-end" style="height: 100%;">
             <div class="text-nowrap d-inline-flex d-lg-flex justify-content-center align-items-center align-self-start flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap" style="height: 40%;padding: 5px;">
              <span class="text-center main_text color_amount_indicator" style="margin-right: 10px;">
-              {{_("Кол-во цветов") ~ colors_n}}
+              {{_("Кол-во цветов: ") ~ colors_n}}
              </span>
              <input class="form-control-range color_amount_range" max="4" min="1" name="color_amount" onchange="setColorsAmount(this.value)" step="1" style="width: auto;margin-top: 10px;margin-bottom: 10px;" type="range" value="{{colors_n}}"/>
             </div>
