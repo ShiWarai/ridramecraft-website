@@ -12,14 +12,14 @@
   <meta content="website" property="og:type"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
-  <link href="../assets/bootstrap/css/bootstrap.min.css?h=238d2b9f54cfe56ca76d080e414c30d5" rel="stylesheet"/>
+  <link href="../assets/bootstrap/css/bootstrap.min.css?h=62172aacc8e16c6505d8ca7104bac2a1" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link href="../assets/css/styles.min.css?h=63b933744a29a7c31a01aa296e3e2fff" rel="stylesheet"/>
-  <link href="../assets/css/projects.min.css?h=e4d2ceed0a254b6bd0c41e1026b72c7e" rel="stylesheet"/>
+  <link href="../assets/css/projects.min.css?h=31e60a95e574c50258e928b04a52f74a" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
@@ -29,7 +29,7 @@
   {% block content %}
   <div class="d-flex align-items-end projects-horizontal parallax_top top-page" data-bss-parallax-bg="true" style="background-image: url(../assets/img/background_projects.jpg?h=433ebe615d2f18cceaeded297070fe61);padding-bottom: 40px;">
    <div class="intro_project">
-    <h2 class="text-center heading" style="margin-bottom: 0px;padding-bottom: 40px;padding-top: 0;font-size: 64px;">
+    <h2 class="text-break text-center heading" style="margin-bottom: 0px;padding-bottom: 40px;padding-top: 0;font-size: 64px;">
      {{ _("Проекты") }}
     </h2>
     <p class="text-center main_text" style="padding-right: 8%;padding-left: 8%;">
@@ -43,11 +43,11 @@
     <div class="row projects">
      {% for project in projects %}
      <div class="col-sm-6 item" style="padding-left: 0px;padding-top: 45px;padding-right: 0px;margin-top: 0px;">
-      <div class="row d-flex flex-wrap link" onclick="{% if not project.is_full %}location.href='{{project.link}}'{% else %}showProject({{project.id}}){% endif %}" style="width: 100%;">
-       <div class="col" style="padding-right: 0px;padding-left: 0px;margin-top: 0px;margin-bottom: 0px;padding-bottom: 15px;flex-grow: 1;flex-basis: 0;flex-shrink: 0;margin-right: 15px;margin-left: 15px;width: 40%;">
+      <div class="row d-flex flex-nowrap link" onclick="{% if not project.is_full %}location.href='{{project.link}}'{% else %}showProject({{project.id}}){% endif %}">
+       <div class="col image-col">
         <img class="img-fluid" src="{{project.image}}" style="width: 100%;"/>
        </div>
-       <div class="col d-flex flex-column justify-content-between order-2" style="flex-grow: 0;flex-basis: 0;flex-shrink: 0;padding-left: 16px;padding-right: 16px;/*margin-left: 15px;*/height: 100%;">
+       <div class="col d-flex flex-column justify-content-between order-2" style="flex-grow: 0;flex-basis: 0;flex-shrink: 0;padding-left: 16px;padding-right: 16px;height: 100%;">
         <h3 class="text-break d-flex align-items-start name" style="margin-bottom: 8px;">
          {{project.name}}
         </h3>
