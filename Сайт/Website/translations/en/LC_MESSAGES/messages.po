@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-12 00:23+0300\n"
+"POT-Creation-Date: 2021-12-12 02:59+0300\n"
 "PO-Revision-Date: 2021-12-10 07:54+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -47,6 +47,7 @@ msgstr ""
 "must be confirmed."
 
 #: Website/templates/color_combinations.html:79
+#: Website/templates/color_combinations.html:141
 msgid "Кол-во цветов: "
 msgstr "Number of colors: "
 
@@ -76,10 +77,6 @@ msgstr ""
 "This section of the site allows you to find a suitable color for the "
 "selected set of colors. Select the number of colors and the colors "
 "themselves, and then run the neural network."
-
-#: Website/templates/color_combinations.html:141
-msgid "Кол-во цветов"
-msgstr "Number of colors"
 
 #: Website/templates/color_combinations.html:147
 msgid "Сгенерировать"
@@ -612,3 +609,4 @@ msgid ""
 msgstr ""
 "This program is no longer valid, but it was created using this site, as "
 "it was used to quickly load modpacks used on my server."
+
