@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link href="../assets/css/styles.min.css?h=63b933744a29a7c31a01aa296e3e2fff" rel="stylesheet"/>
-  <link href="../assets/css/downloads.min.css?h=bec7dc1622115f0e67e2d5387bf0b467" rel="stylesheet"/>
+  <link href="../assets/css/downloads.min.css?h=737fd6db18757fcd6e4344556b1a54e1" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet"/>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
@@ -54,7 +54,7 @@
        </tr>
       </thead>
       <tbody class="text-break text-white table-text" style="font-size: 16px;">
-       <tr class="link" data-bss-hover-animate="flash" onclick="location.href='/downloads'">
+       <tr class="link" data-bss-hover-animate="flash" onclick="location.href='/downloads'" style="display: none">
         <td class="d-none d-sm-table-cell">
          {{ _("name") }}
         </td>
@@ -72,7 +72,7 @@
      </table>
     </div>
     <div class="d-flex justify-content-center" id="page_selectors" style="width: 100%;height: 40px;">
-     <div class="d-flex justify-content-center align-items-center page_selector" style="cursor: pointer;">
+     <div class="justify-content-center align-items-center page_selector" style="display:none">
       <span>
        {{ _("i") }}
       </span>
@@ -102,9 +102,9 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js">
   </script>
-  <script src="../assets/js/script.min.js?h=3191e779dcfb9d85eb00bdc357182dd9">
+  <script src="../assets/js/script.min.js?h=c77ea9a98d927b6826212913410f3ab5">
   </script>
-  <script src="../assets/js/downloads.min.js?h=e069ab4b6358eea9fc22c5fef7c9a336">
+  <script src="../assets/js/downloads.min.js?h=8194926ae03276d0e02613843ef16f65">
   </script>
   {% endblock scripts %}
  </body>

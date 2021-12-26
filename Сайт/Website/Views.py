@@ -9,10 +9,12 @@ from flask_babel import _
 from Website import app, babel
 from Website import Download
 from Website import Projects
-from Website import ColorCombinations
+#from Website import ColorCombinations
+from Website import LedController
 
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
+
 
 def render_base_template(pageName="home.html"):
     return render_template(
@@ -22,22 +24,27 @@ def render_base_template(pageName="home.html"):
         year=datetime.now().year
     )
 
+
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
 
 @app.route('/')
 def home():
     return render_base_template("home.html")
 
+
 @app.route('/home')
 def go_home():
     return redirect('/')
+
 
 # Для доступа к проектам
 @app.route('/projects/<path:path>')
 def send_project_assets(path):
     return send_from_directory('projects', path)
+
 
 # Для доступа к проектам
 @app.route('/project/<int:project_id>')
@@ -69,17 +76,17 @@ def send_project(project_id):
                            project_github_link=github_link,
                            project_is_app=is_app)
 
+
 @app.route('/contacts')
 def contacts():
     return render_base_template("contacts.html")
 
+
 @app.route('/downloads/list', methods=['GET'])
 def downloads_count():
-
     files_list = list()
     # Заполняем массив ссылок
     for file_name in Download.getFilesList():
-
         file_data = dict()
         file = Download.DownloadableFile(file_name)
 
@@ -95,21 +102,22 @@ def downloads_count():
 
     return {'list': files_list, 'count': files_n}
 
+
 @app.route('/downloads')
 def downloads():
     files_n = downloads_count()['count']
 
     return render_template(
         "downloads.html",
-        isEmpty= (files_n == 0),
+        isEmpty=(files_n == 0),
         websiteName=websiteName,
         hostName=hostName,
         year=datetime.now().year
     )
 
+
 @app.route('/projects')
 def projects():
-
     projects = Projects.getProjects()  # Объекты проектов, которые содержат всю нужную информацию
 
     return render_template(
@@ -120,23 +128,26 @@ def projects():
         year=datetime.now().year
     )
 
+
 @app.route('/downloads/<filename>')
 def download_file(filename):
     if filename[0:2] == '__':
         return 'Bad request', 400
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
+
+# Color Combinations
+
 @app.route('/projects/color_combinations')
 def colors_combinations(train_color_amount=3, mode=0):
-
     train_color_amount = int(request.args.get('color_amount') or train_color_amount)
     mode = int(request.args.get('mode') or mode)
 
-    colors_set = ColorCombinations.generate_colors(train_color_amount) # Создаём набор цветов
+    colors_set = ColorCombinations.generate_colors(train_color_amount)  # Создаём набор цветов
 
     last_colors_set = list()
     for i in range(train_color_amount):
-        last_colors_set.append([i,"#ffffff"])
+        last_colors_set.append([i, "#ffffff"])
 
     prediction_enabled = False
     predicted_color = "#ffffff"
@@ -161,9 +172,9 @@ def colors_combinations(train_color_amount=3, mode=0):
         predicted_color=predicted_color,
         prediction_enabled=prediction_enabled)
 
+
 @app.route('/projects/color_combinations/train', methods=['POST'])
 def train_system():
-
     # reCaptcha
     form = ColorCombinations.BaseCaptchaForm()
 
@@ -172,27 +183,27 @@ def train_system():
 
     base_colors_set = list()
     for i in range(int(color_amount)):
-        base_colors_set.append(request.form['base-color-'+str(i)])
+        base_colors_set.append(request.form['base-color-' + str(i)])
 
     if form.validate():
         print("Success: ", base_colors_set, color)
         ColorCombinations.add_colors(color, base_colors_set)
 
         session['prediction_enabled'] = "true"
-        return redirect("/projects/color_combinations?color_amount="+color_amount)
+        return redirect("/projects/color_combinations?color_amount=" + color_amount)
     else:
         print("Fail!")
         session['prediction_enabled'] = "true"
-        return redirect("/projects/color_combinations?color_amount="+color_amount)
+        return redirect("/projects/color_combinations?color_amount=" + color_amount)
+
 
 @app.route('/projects/color_combinations/predict', methods=['POST'])
 def predict_color():
-
     color_amount = request.form['color_amount']
 
     colors_set = list()
     for i in range(int(color_amount)):
-        colors_set.append(request.form['color-'+str(i)])
+        colors_set.append(request.form['color-' + str(i)])
 
     prediction_enabled = False
     if 'prediction_enabled' in session:
@@ -207,6 +218,39 @@ def predict_color():
         session['last_prediction_set'] = ColorCombinations.generate_json(colors_set, generated_color)
         session['last_prediction_set_size'] = color_amount
 
-        return redirect("/projects/color_combinations?mode=1&color_amount="+color_amount)
+        return redirect("/projects/color_combinations?mode=1&color_amount=" + color_amount)
     else:
         abort(403, description="Access denied!")
+
+
+# Led controller
+
+@app.route('/projects/led_controller')
+def led_controller():
+
+    return render_template(
+        "led_controller.html",
+        websiteName=websiteName,
+        hostName=hostName,
+        year=datetime.now().year,
+        default_color=LedController.led_color)
+
+@app.route("/projects/led_controller/led", methods=['PUT'])
+def set_led_data():
+    led_data: dict = request.json
+
+    old_led_color = LedController.led_color
+    try:
+        if 'color' in led_data.keys():
+            LedController.set_led_data(led_data['color'])
+            return app.make_response(('Updated', 200))
+        else:
+            return app.make_response(('No such keys', 400))
+    except LedController.WrongLedData:
+        LedController.set_led_data(old_led_color)
+        return app.make_response(('Wrong color', 400))
+
+
+@app.route("/projects/led_controller/led", methods=['GET'])
+def get_led_data():
+    return LedController.get_led_data()
