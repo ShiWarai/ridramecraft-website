@@ -16,10 +16,12 @@ if __name__ == '__main__':
 
         serve(app, host=HOST, port=PORT, threads=8)
     else:
-        HOST = "192.168.0.148"
+        from subprocess import check_output as cmd
+
+        HOST = cmd("hostname -I", shell=True).decode().strip()  # IP-адрес в локальной сети
         try:
             PORT = 8000
         except ValueError:
-            PORT = int(environ.get('SERVER_PORT', '80'))
+            PORT = int(environ.get('SERVER_PORT', '8000'))
 
         app.run(HOST, PORT, debug=True)
