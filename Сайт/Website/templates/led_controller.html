@@ -1,13 +1,16 @@
+{% extends "layout.html" %}
 <!DOCTYPE html>
-<html>
+<html lang="ru">
  <head>
   <meta charset="utf-8"/>
   {% block head %}
   <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
   <title>
-   RidrameCraft
+   Color Combinations - RidrameCraft
   </title>
-  <meta content="Projects page" name="description"/>
+  <meta content="icon.jpg" property="og:image"/>
+  <meta content="no-cache" http-equiv="Cache-Control"/>
+  <meta content="Color Combinations" name="description"/>
   <meta content="website" property="og:type"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
   <link href="../assets/img/website_icon.png?h=15b8e40d28339fb582ea1179e6313669" rel="icon" sizes="384x384" type="image/png"/>
@@ -18,25 +21,26 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link href="../assets/css/styles.min.css?h=63b933744a29a7c31a01aa296e3e2fff" rel="stylesheet"/>
-  <link href="../assets/css/projects.min.css?h=49e80a8cdab9827972836a38d9af5715" rel="stylesheet"/>
+  <link href="../assets/css/bootstrap-colorpicker.min.min.css?h=d28d1ea360e6d32882c5ee521d7ccc6f" rel="stylesheet"/>
+  <link href="../assets/css/led_controller.min.css?h=7cbd228fa473d13eb04cf7fbee3564e1" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet"/>
+  <!-- varibles for js -->
+  <script>
+   var prediction_enabled = "{{ prediction_enabled }}";
+  </script>
   <script src="{{ url_for('babel_catalog') }}">
   </script>
   {% endblock head %}
  </head>
- <body id="pop-up_window" style="background: rgb(44,62,80);border-radius: 0px;padding: 0px;">
-  <div class="d-flex flex-column" id="window_message">
-   <a class="d-flex flex-shrink-0 justify-content-center align-items-center align-self-end" onclick="closeProject();" style="background: #18bc9c;margin: 8px;border-radius: 100%;border-style: none;color: var(--light);width: 40px;height: 40px;text-decoration: none; cursor: pointer;">
-    {{ _("X") }}
-   </a>
-   <div>
-   </div>
-   <div class="d-flex flex-column flex-fill justify-content-center align-items-center justify-content-xl-center align-items-xl-center">
-    <h1 class="main_text" style="font-size: 17px;">
-     {{ _("Нет такого проекта: ") + project_name}}
-    </h1>
-   </div>
+ <body>
+  {% block content %}
+  <div class="d-flex flex-column justify-content-center align-items-center" style="height: auto;background: #2c3e50;padding-top: 100px;padding-bottom: 32px;min-height: 90vh;">
+   <h1 class="text-break text-center heading" style="margin: 16px 12px;">
+    {{ _("Смотри! Ты можешь контролировать светодиод!") }}
+   </h1>
+   <input class="mx-auto color_square color_picker" id="color-input" name="color" style="background: {{default_color}}; color: {{default_color}}; height:0;width:10%;padding-bottom:10%;" type="button" value="{{default_color}}"/>
   </div>
+  {% endblock content %}
   {% block scripts %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
   </script>
@@ -52,7 +56,9 @@
   </script>
   <script src="../assets/js/script.min.js?h=c77ea9a98d927b6826212913410f3ab5">
   </script>
-  <script src="../assets/js/projects.min.js?h=74c0115551d4a1a0b06d6f634c16138d">
+  <script src="../assets/js/bootstrap-colorpicker.min.min.js?h=d54c4f99df5ae21841bf1a0e6e50c54a">
+  </script>
+  <script src="../assets/js/led_controller.min.js?h=8a38655407be10a36720ef8463becbe7">
   </script>
   {% endblock scripts %}
  </body>

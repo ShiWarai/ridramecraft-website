@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-26 17:57+0300\n"
+"POT-Creation-Date: 2021-12-26 19:12+0300\n"
 "PO-Revision-Date: 2021-12-10 07:54+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -22,17 +22,17 @@ msgstr ""
 msgid "Отправить"
 msgstr "Send"
 
-#: Website/templates/color_combinations.html:40
-#: Website/templates/color_combinations.html:43
+#: Website/templates/color_combinations.html:39
+#: Website/templates/color_combinations.html:42
 msgid "Color combinations"
 msgstr "Color combinations"
 
-#: Website/templates/color_combinations.html:59
-#: Website/templates/color_combinations.html:134
+#: Website/templates/color_combinations.html:58
+#: Website/templates/color_combinations.html:133
 msgid "Цвет: "
 msgstr "Colour: "
 
-#: Website/templates/color_combinations.html:69
+#: Website/templates/color_combinations.html:68
 msgid ""
 "Эта страница сайта содержит нейронную сеть, которая может формировать "
 "цветовые комбинации. В этом разделе вы можете помочь обучить нейронную "
@@ -46,21 +46,21 @@ msgstr ""
 "The number of colors can be changed (maximum 4) and the selected color "
 "must be confirmed."
 
-#: Website/templates/color_combinations.html:79
-#: Website/templates/color_combinations.html:141
+#: Website/templates/color_combinations.html:78
+#: Website/templates/color_combinations.html:140
 msgid "Кол-во цветов: "
 msgstr "Number of colors: "
 
-#: Website/templates/color_combinations.html:85
+#: Website/templates/color_combinations.html:84
 msgid "Подтвердить"
 msgstr "Confirm"
 
-#: Website/templates/color_combinations.html:88
-#: Website/templates/color_combinations.html:150
+#: Website/templates/color_combinations.html:87
+#: Website/templates/color_combinations.html:149
 msgid "Поменять кол-во цветов"
 msgstr "Change the number of colors"
 
-#: Website/templates/color_combinations.html:124
+#: Website/templates/color_combinations.html:123
 msgid ""
 "Внимание! К доступу к нейронной сети, сначала заполните базу данных вашей"
 " цветовой комбинацией."
@@ -68,7 +68,7 @@ msgstr ""
 "Attention! To access the neural network, first fill the database with "
 "your color combination."
 
-#: Website/templates/color_combinations.html:126
+#: Website/templates/color_combinations.html:125
 msgid ""
 "Данный раздел сайта позволяет найти подходящий цвет для выбранного набора"
 " цветов. Выберите количество цветов и сами цвета, а затем запустите "
@@ -78,7 +78,7 @@ msgstr ""
 "selected set of colors. Select the number of colors and the colors "
 "themselves, and then run the neural network."
 
-#: Website/templates/color_combinations.html:147
+#: Website/templates/color_combinations.html:146
 msgid "Сгенерировать"
 msgstr "Generate"
 
@@ -283,6 +283,10 @@ msgstr "Author"
 #: Website/templates/layout.html:114
 msgid "Оформлен ShiWarai"
 msgstr "Designed by ShiWarai"
+
+#: Website/templates/led_controller.html:39
+msgid "Смотри! Ты можешь контролировать светодиод!"
+msgstr "Look! You can control the LED!"
 
 #: Website/templates/project.html:34 Website/templates/project_error.html:30
 #, fuzzy
@@ -609,3 +613,13 @@ msgid ""
 msgstr ""
 "This program is no longer valid, but it was created using this site, as "
 "it was used to quickly load modpacks used on my server."
+
+msgid "Led Controller (WIP)"
+msgstr "Led Controller (WIP)"
+
+msgid ""
+"С помощью данного веб-приложения вы можете контролировать удалённый "
+"светодиод, меняя его цвет."
+msgstr ""
+"With this web application, you can control the remote LED by changing its"
+" color."
