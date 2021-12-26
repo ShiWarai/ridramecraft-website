@@ -9,7 +9,8 @@ from flask_babel import _
 from Website import app, babel
 from Website import Download
 from Website import Projects
-from Website import ColorCombinations
+#from Website import ColorCombinations
+from Website import LedController
 
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
@@ -224,20 +225,32 @@ def predict_color():
 
 # Led controller
 
-led_color = [0, 0, 0]
-
-# def hex_to_rgb(h):
-#     h = h[1:]
-#     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
-
 @app.route('/projects/led_controller')
 def led_controller():
-
-    default_color = '#%02x%02x%02x' % (led_color[0], led_color[1], led_color[2])
 
     return render_template(
         "led_controller.html",
         websiteName=websiteName,
         hostName=hostName,
         year=datetime.now().year,
-        default_color=default_color)
+        default_color=LedController.led_color)
+
+@app.route("/projects/led_controller/led", methods=['PUT'])
+def set_led_data():
+    led_data: dict = request.json
+
+    old_led_color = LedController.led_color
+    try:
+        if 'color' in led_data.keys():
+            LedController.set_led_data(led_data['color'])
+            return app.make_response(('Updated', 200))
+        else:
+            return app.make_response(('No such keys', 400))
+    except LedController.WrongLedData:
+        LedController.set_led_data(old_led_color)
+        return app.make_response(('Wrong color', 400))
+
+
+@app.route("/projects/led_controller/led", methods=['GET'])
+def get_led_data():
+    return LedController.get_led_data()

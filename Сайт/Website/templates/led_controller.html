@@ -35,8 +35,10 @@
  <body>
   {% block content %}
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: auto;background: #2c3e50;padding-top: 100px;padding-bottom: 32px;min-height: 90vh;">
-   <h1 class="text-break text-center heading" style="margin: 16px 12px;">
-    {{ _("Смотри! Ты можешь контролировать светодиод!") }}
+   <h1 class="text-break text-center heading" style="margin: 24px 12px;">
+    {{ _("Смотри!") }}
+    <br/>
+    {{ _("Ты можешь контролировать светодиод!") }}
    </h1>
    <input class="mx-auto color_square color_picker" id="color-input" name="color" style="background: {{default_color}}; color: {{default_color}}; height:0;width:10%;padding-bottom:10%;" type="button" value="{{default_color}}"/>
   </div>
@@ -58,7 +60,7 @@
   </script>
   <script src="../assets/js/bootstrap-colorpicker.min.min.js?h=d54c4f99df5ae21841bf1a0e6e50c54a">
   </script>
-  <script src="../assets/js/led_controller.min.js?h=8a38655407be10a36720ef8463becbe7">
+  <script src="../assets/js/led_controller.min.js?h=b4d03e2175ee2a3a57a1e4f822070263">
   </script>
   {% endblock scripts %}
  </body>
