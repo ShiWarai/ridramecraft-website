@@ -18,7 +18,9 @@ if __name__ == '__main__':
     else:
         from subprocess import check_output as cmd
 
-        HOST = cmd("hostname -I", shell=True).decode().strip()  # IP-адрес в локальной сети
+        HOST = cmd("hostname -I", shell=True).decode().strip().split()[0]  # IP-адрес в локальной сети
+        print("Hostname: ", HOST)
+
         try:
             PORT = 8000
         except ValueError:
