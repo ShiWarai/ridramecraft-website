@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from Website import app
+from sqlalchemy import desc
 
 database = SQLAlchemy(app)
 
@@ -24,6 +25,7 @@ class Project(database.Model):
     id = database.Column(database.Integer, primary_key=True, autoincrement=True)
     name = database.Column(database.Text, nullable=False, unique=True)
     description = database.Column(database.Text, default="Not found")
+    date = database.Column(database.Date, nullable=False)
     tags = database.Column(database.Text, nullable=False, default="No tags")
     images = database.Column(database.Text, nullable=False, default="not_found.png")
     link = database.Column(database.Text)

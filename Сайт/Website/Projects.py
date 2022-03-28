@@ -1,7 +1,7 @@
 from os import path
 from flask_babel import lazy_gettext as _l
 
-from Website import DatabaseClasses
+from Website import DatabaseClasses as DB
 
 
 class Project:
@@ -9,6 +9,7 @@ class Project:
         self.id = project_object.id
         self.name = _l(project_object.name)
         self.description = _l(project_object.description)
+        self.date = project_object.date
 
         self.tags = list()
         for tag in project_object.tags.split(';'):
@@ -35,7 +36,7 @@ class Project:
         self.github_link = project_object.github_link
 
 def getProject(id):
-    project_obj = DatabaseClasses.Project.query.filter_by(id=id).first()
+    project_obj = DB.Project.query.filter_by(id=id).first()
 
     try:
         project = Project(project_obj)
@@ -49,12 +50,13 @@ def getProjects():
 
     sql_project_objects = list()
     try:
-        sql_project_objects = DatabaseClasses.Project.query.order_by(DatabaseClasses.Project.name).all()
+        # Sort by id (as by date)
+        sql_project_objects = \
+            DB.Project.query.order_by(DB.desc(DB.Project.date)).all()
     except:
         pass
 
     projects_list = list()
     for obj in sql_project_objects:
         projects_list.append(Project(obj))
-
     return projects_list
