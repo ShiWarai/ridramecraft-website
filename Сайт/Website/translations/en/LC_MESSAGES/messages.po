@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-03-28 22:04+0300\n"
+"POT-Creation-Date: 2022-06-25 23:41+0300\n"
 "PO-Revision-Date: 2021-12-10 07:54+0300\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.10.3\n"
 
 #: Website/assets/js/color_combinations.js:76
 msgid "Отправить"
@@ -124,8 +124,8 @@ msgid ""
 msgstr ""
 "The main occupation at the moment is the development of software for "
 "applied purposes, solving problems in the course of study at the "
-"university, as well as taking elective courses. Among the relevant ones: "
-"courses from VK Company in the direction of \"Automated Testing\" and "
+"university, as well as taking elective courses. Among the relevant: "
+"courses from VK Company in the direction of \"Automated testing\" and "
 "\"Basic Linux Administration\", as well as a 2-semester IoT course from "
 "the Samsung Academy. I also try to record all the learning progress using"
 " third-party projects or using a repository on GitHub."
@@ -151,7 +151,6 @@ msgid "проекты"
 msgstr "projects"
 
 #: Website/templates/contacts.html:68
-#, fuzzy
 msgid "."
 msgstr "."
 
@@ -188,27 +187,22 @@ msgid "Описание"
 msgstr "Description"
 
 #: Website/templates/downloads.html:59
-#, fuzzy
 msgid "name"
 msgstr "name"
 
 #: Website/templates/downloads.html:62
-#, fuzzy
 msgid "name+extension"
 msgstr "name+extension"
 
 #: Website/templates/downloads.html:65
-#, fuzzy
 msgid "extension"
 msgstr "extension"
 
 #: Website/templates/downloads.html:68
-#, fuzzy
 msgid "description"
 msgstr "description"
 
 #: Website/templates/downloads.html:77
-#, fuzzy
 msgid "i"
 msgstr "i"
 
@@ -250,7 +244,7 @@ msgstr "To projects"
 
 #: Website/templates/layout.html:41
 msgid "Главная"
-msgstr "Home"
+msgstr "Main"
 
 #: Website/templates/layout.html:46
 msgid "Загрузки"
@@ -274,7 +268,7 @@ msgstr "Moscow, 33 Studentskaya Street, building 3"
 
 #: Website/templates/layout.html:79
 msgid "В Интернете"
-msgstr "Around the Web"
+msgstr "in the Internet"
 
 #: Website/templates/layout.html:110
 msgid "Автор"
@@ -293,7 +287,6 @@ msgid "Ты можешь контролировать светодиод!"
 msgstr "You can control the LED!"
 
 #: Website/templates/project.html:34 Website/templates/project_error.html:30
-#, fuzzy
 msgid "X"
 msgstr "X"
 
@@ -678,3 +671,109 @@ msgstr ""
 "of the area, avoid the Pripyat and much more. The code is written with "
 "maximum emphasis on readability and further development. As already "
 "written in the tags - the code is written in Python 3."
+
+msgid "Сервер к проекту \"Умное общежитие\""
+msgstr "Server for the Smart Hostel project"
+
+msgid ""
+"Сервер разработанный как курсовая работа 2ого курса для проекта \"Умное "
+"общежитие\". Реализует клиент-серверное взаимодействие с жителями "
+"общежития."
+msgstr ""
+"The server was developed as a course work of the 2nd course for the Smart"
+" Dormitory project. Implements client-server interaction with the "
+"residents of the hostel."
+
+msgid ""
+"В современных реалиях автоматизация процессов затрагивает не только "
+"производство, но и достаточно бытовые вещи, чтобы повысить эффективность "
+"использования ресурсов. Одной из современных концепций, которая решает "
+"спектр вопросов по взаимодействию информационных систем с физическим "
+"миров, в котором действует человек, является Интернет Вещей (далее IoT)."
+" \n"
+"IoT представляет собой огромную систему из связанных между собой "
+"устройств, требующих отдельных навыков по разработке на их платформе. В "
+"особенно крупных проектах присутствует также и серверная часть, которая "
+"выполняет роль хранилища и координатора всей сети. Одним из примеров "
+"таких может стать «умное общежитие».\n"
+"Данная формулировка требует небольшого помещения. Под «умным общежитием» "
+"подразумевается сеть, организованная внутри студенческого общежития для "
+"упрощения взаимодействий с внутренним оборудованием и между жителями.\n"
+"Выбранная область отличается от других наличием хозяйства, доступ к "
+"которого общежитие выдаёт всем своим жителям. Правильный менеджмент "
+"оборудованием и помещениями увеличит срок работы некоторого оборудование "
+"и ускорит реакцию обсуживающего персонала на поломки.\n"
+"В условиях пандемии особенно становится актуальным контроль за нагрузкой "
+"на помещения, чтобы не создавать толпу, а равномерно распределять по "
+"возможности (предположим в прачечную, спортзал). Электронная запись, "
+"интегрированная в систему, легко решает этот вопрос, однако зачастую это "
+"реализовано не централизованно, а локально (если реализовано вообще).\n"
+"Также внутри общежития зачастую действует принятый в молодёжных кругах "
+"обмен вещами на время или за просто так. Обычно такой обмен проходит "
+"через социальные сети, но наличие специализированной и модерируемой "
+"системы может позволить упростить процесс возвращение своих вещей или "
+"поиск нужных."
+msgstr ""
+"In modern realities, process automation affects not only production, but "
+"also household things enough to increase the efficiency of resource use. "
+"One of the modern concepts that solves a range of issues on the "
+"interaction of information systems with the physical worlds in which a "
+"person operates is the Internet of Things (hereinafter IoT). \n"
+"IoT is a huge system of interconnected devices that require separate "
+"development skills on their platform. In especially large projects, there"
+" is also a server part, which acts as a repository and coordinator of the"
+" entire network. One example of such could be a \"smart hostel\".\n"
+"This formulation requires a small room. A \"smart dormitory\" means a "
+"network organized inside a student dormitory to simplify interactions "
+"with internal equipment and between residents.\n"
+"The selected area differs from others by the presence of a farm, access "
+"to which the hostel gives to all its residents. Proper management of "
+"equipment and premises will increase the working life of some equipment "
+"and accelerate the response of the service personnel to breakdowns.\n"
+"In the conditions of a pandemic, it becomes especially important to "
+"control the load on the premises, so as not to create a crowd, but to "
+"distribute it evenly if possible (for example, to the laundry room, gym)."
+" An electronic record integrated into the system easily solves this "
+"issue, however, it is often implemented not centrally, but locally (if "
+"implemented at all).\n"
+"Also, inside the hostel, the exchange of things accepted in youth circles"
+" often works for a while or for nothing. Usually such an exchange takes "
+"place through social networks, but the presence of a specialized and "
+"moderated system can simplify the process of returning your belongings or"
+" finding the right ones."
+
+msgid "Терминал к проекту \"Умное общежитие\""
+msgstr "Terminal for the Smart Hostel project"
+
+msgid ""
+"Прошивка к плате STM32F746 Discovery, которая применяется в роли "
+"терминала для связи с сервером"
+msgstr ""
+"Firmware for the STM32F746 Discovery board, which is used as a terminal "
+"for communication with the server"
+
+msgid ""
+"Плата запрограммирована на базе FreeRTOS, TouchGFX с применением рядом "
+"сторонних библиотек и собственно написанных. Реализован базовый "
+"функционал для демонстрации на защите проекта по треку ИоТ IT Академии "
+"Samsung. На текущий момент реализованы:\n"
+"\n"
+"- Авторизация\n"
+"- Отображение пользователя\n"
+"- Смена PIN-кода\n"
+"- Просмотр списка бронирований\n"
+"- Резервирование по дате\n"
+"- Удаление резервирования, если оно создано текущим пользователем\n"
+msgstr ""
+"The board is programmed on the basis of FreeRTOS, TouchGFX with the use "
+"of a number of third-party libraries and actually written. The basic "
+"functionality has been implemented for demonstration at the defense of "
+"the project on the track of the IoT of the Samsung IT Academy. Currently "
+"implemented:\n"
+"\n"
+"- Authorization\n"
+"- User display\n"
+"- PIN code change\n"
+"- View the list of bookings\n"
+"- Reservation by date\n"
+"- Deleting a reservation if it is created by the current user\n"

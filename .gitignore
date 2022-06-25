@@ -130,6 +130,7 @@ dmypy.json
 
 # PyCharm
 .idea
+.fuse_hidden*
 
 # Neural-newtwork test
 /Neural network tests
