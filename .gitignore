@@ -136,6 +136,19 @@ dmypy.json
 /Neural network tests
 
 # Downloads
-/Сайт/downloads
-/Сайт/Резерв
-/Сайт/Website/projects
+/Website/downloads
+/Website/Резерв
+/Website/Website/projects
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+Website/identifier.sqlite
+Website/Website/*.db
+
+# Model files
+Website/Website/model.h5
+
+# Data directory (for Docker volumes)
+/data/

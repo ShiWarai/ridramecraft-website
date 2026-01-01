@@ -1,11 +1,12 @@
 from os import path, listdir, curdir, remove
 
 root_dir = path.abspath(curdir)
-downloads_directory = path.join(root_dir, "downloads")
-projects_directory = path.join(root_dir,"Website", "projects")
+downloads_directory = path.join(root_dir, "data", "downloads")
+projects_directory = path.join(root_dir, "data", "projects")
+databases_directory = path.join(root_dir, "data", "databases")
 templates_directory = path.join(root_dir,"Website", "templates")
 static_directory = path.join(root_dir,"Website", "assets")
-model_path = path.join(root_dir, "Website", "model.h5")
+model_path = path.join(root_dir, "data", "models", "model.h5")
 pot_file_path = path.join(root_dir, "req_translation.pot")
 
 def get_po_file_path(lang):

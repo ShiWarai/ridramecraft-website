@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Виртуальные окружения
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Git
+.git/
+.gitignore
+
+# Данные (будут монтироваться как volume)
+data/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+
+# Временные файлы
+*.tmp
+*.temp
+
+# Документация
+*.md
+!README.md
+
+# Другие файлы проекта
+Profile.bsdesign
+content/
+fonts/
+scripts/
+
