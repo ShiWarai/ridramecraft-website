@@ -48,13 +48,20 @@ docker run -it \
 
 ```bash
 docker run -d \
-  -p 80:80 \
+  --restart unless-stopped \
+  -p 8080:80 \
   -e API_KEY="your-api-key-here" \
   -e MODE="release" \
   -v $(pwd)/data:/app/Website/data \
   --name ridramecraft \
   ridramecraft-website
 ```
+
+**Политика автозапуска (`--restart unless-stopped`):**
+- Контейнер будет автоматически запускаться после перезагрузки системы
+- Контейнер будет автоматически перезапускаться при сбое
+- Можно остановить вручную командой `docker stop ridramecraft`
+- После ручной остановки контейнер не будет запускаться автоматически до следующей перезагрузки
 
 #### Просмотр логов запущенного контейнера
 
@@ -75,11 +82,19 @@ docker stop ridramecraft
 # Запуск остановленного контейнера
 docker start ridramecraft
 
-# Удаление контейнера
+# Удаление контейнера (сначала нужно остановить)
+docker stop ridramecraft
 docker rm ridramecraft
 
 # Перезапуск контейнера
 docker restart ridramecraft
+
+# Если контейнер с таким именем уже существует, но остановлен
+docker start ridramecraft
+
+# Или удалить старый и создать новый
+docker rm ridramecraft
+# Затем выполнить команду запуска заново
 ```
 
 ### Переменные окружения

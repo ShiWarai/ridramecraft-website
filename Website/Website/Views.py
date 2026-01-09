@@ -11,6 +11,7 @@ from Website import Download
 from Website import Projects
 from Website import ColorCombinations
 from Website import LedController
+from Website import Repository
 
 websiteName = "RidrameCraft"
 hostName = "ridramecraft.ru"
@@ -43,7 +44,7 @@ def go_home():
 # Для доступа к проектам
 @app.route('/projects/<path:path>')
 def send_project_assets(path):
-    return send_from_directory('projects', path)
+    return send_from_directory(Repository.projects_directory, path)
 
 
 # Для доступа к проектам
